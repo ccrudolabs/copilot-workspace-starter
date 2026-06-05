@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 13 GH-300 generado desde Lab_13_JavaScript_Action.docx." />
+    <title>Laboratorio 13 | Escribir una JavaScript Action personalizada</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 13</p>
+        <h1>Escribir una JavaScript Action personalizada</h1>
+        <p>Desarrollo completo de una GitHub Action en JavaScript/TypeScript para automatizar tareas personalizadas y únicos en flujos de trabajo enterprise.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_13_JavaScript_Action.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_13_JavaScript_Action.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 13</h2>
+<p>GitHub JavaScript Action — Automatización Custom</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Desarrollo completo de una GitHub Action en JavaScript/TypeScript para automatizar tareas personalizadas y únicos en flujos de trabajo enterprise.</p>
+<p>Temas que cubre este laboratorio:</p>
+<pre class="code-block"><code>@actions/core, @actions/github toolkit</code></pre>
+<p>Inputs, outputs y context de una Action</p>
+<p>Testing con Jest</p>
+<p>Compilación con @vercel/ncc</p>
+<p>Publicación en GitHub Marketplace</p>
+<h2>Laboratorio 13: GitHub JavaScript Action — Automatización Custom</h2>
+<h2>Laboratorio 13: Escribe GitHub JavaScript Action y automatiza tareas personalizadas únicas para tu flujo de trabajo</h2>
+<p>Objetivos:</p>
+<p>Imagina que tienes que crear una acción personalizada en GitHub para automatizar tareas específicas dentro de tu flujo de trabajo. Para empezar, necesitas configurar un entorno de desarrollo para escribir y probar tu JavaScript Acción. Esto implica inicializar un nuevo proyecto JavaScript y configurar Tu estructura de proyecto y la instalación de las dependencias necesarias. Por Siguiendo los pasos de este laboratorio, crearás una base sólida para desarrollando tu GitHub Action, permitiéndote crear automatizaciones personalizadas Según las necesidades de tu proyecto.</p>
+<p>En este laboratorio práctico, tú deberás:</p>
+<p>Clona el repositorio: Clona el repositorio proporcionado a tu localidad máquina para iniciar tu proceso de desarrollo.</p>
+<p>Navegar a la carpeta del proyecto: Mover a la carpeta del repositorio clonado Dónde vas a preparar tu acción.</p>
+<p>Crear carpeta de acciones: Configurar una nueva carpeta dentro del repositorio Específicamente para tus archivos de acciones.</p>
+<p>Inicializar el proyecto npm: Inicializar un nuevo proyecto npm en la acción carpeta para gestionar dependencias y configuraciones.</p>
+<p>Instalar dependencias: Utiliza npm para instalar las dependencias necesarias necesario para desarrollar tu Acción JavaScript en GitHub.</p>
+<p>Prepárate para el desarrollo de acciones: Configura el entorno de tu proyecto para comenzar a escribir y probar tu Acción JavaScript personalizada en GitHub.</p>
+<h3>Ejercicio: 1 Crear un nuevo repositorio</h3>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/write-javascript-actions</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública skills-write-javascript-actions</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: skills-write-javascript-actions</p>
+<p>Tipo de repositorio: Público</p>
+<h3>Ejercicio #2: Inicializar un nuevo proyecto JavaScript</h3>
+<p>Una vez que tengas las herramientas necesarias instaladas localmente, sigue estos pasos para empezar a crear tu primera acción.</p>
+<p>En la página de inicio del repositorio write-javascript-actions, haz clic en el botón Code (el de color verde) y copia la URL HTTPS en la pestaña Local.</p>
+<p>Ahora abre el Símbolo del Enlace y clona tu repositorio de habilidades en la máquina local:</p>
+<pre class="code-block"><code>git clone &lt;this repository URL&gt;.git</code></pre>
+<h3>Nota: Normalmente se clona en el siguiente camino: &quot;C:\Users\Admin\skills-write-javascript-actions&quot;</h3>
+<p>Ve a la carpeta que acabas de clonar:</p>
+<pre class="code-block"><code>cd C:\Users\Admin\skills-write-javascript-actions</code></pre>
+<p>Usaremos la rama llamada main.</p>
+<p>Git switch principal</p>
+<p>Crea una nueva carpeta para nuestros archivos de acciones:</p>
+<pre class="code-block"><code>mkdir -p .github\actions\joke-action</code></pre>
+<p>Navega a la carpeta de bromas-acciones que acabas de crear:</p>
+<pre class="code-block"><code>cd .github/acciones/broma-acción</code></pre>
+<p>Inicializar un nuevo proyecto:</p>
+<pre class="code-block"><code>npm init -y</code></pre>
+<p>Instala las dependencias de solicitud, promesa de petición y \@actions/núcleo usando npm desde el GitHub ToolKit (https://github.com/actions/toolkit):</p>
+<p>Npm install -solicitud de guardado - solicitud de @actions/núcleo</p>
+<p>Haz el commit de esos archivos añadidos recientemente, eliminaremos la necesidad de subirlos node_modules en un paso posterior:</p>
+<pre class="code-block"><code>git add . &amp;&amp; git commit -m &quot;añadir dependencias del proyecto&quot;</code></pre>
+<h3>Nota: Si se le pide introducir el correo electrónico y el nombre de usuario, introduzca el siguiente comando con los datos sustituidos.</h3>
+<pre class="code-block"><code>git config --global user.email &quot;your_email@example.com&quot;
+git config --global user.name &quot;Tu nombre&quot;</code></pre>
+<h3>Nota: Sustituye por tus datos.</h3>
+<p>Empuja tus cambios a tu repositorio: introduce el siguiente comando y Iniciar sesión</p>
+<pre class="code-block"><code>git push</code></pre>
+<h3>Nota: cuando se te pida autorizar, inicia sesión en la cuenta de GitHub y continúa el proceso.</h3>
+<p>Espera unos 20 segundos mientras GitHub Actions se actualiza automáticamente la página para el procesamiento posterior.</p>
+<h2>Resumen:</h2>
+<p>Ahora has establecido un entorno de desarrollo robusto para crear y gestionar tu Acción JavaScript en GitHub, sentando las bases para automatizar y mejorar tus flujos de trabajo.</p>
+<h2>Laboratorio 13: Escribe GitHub JavaScript Action y automatiza tareas personalizadas únicas para tu flujo de trabajo</h2>
+<p>Objetivos:</p>
+<p>Imagina que tienes que crear una acción personalizada en GitHub para automatizar tareas específicas dentro de tu flujo de trabajo. Para empezar, necesitas configurar un entorno de desarrollo para escribir y probar tu JavaScript Acción. Esto implica inicializar un nuevo proyecto JavaScript y configurar Tu estructura de proyecto y la instalación de las dependencias necesarias. Por Siguiendo los pasos de este laboratorio, crearás una base sólida para desarrollando tu GitHub Action, permitiéndote crear automatizaciones personalizadas Según las necesidades de tu proyecto.</p>
+<p>En este laboratorio práctico, tú deberás:</p>
+<p>Clona el repositorio: Clona el repositorio proporcionado a tu localidad máquina para iniciar tu proceso de desarrollo.</p>
+<p>Navegar a la carpeta del proyecto: Mover a la carpeta del repositorio clonado Dónde vas a preparar tu acción.</p>
+<p>Crear carpeta de acciones: Configurar una nueva carpeta dentro del repositorio Específicamente para tus archivos de acciones.</p>
+<p>Inicializar el proyecto npm: Inicializar un nuevo proyecto npm en la acción carpeta para gestionar dependencias y configuraciones.</p>
+<p>Instalar dependencias: Utiliza npm para instalar las dependencias necesarias necesario para desarrollar tu Acción JavaScript en GitHub.</p>
+<p>Prepárate para el desarrollo de acciones: Configura el entorno de tu proyecto para comenzar a escribir y probar tu Acción JavaScript personalizada en GitHub.</p>
+<h3>Ejercicio: 1 Crear un nuevo repositorio</h3>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/write-javascript-actions</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública skills-write-javascript-actions</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: skills-write-javascript-actions</p>
+<p>Tipo de repositorio: Público</p>
+<h3>Ejercicio #2: Inicializar un nuevo proyecto JavaScript</h3>
+<p>Una vez que tengas las herramientas necesarias instaladas localmente, sigue estos pasos para empezar a crear tu primera acción.</p>
+<p>En la página de inicio del repositorio write-javascript-actions, haz clic en el botón Code (el de color verde) y copia la URL HTTPS en la pestaña Local.</p>
+<p>Ahora abre el Símbolo del Enlace y clona tu repositorio de habilidades en la máquina local:</p>
+<pre class="code-block"><code>git clone &lt;this repository URL&gt;.git</code></pre>
+<h3>Nota: Normalmente se clona en el siguiente camino: &quot;C:\Users\Admin\skills-write-javascript-actions&quot;</h3>
+<p>Ve a la carpeta que acabas de clonar:</p>
+<pre class="code-block"><code>cd C:\Users\Admin\skills-write-javascript-actions</code></pre>
+<p>Usaremos la rama llamada main.</p>
+<p>Git switch principal</p>
+<p>Crea una nueva carpeta para nuestros archivos de acciones:</p>
+<pre class="code-block"><code>mkdir -p .github\actions\joke-action</code></pre>
+<p>Navega a la carpeta de bromas-acciones que acabas de crear:</p>
+<pre class="code-block"><code>cd .github/acciones/broma-acción</code></pre>
+<p>Inicializar un nuevo proyecto:</p>
+<pre class="code-block"><code>npm init -y</code></pre>
+<p>Instala las dependencias de solicitud, promesa de petición y \@actions/núcleo usando npm desde el GitHub ToolKit (https://github.com/actions/toolkit):</p>
+<p>Npm install -solicitud de guardado - solicitud de @actions/núcleo</p>
+<p>Haz el commit de esos archivos añadidos recientemente, eliminaremos la necesidad de subirlos node_modules en un paso posterior:</p>
+<pre class="code-block"><code>git add . &amp;&amp; git commit -m &quot;añadir dependencias del proyecto&quot;</code></pre>
+<h3>Nota: Si se le pide introducir el correo electrónico y el nombre de usuario, introduzca el siguiente comando con los datos sustituidos.</h3>
+<pre class="code-block"><code>git config --global user.email &quot;your_email@example.com&quot;
+git config --global user.name &quot;Tu nombre&quot;</code></pre>
+<h3>Nota: Sustituye por tus datos.</h3>
+<p>Empuja tus cambios a tu repositorio: introduce el siguiente comando y Iniciar sesión</p>
+<pre class="code-block"><code>git push</code></pre>
+<h3>Nota: cuando se te pida autorizar, inicia sesión en la cuenta de GitHub y continúa el proceso.</h3>
+<p>Espera unos 20 segundos mientras GitHub Actions se actualiza automáticamente la página para el procesamiento posterior.</p>
+<h2>Resumen:</h2>
+<p>Ahora has establecido un entorno de desarrollo robusto para crear y gestionar tu Acción JavaScript en GitHub, sentando las bases para automatizar y mejorar tus flujos de trabajo.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 13 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

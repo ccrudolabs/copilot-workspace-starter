@@ -3,268 +3,1199 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GH-300 Copilot Learning Hub</title>
+    <meta
+      name="description"
+      content="Material de estudio GH-300 y GitHub Copilot preparado por Carlos Crudo para profesionales IT, cloud, DevOps, IoT y arquitectura empresarial."
+    />
+    <title>GH-300 GitHub Copilot Study Hub | Carlos Crudo</title>
     <style>
       :root {
-        color-scheme: dark;
-        font-family: Arial, Helvetica, sans-serif;
-        --bg:#07111f;
-        --panel:#121c2d;
-        --panel-2:#0f172a;
-        --accent:#5eead4;
-        --accent-2:#bfdbfe;
-        --text:#eff6ff;
-        --muted:#dbe4f0;
-        --good:#a7f3d0;
-        --warn:#fde68a;
+        color-scheme: light;
+        --ink: #102033;
+        --muted: #5b6677;
+        --soft: #eef4f8;
+        --paper: #ffffff;
+        --line: #d9e3ea;
+        --navy: #0c233c;
+        --cyan: #00a6c8;
+        --green: #3aa76d;
+        --amber: #f0a83a;
+        --radius: 8px;
+        --shadow: 0 18px 48px rgba(12, 35, 60, 0.12);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
       }
-      * { box-sizing: border-box; }
-      body { margin:0; background:linear-gradient(135deg,#07111f 0%,#0f172a 45%,#111827 100%); color:var(--text); }
-      header { padding:24px 18px 10px; border-bottom:1px solid rgba(148,163,184,.18); }
-      main { max-width:1280px; margin:0 auto; padding:18px; display:grid; gap:18px; }
-      .hero, .card, .footer-note { background:rgba(15,23,42,.92); border:1px solid rgba(148,163,184,.18); border-radius:18px; padding:18px; box-shadow:0 14px 36px rgba(15,23,42,.35); }
-      h1,h2,h3 { margin-top:0; line-height:1.15; }
-      p, li { color:var(--muted); line-height:1.45; }
-      .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:18px; }
-      .hero-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-      .badge { display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(94,234,212,.12); color:#ccfbf1; border:1px solid rgba(94,234,212,.25); font-size:13px; margin-right:8px; margin-bottom:8px; }
-      .pill { display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(191,219,254,.12); color:#dbeafe; border:1px solid rgba(191,219,254,.18); font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
-      .mini-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:10px; }
-      .mini-card { background:rgba(15,23,42,.78); border:1px solid rgba(148,163,184,.14); border-radius:14px; padding:12px; }
-      .mini-card h4 { margin:0 0 6px; color:#ecfeff; font-size:15px; }
-      .mini-card p { font-size:13px; margin:0; color:var(--muted); }
-      .image-card img { width:100%; border-radius:14px; border:1px solid rgba(148,163,184,.16); }
-      .quote { color:#d1fae5; font-style:italic; }
-      .tip { color:var(--good); font-weight:600; }
-      .warn { color:var(--warn); }
-      table { width:100%; border-collapse:collapse; border-radius:12px; overflow:hidden; }
-      th, td { text-align:left; padding:8px 10px; border-bottom:1px solid rgba(148,163,184,.12); color:var(--muted); font-size:14px; vertical-align:top; }
-      th { color:#ecfeff; background:rgba(15,23,42,.98); }
-      code { background:#111827; color:#bfdbfe; padding:2px 6px; border-radius:6px; }
-      .question-card { background:linear-gradient(145deg, rgba(17,24,39,.95), rgba(15,23,42,.88)); border:1px solid rgba(125,211,252,.18); border-radius:14px; padding:12px; margin-bottom:10px; }
-      .question-card strong { color:#ecfeff; display:block; margin-bottom:4px; }
-      .footer-note { margin:0 18px 24px; font-size:14px; color:#dbe4f0; }
-      a { color:#bfdbfe; }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: #f7fafc;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(217, 227, 234, 0.82);
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 22px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 14px 22px;
+      }
+
+      .brand {
+        display: grid;
+        gap: 2px;
+        text-decoration: none;
+      }
+
+      .brand strong {
+        font-size: 15px;
+        letter-spacing: 0;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        border-radius: 999px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 11px;
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        background: var(--soft);
+        color: var(--ink);
+      }
+
+      .hero {
+        background:
+          linear-gradient(90deg, rgba(12, 35, 60, 0.96), rgba(12, 35, 60, 0.58)),
+          url("assets/gh300-copilot-study-hero-carlos-crudo.png") center/cover;
+        color: #fff;
+        min-height: 92vh;
+        display: grid;
+        align-items: end;
+      }
+
+      .hero-inner {
+        width: min(1180px, calc(100% - 44px));
+        margin: 0 auto;
+        padding: 90px 0 64px;
+      }
+
+      .eyebrow,
+      .kicker {
+        color: #9de5f5;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero h1 {
+        max-width: 820px;
+        margin: 18px 0 18px;
+        font-size: clamp(2.45rem, 7vw, 5.8rem);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .hero p {
+        max-width: 680px;
+        color: #d7e7ef;
+        font-size: clamp(1.02rem, 2vw, 1.24rem);
+        line-height: 1.65;
+      }
+
+      .hero-actions,
+      .inline-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .btn {
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 999px;
+        display: inline-flex;
+        font-weight: 800;
+        gap: 8px;
+        min-height: 44px;
+        padding: 11px 16px;
+        text-decoration: none;
+      }
+
+      .btn.primary {
+        background: #fff;
+        color: var(--navy);
+      }
+
+      .btn.secondary {
+        color: #fff;
+      }
+
+      .inline-actions .btn.primary {
+        background: var(--navy);
+        border-color: var(--navy);
+        color: #fff;
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .section {
+        padding: 76px 22px;
+      }
+
+      .section.alt {
+        background: var(--paper);
+      }
+
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        gap: 10px;
+        max-width: 790px;
+        margin-bottom: 28px;
+      }
+
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h2 {
+        font-size: clamp(1.9rem, 4vw, 3.2rem);
+        line-height: 1.06;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-size: 1.04rem;
+        line-height: 1.28;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        line-height: 1.64;
+      }
+
+      .grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(12, 1fr);
+      }
+
+      .span-4 {
+        grid-column: span 4;
+      }
+
+      .span-5 {
+        grid-column: span 5;
+      }
+
+      .span-6 {
+        grid-column: span 6;
+      }
+
+      .span-7 {
+        grid-column: span 7;
+      }
+
+      .span-12 {
+        grid-column: 1 / -1;
+      }
+
+      .card,
+      .lab,
+      .callout {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 24px;
+      }
+
+      .card h3,
+      .lab h3 {
+        color: var(--navy);
+        margin-bottom: 9px;
+      }
+
+      .metric {
+        border-left: 4px solid var(--cyan);
+        padding-left: 16px;
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--navy);
+        font-size: 2rem;
+        line-height: 1;
+      }
+
+      .pill-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .pill {
+        background: #e7f7fa;
+        border: 1px solid #bce9f1;
+        border-radius: 999px;
+        color: #075f70;
+        font-size: 12px;
+        font-weight: 800;
+        padding: 7px 10px;
+      }
+
+      .roadmap {
+        counter-reset: lab;
+      }
+
+      .lab {
+        counter-increment: lab;
+        position: relative;
+      }
+
+      .lab::before {
+        content: counter(lab, decimal-leading-zero);
+        color: var(--cyan);
+        display: block;
+        font-size: 13px;
+        font-weight: 900;
+        margin-bottom: 12px;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .feature-list li {
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+      }
+
+      .matrix {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .figure-card {
+        background: #071827;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .figure-card img {
+        background: #fff;
+        width: 100%;
+      }
+
+      .figure-caption {
+        color: #d7e7ef;
+        padding: 16px 18px;
+      }
+
+      .resource-card {
+        display: grid;
+        gap: 14px;
+      }
+
+      .download-list {
+        display: grid;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .download-list a {
+        align-items: center;
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        display: flex;
+        font-weight: 850;
+        justify-content: space-between;
+        min-height: 48px;
+        padding: 11px 13px;
+        text-decoration: none;
+      }
+
+      .study-band {
+        background: #f0f6f9;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px;
+      }
+
+      .exam-shell {
+        display: grid;
+        gap: 18px;
+      }
+
+      .exam-toolbar {
+        align-items: center;
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 14px;
+        grid-template-columns: minmax(220px, 1fr) auto;
+        padding: 18px;
+        position: sticky;
+        top: 72px;
+        z-index: 10;
+      }
+
+      .progress-track {
+        background: #dfeaf0;
+        border-radius: 999px;
+        height: 10px;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        background: linear-gradient(90deg, var(--cyan), var(--green));
+        height: 100%;
+        transition: width 0.25s ease;
+        width: 0;
+      }
+
+      .exam-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .button {
+        border: 1px solid var(--navy);
+        border-radius: 999px;
+        cursor: pointer;
+        font: inherit;
+        font-weight: 850;
+        min-height: 42px;
+        padding: 10px 14px;
+      }
+
+      .button.primary {
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .button.ghost {
+        background: #fff;
+        color: var(--navy);
+      }
+
+      .exam-question {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: 0 12px 30px rgba(12, 35, 60, 0.08);
+        padding: 20px;
+      }
+
+      #examQuestions {
+        display: grid;
+        gap: 14px;
+      }
+
+      .exam-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+
+      .exam-meta span,
+      .exam-meta strong {
+        background: #edf4f7;
+        border-radius: 999px;
+        color: #19324d;
+        font-size: 12px;
+        font-weight: 850;
+        padding: 6px 9px;
+      }
+
+      .exam-meta strong {
+        background: #fff3da;
+        color: #8a5608;
+      }
+
+      .exam-options {
+        display: grid;
+        gap: 10px;
+      }
+
+      .exam-options label {
+        align-items: flex-start;
+        background: #f6fafc;
+        border: 1px solid #dce8ee;
+        border-radius: var(--radius);
+        cursor: pointer;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: auto 1fr;
+        padding: 12px;
+      }
+
+      .exam-options input {
+        margin-top: 4px;
+      }
+
+      .exam-results {
+        background: #071827;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        color: #fff;
+        padding: 24px;
+      }
+
+      .exam-results p,
+      .exam-results span {
+        color: #d7e7ef;
+      }
+
+      .result-summary {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 18px;
+      }
+
+      .result-summary div,
+      .topic-review article {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: var(--radius);
+        padding: 14px;
+      }
+
+      .result-summary span {
+        display: block;
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .result-summary strong {
+        display: block;
+        margin-top: 6px;
+      }
+
+      .topic-review {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .topic-review h4 {
+        margin: 0;
+      }
+
+      .topic-review article {
+        display: grid;
+        gap: 4px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+        padding: 13px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: #f0f6f9;
+        color: var(--navy);
+      }
+
+      .callout {
+        background: var(--navy);
+        color: #fff;
+      }
+
+      .callout p,
+      .callout li {
+        color: #d7e7ef;
+      }
+
+      .callout h2 {
+        font-size: clamp(1.55rem, 3vw, 2.35rem);
+        line-height: 1.12;
+      }
+
+      .check {
+        border-left: 4px solid var(--green);
+      }
+
+      .warn {
+        border-left: 4px solid var(--amber);
+      }
+
+      .quote {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        line-height: 1.24;
+        color: var(--navy);
+      }
+
+      .footer {
+        background: #071827;
+        color: #fff;
+        padding: 38px 22px;
+      }
+
+      .footer .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer p {
+        color: #c8d8e3;
+        margin: 0;
+      }
+
+      code {
+        background: #edf4f7;
+        border: 1px solid #d5e2e8;
+        border-radius: 6px;
+        color: #19324d;
+        padding: 2px 6px;
+      }
+
+      @media (max-width: 900px) {
+        .span-4,
+        .span-5,
+        .span-6,
+        .span-7 {
+          grid-column: 1 / -1;
+        }
+
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+        }
+
+        .exam-toolbar {
+          grid-template-columns: 1fr;
+          position: static;
+        }
+
+        .result-summary {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          min-height: 86vh;
+        }
+
+        .hero-inner {
+          width: min(100% - 28px, 1180px);
+          padding-bottom: 42px;
+        }
+
+        .section {
+          padding: 52px 14px;
+        }
+
+        .card,
+        .lab,
+        .callout {
+          padding: 18px;
+        }
+      }
     </style>
   </head>
   <body>
-    <header>
-      <div class="badge">GH-300</div>
-      <div class="badge">GitHub Copilot</div>
-      <div class="badge">Estudio práctico</div>
-      <div class="badge">Autor: Carlos Crudo</div>
-      <h1>Portal de estudio GH-300 con material de examen, costos, seguridad y arquitectura</h1>
-      <p>Este sitio reúne el contenido del workbook del proyecto, la arquitectura 360, las buenas prácticas de prompt engineering y los escenarios de examen que debes dominar para certificarte con confianza.</p>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegación principal">
+        <a class="brand" href="#inicio">
+          <strong>Carlos Crudo</strong>
+          <span>IT, Cloud, IoT, DevOps y AI Learning</span>
+        </a>
+        <div class="nav-links">
+          <a href="#ruta">Ruta GH-300</a>
+          <a href="#arquitectura-360">Arquitectura 360</a>
+          <a href="teoria-github-copilot.html">Teoría</a>
+          <a href="simulador-examen.html">Simulador</a>
+          <a href="#laboratorios">Laboratorios</a>
+          <a href="#seguridad">Seguridad</a>
+          <a href="#publicacion">Publicación</a>
+        </div>
+      </nav>
     </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-inner">
+        <p class="eyebrow">GitHub Copilot Certification Study Hub</p>
+        <h1>GH-300 para profesionales IT que construyen con criterio.</h1>
+        <p>
+          Portal de estudio curado por Carlos Crudo para preparar GitHub Copilot con foco
+          práctico: arquitectura, prompts, gobernanza, seguridad, costos, laboratorios y
+          escenarios de examen aplicados a entornos reales.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="teoria-github-copilot.html">Ver teoría base</a>
+          <a class="btn primary" href="lab-00-preparacion.html">Comenzar Lab 0</a>
+          <a class="btn secondary" href="simulador-examen.html">Iniciar simulador</a>
+          <a class="btn secondary" href="#arquitectura-360">Ver arquitectura 360</a>
+          <a class="btn secondary" href="#ruta">Mapa de estudio</a>
+        </div>
+      </div>
+    </section>
+
     <main>
-      <section class="hero">
-        <p class="pill">Objetivo de certificación</p>
-        <h2>Qué debes dominar para aprobar GH-300</h2>
-        <p>La preparación no se limita a repetir teoría: debes saber elegir el plan correcto, usar Copilot con contexto, validar respuestas, proteger privacidad y aplicar gobernanza responsable en proyectos reales.</p>
-        <div class="mini-grid">
-          <article class="mini-card"><h4>Licenciamiento</h4><p>Free, Student, Pro, Business y Enterprise como base del examen.</p></article>
-          <article class="mini-card"><h4>Prompt engineering</h4><p>Instrucciones por repositorio, path y agentes para controlar calidad y contexto.</p></article>
-          <article class="mini-card"><h4>Seguridad y gobernanza</h4><p>Revisión humana, políticas, privacidad, auditoría y uso responsable.</p></article>
-          <article class="mini-card"><h4>Práctica de examen</h4><p>Preguntas tipo test, escenarios y validación antes de aceptar una sugerencia.</p></article>
+      <section class="section" id="arquitectura-360">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Arquitectura enterprise 360</p>
+            <h2>GitHub Copilot visto como plataforma: personas, agentes, seguridad, costos y ROI.</h2>
+            <p>
+              Esta sección incorpora la arquitectura 360 y el workbook de licenciamiento preparado
+              por Carlos Crudo. La idea es que el visitante pueda estudiar el mapa completo,
+              descargar la fuente y recorrer los dominios clave sin abrir Excel.
+            </p>
+          </div>
+          <div class="grid">
+            <figure class="figure-card span-12">
+              <img
+                src="assets/arquitectura-enterprise-360-github-copilot-roi-carlos-crudo.png"
+                alt="Arquitectura enterprise 360 de GitHub Copilot con ROI optimizado por Carlos Crudo"
+              />
+              <figcaption class="figure-caption">
+                Arquitectura Enterprise 360: Agentic AI, Zero Trust, multi-cloud, governance,
+                DevOps, DevSecOps, refactoring, change management, ROI y costos a junio de 2026.
+              </figcaption>
+            </figure>
+            <article class="card span-7 resource-card">
+              <p class="kicker">Workbook descargable</p>
+              <h2>GitHub Copilot SKUs, licenciamiento, seguridad y ecosistema 360.</h2>
+              <p>
+                El Excel queda publicado como material complementario: permite revisar planes,
+                SKUs técnicos, costos, AI Credits, controles, preguntas de examen, políticas,
+                auditoría, modelos, Agent Mode, MCP y escenarios de adopción empresarial.
+              </p>
+              <ul class="download-list">
+                <li>
+                  <a href="downloads/github-copilot-skus-licenciamiento-360-carlos-crudo-v7.xlsx">
+                    Descargar workbook Excel
+                    <span>.xlsx</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="assets/arquitectura-enterprise-360-github-copilot-roi-carlos-crudo.png">
+                    Descargar arquitectura 360
+                    <span>.png</span>
+                  </a>
+                </li>
+              </ul>
+            </article>
+            <aside class="callout span-5">
+              <p class="kicker">Lectura ejecutiva</p>
+              <h2>Cómo estudiar este material.</h2>
+              <ul>
+                <li>Primero revisar el diagrama 360 para entender el mapa completo.</li>
+                <li>Después usar el dashboard del Excel para comparar planes y costos.</li>
+                <li>Finalmente practicar con las hojas de examen, gobernanza y seguridad.</li>
+              </ul>
+            </aside>
+          </div>
         </div>
       </section>
 
-      <section class="grid">
-        <article class="card">
-          <h3>Mapa de estudio GH-300</h3>
-          <ul>
-            <li>Comprender el ecosistema: IDE, CLI, GitHub.com, mobile, agentes y extensiones.</li>
-            <li>Identificar cuándo usar Free, Student, Pro, Business o Enterprise.</li>
-            <li>Aplicar prompt engineering con instrucciones personalizadas y contexto claro.</li>
-            <li>Validar respuestas con pruebas, revisión y controles de seguridad.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Resumen de licenciamiento y costos</h3>
-          <table>
-            <thead>
-              <tr><th>Plan</th><th>Referencia</th><th>Uso recomendado</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Free</td><td>Inicio sin costo</td><td>Aprender, practicar y validar conceptos básicos.</td></tr>
-              <tr><td>Student</td><td>Verificación educativa</td><td>Laboratorios y estudio académico con enfoque de aprendizaje.</td></tr>
-              <tr><td>Pro / Pro+</td><td>Usuario avanzado</td><td>Desarrollo individual con más capacidad y contexto.</td></tr>
-              <tr><td>Business</td><td>USD 19/user/mes</td><td>Organizaciones que necesitan políticas y control.</td></tr>
-              <tr><td>Enterprise</td><td>USD 39/user/mes</td><td>Gobierno avanzado, auditoría y adopción corporativa.</td></tr>
-            </tbody>
-          </table>
-          <p class="tip">Referencia extraída del workbook: 1 AI Credit equivale a USD 0,01 y se usa como referencia de consumo y FinOps.</p>
-        </article>
-        <article class="card">
-          <h3>Buenas prácticas de prompt engineering</h3>
-          <table>
-            <thead>
-              <tr><th>Patrón</th><th>Cómo aplicarlo</th><th>Resultado esperado</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>.github/copilot-instructions.md</td><td>Definir arquitectura, naming, tests y seguridad del repo.</td><td>Respuestas consistentes y alineadas al proyecto.</td></tr>
-              <tr><td>.github/instructions/**/*.instructions.md</td><td>Usar por carpeta o dominio (src, docs, infra).</td><td>Contexto más preciso y menos ruido.</td></tr>
-              <tr><td>AGENTS.md / CLAUDE.md / GEMINI.md</td><td>Establecer pasos, límites y validaciones para agentes.</td><td>Menos ejecuciones fuera de alcance.</td></tr>
-              <tr><td>Políticas de organización</td><td>Auditar permisos, modelos y acceso por equipo.</td><td>Control, trazabilidad y seguridad empresarial.</td></tr>
-            </tbody>
-          </table>
-        </article>
-      </section>
 
-      <section class="grid">
-        <article class="card">
-          <h3>Preguntas tipo examen para practicar</h3>
-          <div class="question-card"><strong>1. ¿Qué plan es el punto de entrada sin costo?</strong>Respuesta correcta: B) Free. Sirve para practicar sin inversión inicial.</div>
-          <div class="question-card"><strong>2. ¿Qué plan requiere verificación educativa?</strong>Respuesta correcta: A) Student. Revisa la diferencia entre individual y académico.</div>
-          <div class="question-card"><strong>3. ¿Qué planes cubren organizaciones?</strong>Respuesta correcta: A) Business y Enterprise. Importante para gobierno y auditoría.</div>
-          <div class="question-card"><strong>4. ¿Qué debes hacer antes de aceptar una suggestion?</strong>Validar, revisar seguridad y ejecutar pruebas cuando sea necesario.</div>
-        </article>
-        <article class="card">
-          <h3>Checklist de seguridad y gobernanza</h3>
-          <ul>
-            <li>Revisa cada sugerencia antes de aceptarla.</li>
-            <li>Evita pegar secretos, tokens o datos sensibles en prompts.</li>
-            <li>Usa políticas y controles de organización cuando haya equipos o clientes.</li>
-            <li>Combina Copilot con tests, CodeQL/SAST y revisiones humanas.</li>
-            <li>Documenta límites, riesgos y decisiones para auditoría y FinOps.</li>
-          </ul>
-          <p class="warn">La preparación GH-300 evalúa la capacidad de usar Copilot con responsabilidad, no solo la velocidad de generación.</p>
-        </article>
-      </section>
-
-      <section class="grid">
-        <article class="card image-card">
-          <h3>Arquitectura visual 360 incluida</h3>
-          <img src="../00_Arquitectura_Enterprise_360_GitHub_Copilot_ROI_Autor_Carlos_Crudo.png" alt="Arquitectura enterprise 360 de GitHub Copilot" />
-          <p class="quote">Esta imagen forma parte del material de estudio del proyecto y representa el enfoque 360: licenciamiento, seguridad, modelos, agentes, mobile y gobernanza.</p>
-        </article>
-        <article class="card">
-          <h3>Arquitectura y flujo de trabajo</h3>
-          <pre class="mermaid">
-flowchart LR
-  A[Estudiante / candidato GH-300] --> B[VS Code + GitHub Copilot]
-  B --> C[App de práctica y workbook]
-  C --> D[Prompt engineering]
-  C --> E[Pruebas y validación]
-  C --> F[GitHub, reviews y gobernanza]
-  D --> G[Respuesta responsable]
-  E --> G
-  F --> H[Preparación para examen]
-          </pre>
-          <p>El flujo de estudio combina documentación, pruebas, prompts y revisión de cambios para reproducir un entorno real de preparación profesional.</p>
-        </article>
-      </section>
-
-      <section class="card">
-        <p class="pill">Laboratorios DPCP-010 (español)</p>
-        <h2>Ruta ordenada de laboratorios — 23 módulos previstos</h2>
-        <p class="tip">Esta guía está organizada por número de laboratorio para que puedas avanzar de forma secuencial y clara en tu preparación GH-300 y GitHub.</p>
-      </section>
-
-      <section class="card">
-        <h3>Laboratorio 01 — Crear un repositorio y una rama</h3>
-        <p><strong>Temas que cubre:</strong> crear un repositorio desde plantilla pública, crear ramas (branches), repositorios públicos vs privados, flujo de trabajo con ramas y práctica de colaboración en GitHub.</p>
-        <p><strong>Ejercicio guía:</strong> crea el repositorio <code>skills-introduction-to-github</code>, busca una rama llamada <code>Mi-Primera-Rama</code> y créala desde <code>main</code>. La rama activa cambiará automáticamente a la nueva rama creada.</p>
-        <p><strong>Objetivo didáctico:</strong> aprender los fundamentos de GitHub para contribuir con confianza a proyectos, colaborar con equipos y participar en comunidades de desarrollo.</p>
-        <ul>
-          <li>Entender qué es un repositorio y cómo usar una plantilla pública.</li>
-          <li>Aprender a crear y cambiar de rama para trabajar de forma aislada.</li>
-          <li>Comparar repositorios públicos y privados en el flujo de colaboración.</li>
-          <li>Practicar el flujo básico de GitHub: rama → cambios → revisión → fusión.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Laboratorio 02 — Markdown para documentación estructurada, PR y comunicación eficaz</h3>
-        <p><strong>Temas que cubre:</strong> crear repositorio desde plantilla, pull request y comparación de cambios, cabeceras Markdown (H1-H6), commit de cambios documentados, y comunicación efectiva en proyectos colaborativos.</p>
-        <p><strong>Objetivo:</strong> Imagina que estás trabajando en un proyecto colaborativo con tu equipo de desarrollo. La comunicación y la organización son clave para garantizar el éxito del proyecto. Markdown es una herramienta crucial para desarrolladores como tú para mejorar la claridad y la organización en tu comunicación, especialmente al tratar con problemas y pull requests.</p>
-        <ul>
-          <li>Usar Markdown para estructurar README, notas de cambios y documentación de tareas.</li>
-          <li>Abrir PRs con propósito claro, contexto y alcance definido.</li>
-          <li>Comparar cambios y revisar diferencias antes de aceptar una propuesta.</li>
-          <li>Escribir commits con mensajes descriptivos y coherentes con el trabajo realizado.</li>
-        </ul>
-        <p class="tip">Ejemplo práctico: crea un README bien organizado con H1-H6, describe la mejora en un PR y usa mensajes de commit que expliquen por qué cambió el proyecto.</p>
-      </section>
-
-      <section class="card">
-        <h3>Laboratorio 03 — GitHub Pages, Jekyll y portfolio profesional</h3>
-        <p><strong>Temas que cubre:</strong> GitHub Pages, configuración del sitio, Jekyll como generador estático, publicación desde repositorio GitHub y creación de un portfolio profesional online.</p>
-        <p><strong>Objetivo:</strong> Imagina que eres un desarrollador de software en ciernes en una startup tecnológica, deseando mostrar tus proyectos, habilidades y experiencias a través de un portafolio online. Quieres una plataforma profesional para mostrar tu trabajo, así que decides crear una página web o blog personal usando GitHub Pages. Esta plataforma te permite aprovechar los repositorios de GitHub para publicar y mantener fácilmente tu sitio web.</p>
-        <ul>
-          <li>Configurar GitHub Pages para publicar un sitio desde un repositorio.</li>
-          <li>Entender cómo Jekyll genera páginas estáticas desde archivos Markdown y HTML.</li>
-          <li>Publicar un portfolio profesional que pueda actualizarse con commits y PRs.</li>
-          <li>Relacionar la publicación web con la visibilidad y la presencia profesional en GitHub.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Laboratorio 04 — Gestión avanzada de pull requests, revisión de código y resolución de conflictos de fusión</h3>
-        <p><strong>Temas que cubre:</strong> revisión de pull requests (code review), resolución de conflictos de merge, estrategias de fusión: merge, squash, rebase, y branch protection rules.</p>
-        <p><strong>Objetivo:</strong> Imagina que formas parte de un equipo de desarrollo trabajando en un proyecto con colaboradores múltiples. A medida que se hacen cambios, es fundamental revisarlos y asegurarse de que el trabajo de todos se integre sin problemas. Tú necesitas colaborar eficazmente gestionando las pull requests y resolviendo conflictos de fusión para mantener la integridad del proyecto y evitar interrupciones.</p>
-        <ul>
-          <li>Crear una solicitud de tirada con título y descripción claros.</li>
-          <li>Revisar cambios propuestos y verificar su calidad antes de integrarlos.</li>
-          <li>Resolver conflictos de fusión y aplicar merge, squash o rebase según la estrategia del equipo.</li>
-        </ul>
-      </section>
-
-      <section class="card">
-        <h3>Laboratorio 05 — Gestionar Releases con Flujo de Trabajo</h3>
-        <p><strong>Temas que cubre:</strong> creación de releases y tags, semantic versioning (semver), automatización de releases con GitHub Actions, changelogs y notas de release.</p>
-        <p><strong>Objetivo:</strong> Implementar un flujo de trabajo basado en releases para gestionar versiones de software de forma estructurada y reproducible, facilitando el seguimiento de iteraciones, la publicación de versiones beta y la resolución controlada de incidentes.</p>
-        <ul>
-          <li>Crear un repositorio base para el flujo de trabajo de releases.</li>
-          <li>Aplicar versionado semántico y seguir la evolución del software por iteraciones.</li>
-          <li>Publicar una versión beta con tags y notas de release en GitHub.</li>
-          <li>Simular un escenario real con un error en la base de código y corregirlo dentro del flujo de releases.</li>
-        </ul>
-        <p class="tip">Este laboratorio refuerza la capacidad de planificar, publicar y supervisar entregas de software con trazabilidad y control.</p>
-      </section>
-
-      <section class="card">
-        <h2>Ruta completa de talleres incluidos en esta experiencia</h2>
-        <p>Esta página está alineada con el taller de desarrolladores <strong>DPCP-010 GitHub y GitHub Copilot</strong> y resume una ruta de <strong>23 laboratorios previstos</strong> para avanzar de forma organizada en GitHub, Copilot, revisión de código, seguridad y certificación GH-300.</p>
-        <p class="tip">Los laboratorios están numerados y etiquetados para que el recorrido sea fácil de seguir desde el 01 hasta el 23.</p>
-        <div class="grid hero-grid">
-          <article class="mini-card"><h4>Laboratorio 01 — Repositorios y ramas</h4><p>Crear un repositorio, trabajar con ramas y entender flujos básicos de colaboración.</p></article>
-          <article class="mini-card"><h4>Laboratorio 02 — Markdown, PR y comunicación</h4><p>Documentación estructurada, pull requests, comparación de cambios y commits claros.</p></article>
-          <article class="mini-card"><h4>Laboratorio 03 — GitHub Pages y portfolio</h4><p>Publicar un sitio con GitHub Pages, Jekyll y un portfolio profesional online.</p></article>
-          <article class="mini-card"><h4>Laboratorio 04 — PR avanzados y merge conflicts</h4><p>Revisión de código, estrategias de fusión y resolución de conflictos.</p></article>
-          <article class="mini-card"><h4>Laboratorio 05 — Releases y versionado semántico</h4><p>Creación de releases, tags, semver, changelogs y automatización de lanzamientos.</p></article>
-          <article class="mini-card"><h4>Laboratorio 06 — Seguridad y gobernanza</h4><p>Evalúa privacidad, límites, auditoría, políticas y control de uso responsable.</p></article>
-          <article class="mini-card"><h4>Laboratorio 07 — Agent Mode y Workspace</h4><p>Explora flujos de agente, MCP, cambios por lotes y automatización controlada.</p></article>
-          <article class="mini-card"><h4>Laboratorio 08 — Simulación de examen GH-300</h4><p>Resuelve preguntas tipo examen, revisa errores frecuentes y valida la preparación final.</p></article>
-          <article class="mini-card"><h4>Laboratorio 09+ — Ruta planificada</h4><p>La secuencia continuará hasta completar los 23 laboratorios previstos para el taller.</p></article>
+      <section class="section alt" id="ruta">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Enfoque profesional</p>
+            <h2>Una guía de estudio pensada como una práctica de arquitectura.</h2>
+            <p>
+              GH-300 no se prepara memorizando pantallas. Se prepara entendiendo cuándo usar
+              Copilot, cómo darle contexto, cómo revisar sugerencias y cómo gobernar su adopción
+              en equipos reales.
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card span-4 metric">
+              <strong>01</strong>
+              <h3>Fundamentos GitHub</h3>
+              <p>Repositorios, ramas, pull requests, Markdown, GitHub Pages y flujo de colaboración.</p>
+            </article>
+            <article class="card span-4 metric">
+              <strong>02</strong>
+              <h3>Copilot aplicado</h3>
+              <p>IDE, CLI, GitHub.com, instrucciones personalizadas, agentes y validación técnica.</p>
+            </article>
+            <article class="card span-4 metric">
+              <strong>03</strong>
+              <h3>Gobernanza empresarial</h3>
+              <p>Planes, AI Credits, privacidad, auditoría, seguridad, FinOps y controles por equipo.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="grid">
-        <article class="card">
-          <h3>Qué se incorpora del workbook</h3>
-          <ul>
-            <li>Matriz completa de licenciamiento, pricing y AI Credits.</li>
-            <li>Escenarios de seguridad, privacidad, auditoría y governance.</li>
-            <li>Preguntas tipo examen, modelos de prueba y recomendaciones de uso.</li>
-            <li>Arquitectura 360, prompt engineering y decisiones por plan.</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Cómo usar esta página como práctica</h3>
-          <ul>
-            <li>Lee la guía en <code>docs/gh300-study-guide.md</code>.</li>
-            <li>Revisa los escenarios en <code>docs/exam-scenarios.md</code>.</li>
-            <li>Ejecuta <code>npm test</code> para validar la lógica del laboratorio.</li>
-            <li>Usa <code>npm start</code> y repasa cada bloque como preparación para examen.</li>
-          </ul>
-        </article>
+      <section class="section">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-7">
+              <p class="kicker">Mapa de dominio</p>
+              <h2>Qué debes dominar para aprobar con confianza.</h2>
+              <ul class="feature-list">
+                <li>Elegir el plan correcto: Free, Student, Pro, Business o Enterprise.</li>
+                <li>Crear prompts con contexto, objetivo, restricciones, ejemplos y criterio de salida.</li>
+                <li>Configurar instrucciones por repositorio, carpeta o dominio técnico.</li>
+                <li>Validar sugerencias con pruebas, revisión humana, SAST, CodeQL y políticas de seguridad.</li>
+                <li>Explicar riesgos de privacidad, propiedad intelectual, compliance y costos de consumo.</li>
+              </ul>
+            </article>
+            <aside class="callout span-5">
+              <p class="kicker">Material de estudio profesional</p>
+              <h2>Un recorrido claro para preparar GH-300 con criterio.</h2>
+              <p>
+                La ruta combina teoría, arquitectura 360, simulador interactivo, preguntas críticas,
+                buenas prácticas y checklist de gobierno para estudiar Copilot como se usa en
+                proyectos reales.
+              </p>
+              <div class="pill-row">
+                <span class="pill">GH-300</span>
+                <span class="pill">Copilot Enterprise</span>
+                <span class="pill">Zero Trust</span>
+                <span class="pill">Simulador</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Contenido rediseñado desde el Excel</p>
+            <h2>Dominios de estudio extraídos del workbook v7.</h2>
+          </div>
+          <div class="grid">
+            <article class="study-band span-4">
+              <h3>Licenciamiento y SKUs</h3>
+              <p>
+                Matriz de Free, Student, Pro, Business y Enterprise; SKU técnico,
+                elegibilidad, asignación, cobertura, billing y fuentes oficiales.
+              </p>
+            </article>
+            <article class="study-band span-4">
+              <h3>FinOps y AI Credits</h3>
+              <p>
+                Simulador editable de usuarios, precio base, créditos incluidos,
+                pool total, excedentes, costos mensuales y ROI estimado.
+              </p>
+            </article>
+            <article class="study-band span-4">
+              <h3>Seguridad y Zero Trust</h3>
+              <p>
+                Entrenamiento de modelos, DPA, privacidad, exclusión de contenido,
+                secretos, auditoría, políticas y controles enterprise.
+              </p>
+            </article>
+            <article class="study-band span-4">
+              <h3>Ecosistema Copilot</h3>
+              <p>
+                IDEs, CLI, GitHub.com, mobile, extensiones, Marketplace, MCP,
+                Agent Mode, Cloud Agent y Copilot Workspace.
+              </p>
+            </article>
+            <article class="study-band span-4">
+              <h3>DevOps y DevSecOps</h3>
+              <p>
+                Pull requests, CI/CD, IaC, refactoring, rendimiento, memoria,
+                testing, revisión humana y trazabilidad por cambios.
+              </p>
+            </article>
+            <article class="study-band span-4">
+              <h3>Banco de examen</h3>
+              <p>
+                Preguntas tipo GH-300 sobre planes, políticas, auditoría,
+                gobernanza empresarial, MCP, agentes y escenarios prácticos.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="laboratorios">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Mapa de laboratorios</p>
+            <h2>Ruta completa del 0 al 23, organizada por páginas.</h2>
+            <p>
+              Cada laboratorio abre en una página dedicada con objetivo, pasos ordenados,
+              criterios de avance, alineación GH-300 y capturas reales extraídas del material
+              original. Así el hub queda claro y cada práctica tiene espacio propio.
+            </p>
+          </div>
+          <div class="grid roadmap">
+            <article class="lab span-4">
+              <h3>Lab 00 · Preparación del entorno</h3>
+              <p>Cuenta GitHub, acceso a Copilot, VS Code y extensiones base.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-00-preparacion.html">Abrir Lab 00</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 01 · Crear un repositorio de GitHub y una rama</h3>
+              <p>Repositorios, ramas y flujo inicial de colaboración.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-01-crear-un-repositorio-de-github-y-una-rama.html">Abrir Lab 01</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 02 · Comunicarse usando Markdown</h3>
+              <p>Documentación clara, README, pull requests y comunicación técnica.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-02-comunicarse-usando-markdown.html">Abrir Lab 02</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 03 · Crear un portafolio online con GitHub Pages y Jekyll</h3>
+              <p>Publicación estática, Jekyll y presencia profesional.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-03-crear-un-portafolio-online-con-github-pages-y-je.html">Abrir Lab 03</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 04 · Revisar pull requests y resolver conflictos</h3>
+              <p>Code review, conflictos de fusión y colaboración segura.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-04-revisar-pull-requests-y-resolver-conflictos.html">Abrir Lab 04</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 05 · Gestionar lanzamientos con release workflow</h3>
+              <p>Releases, tags, changelogs y versionado semántico.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-05-gestionar-lanzamientos-con-release-workflow.html">Abrir Lab 05</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 06 · Conectar issues y cerrar trabajo enlazado</h3>
+              <p>Trazabilidad entre issues, PRs y colaboración.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-06-conectar-issues-y-cerrar-trabajo-enlazado.html">Abrir Lab 06</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 07 · Programar con GitHub Codespaces y Visual Studio Code</h3>
+              <p>Entornos cloud de desarrollo y productividad.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-07-programar-con-github-codespaces-y-visual-studio-.html">Abrir Lab 07</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 08 · Crear una GitHub Action y usarla en un workflow</h3>
+              <p>Automatización inicial con GitHub Actions.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-08-crear-una-github-action-y-usarla-en-un-workflow.html">Abrir Lab 08</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 09 · Crear workflows de integración continua</h3>
+              <p>CI, validaciones automáticas y calidad de código.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-09-crear-workflows-de-integracion-continua.html">Abrir Lab 09</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 10 · Publicar una imagen Docker con GitHub Actions</h3>
+              <p>Build, empaquetado, registro y entrega de contenedores.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-10-publicar-una-imagen-docker-con-github-actions.html">Abrir Lab 10</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 11 · Workflows reutilizables y estrategia matricial</h3>
+              <p>Reutilización de pipelines y matrices de versiones.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-11-workflows-reutilizables-y-estrategia-matricial.html">Abrir Lab 11</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 12 · Despliegue con GitHub Actions y Microsoft Azure</h3>
+              <p>CI/CD hacia Azure y automatización de despliegues.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-12-despliegue-con-github-actions-y-microsoft-azure.html">Abrir Lab 12</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 13 · Escribir una JavaScript Action personalizada</h3>
+              <p>Acciones propias, Node.js, pruebas y automatización.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-13-escribir-una-javascript-action-personalizada.html">Abrir Lab 13</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 14 · Asegurar la cadena de suministro del repositorio</h3>
+              <p>Dependencias, supply chain security y hardening.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-14-asegurar-la-cadena-de-suministro-del-repositorio.html">Abrir Lab 14</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 15 · Activar CodeQL para proteger el código fuente</h3>
+              <p>Code scanning, análisis estático y seguridad preventiva.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-15-activar-codeql-para-proteger-el-codigo-fuente.html">Abrir Lab 15</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 16 · Eliminar historial de commits de un repositorio Git</h3>
+              <p>Historia Git, reescritura controlada y riesgos operativos.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-16-eliminar-historial-de-commits-de-un-repositorio-.html">Abrir Lab 16</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 17 · Habilitar secret scanning y probar detección</h3>
+              <p>Secret scanning, tokens y respuesta a exposición accidental.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-17-habilitar-secret-scanning-y-probar-deteccion.html">Abrir Lab 17</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 18 · Construir una API REST con Spring Boot y Copilot</h3>
+              <p>Copilot aplicado a Java, API REST, pruebas y contenedores.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-18-construir-una-api-rest-con-spring-boot-y-copilot.html">Abrir Lab 18</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 19 · Construir una API REST con Quarkus y Copilot</h3>
+              <p>Quarkus, Java cloud-native y asistencia con Copilot.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-19-construir-una-api-rest-con-quarkus-y-copilot.html">Abrir Lab 19</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 20 · Activar GitHub Copilot usando Node.js</h3>
+              <p>Proyecto Node.js, Copilot Chat y generación asistida.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-20-activar-github-copilot-usando-nodejs.html">Abrir Lab 20</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 21 · Crear una Web API mínima .NET y Docker con Copilot</h3>
+              <p>.NET, Dockerfile, API mínima y asistencia de Copilot.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-21-crear-una-web-api-minima-net-y-docker-con-copilo.html">Abrir Lab 21</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 22 · Crear un notebook con Copilot Chat y datos de prueba</h3>
+              <p>Jupyter, pandas, análisis exploratorio y visualización.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-22-crear-un-notebook-con-copilot-chat-y-datos-de-pr.html">Abrir Lab 22</a>
+              </div>
+            </article>
+            <article class="lab span-4">
+              <h3>Lab 23 · Construir un clasificador con Scikit-learn y Copilot Chat</h3>
+              <p>Python, machine learning, errores guiados y validación.</p>
+              <div class="inline-actions">
+                <a class="btn primary" href="lab-23-construir-un-clasificador-con-scikit-learn-y-cop.html">Abrir Lab 23</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="seguridad">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-6 check">
+              <p class="kicker">Checklist operacional</p>
+              <h2>Seguridad antes de aceptar una sugerencia.</h2>
+              <ul>
+                <li>Revisar el código generado antes de integrarlo.</li>
+                <li>No incluir secretos, tokens, datos personales ni información de clientes en prompts.</li>
+                <li>Ejecutar pruebas y validar comportamiento esperado.</li>
+                <li>Aplicar CodeQL, SAST, revisión humana y políticas de organización.</li>
+                <li>Documentar decisiones relevantes para auditoría, compliance y FinOps.</li>
+              </ul>
+            </article>
+            <article class="card span-6 warn">
+              <p class="kicker">Idea clave GH-300</p>
+              <p class="quote">
+                Copilot acelera el trabajo, pero el criterio profesional sigue siendo la capa de
+                seguridad, arquitectura y responsabilidad.
+              </p>
+              <p>
+                La certificación evalúa si puedes usar IA de forma responsable dentro de flujos de
+                desarrollo modernos, no solo si sabes generar código rápido.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head">
+            <p class="kicker">Licenciamiento y consumo</p>
+            <h2>Matriz rápida para repasar costos y escenarios.</h2>
+          </div>
+          <div class="matrix">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plan</th>
+                  <th>Uso recomendado</th>
+                  <th>Qué recordar para GH-300</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Free</td>
+                  <td>Aprendizaje, práctica inicial y validación de conceptos.</td>
+                  <td>Punto de entrada sin costo para usuarios individuales.</td>
+                </tr>
+                <tr>
+                  <td>Student</td>
+                  <td>Entornos académicos con verificación educativa.</td>
+                  <td>Diferenciar uso individual de beneficio educativo.</td>
+                </tr>
+                <tr>
+                  <td>Pro / Pro+</td>
+                  <td>Desarrollo individual avanzado con mayor capacidad.</td>
+                  <td>Enfocado en productividad personal y contexto ampliado.</td>
+                </tr>
+                <tr>
+                  <td>Business</td>
+                  <td>Equipos que necesitan políticas, control y administración.</td>
+                  <td>Gobernanza organizacional y gestión por usuarios.</td>
+                </tr>
+                <tr>
+                  <td>Enterprise</td>
+                  <td>Empresas con auditoría, compliance y adopción a escala.</td>
+                  <td>Gobierno avanzado, seguridad y trazabilidad empresarial.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publicacion">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-6">
+              <p class="kicker">Cómo trabajarlo en VS Code</p>
+              <h2>Flujo recomendado de edición.</h2>
+              <ul>
+                <li>Usa Live Server para revisar cambios al instante.</li>
+                <li>HTML CSS Support ayuda con autocompletado visual y propiedades CSS.</li>
+                <li>Prettier mantiene el documento legible antes de publicarlo.</li>
+                <li>Tailwind CSS IntelliSense será útil si luego migras esta estructura a Tailwind.</li>
+              </ul>
+            </article>
+            <article class="card span-6">
+              <p class="kicker">Publicación</p>
+              <h2>Opciones claras para compartir el material.</h2>
+              <ul>
+                <li>GitHub Pages: publicar como sitio estático desde el repositorio.</li>
+                <li>Blog personal: adaptar esta página como entrada larga o landing educativa.</li>
+                <li>Repositorio de estudio: mantener versiones, laboratorios y recursos descargables.</li>
+                <li>LinkedIn: compartir avances por módulo y enlazar al blog o GitHub Pages.</li>
+              </ul>
+              <div class="inline-actions">
+                <a class="btn primary" href="https://carloscrudo.com/">carloscrudo.com</a>
+                <a class="btn primary" href="https://www.linkedin.com/in/carloscrudo/">LinkedIn</a>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
     </main>
-    <p class="footer-note">Derechos de autor: Carlos Crudo. Este sitio integra el contenido del workbook y los recursos del proyecto como material de estudio didáctico para GH-300 y Copilot GitHub.</p>
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-    </script>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>© Carlos Crudo. Material de estudio GH-300, GitHub Copilot y prácticas profesionales de IT.</p>
+        <p>Diseñado para aprendizaje, publicación y mejora continua.</p>
+      </div>
+    </footer>
   </body>
 </html>

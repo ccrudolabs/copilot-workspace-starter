@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 04 GH-300 generado desde Lab_04_PR_Conflictos.docx." />
+    <title>Laboratorio 04 | Revisar pull requests y resolver conflictos</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 04</p>
+        <h1>Revisar pull requests y resolver conflictos</h1>
+        <p>Gestión avanzada de pull requests, técnicas de revisión de código y resolución de conflictos de fusión (merge conflicts).</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_04_PR_Conflictos.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_04_PR_Conflictos.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 04</h2>
+<p>Revisar Pull Requests y Resolver Conflictos</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Gestión avanzada de pull requests, técnicas de revisión de código y resolución de conflictos de fusión (merge conflicts).</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Revisión de pull requests (code review)</p>
+<p>Resolución de conflictos de merge</p>
+<p>Estrategias de fusión: merge, squash, rebase</p>
+<p>Branch protection rules</p>
+<h2>Laboratorio 04: Revisar Pull Requests y Resolver Conflictos</h2>
+<h2>Laboratorio 04: Revisar solicitudes de arrastre y resolver conflictos de fusión</h2>
+<h2>Objetivo:</h2>
+<p>Imagina que formas parte de un equipo de desarrollo trabajando en un proyecto con Colaboradores múltiples. A medida que se hacen cambios, es fundamental revisarlo Estos cambios y aseguran que el trabajo de todos se integre sin problemas. Tú Es necesario colaborar eficazmente gestionando las pull requests y resolviendo Conflictos de fusión para mantener la integridad del proyecto y evitar interrupciones.</p>
+<p>En este laboratorio práctico, te centrarás en dos aspectos clave de la colaboración en GitHub:</p>
+<p>Crear una solicitud de tirada: Selecciona las ramas adecuadas, proporciona una Título y descripción, y enviar una solicitud pull para proponer cambios.</p>
+<p>Revisa las solicitudes de retirada: Examina los cambios propuestos en las solicitudes de retirada, asegurándose de que cumplan con los estándares del proyecto y estén listos para su integración.</p>
+<p>Resuelve los conflictos de fusión: Practica la resolución de conflictos que surjan Cuando los cambios en diferentes ramas afectan a las mismas partes de un archivo, Asegurando una integración y colaboración fluidas.</p>
+<h3>Ejercicio #1: Crea un repositorio a partir de una plantilla y crea una solicitud de tirada</h3>
+<p>La pull request mostrará los cambios en tu sucursal a otras personas. Esta pull request va a conservar los cambios que acabas de hacer en tu Y propongo aplicarlos a la rama principal.</p>
+<p>Inicia sesión en tu cuenta de GitHub.</p>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/review-pull-requests</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública &quot;skills-review-pull-requests&quot;.</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: revisión de habilidades-solicitudes de consulta</p>
+<p>Tipo de repositorio: Público</p>
+<p>En la página principal de navegación, selecciona la pestaña de Solicitudes de tirada.</p>
+<p>En la página siguiente, selecciona Nuevo pull request.</p>
+<p>En la página de Comparar cambios:</p>
+<p>En el desplegable base: selecciona main (por defecto esto es seleccionado)</p>
+<p>En el desplegable comparar: selecciona update-game,</p>
+<p>Normalmente es necesario esperar unos segundos y actualizar la página para ver las ramas.</p>
+<p>Una vez que seleccionas actualizar juego en el menú desplegable comparar: se abre la ventana de Comparar cambios. Haz clic en Crear solicitud pull.</p>
+<p>En la página Abrir una solicitud de arrastre, introduce lo siguiente:</p>
+<p>Añade un título para tu pull request: Actualizar el mensaje de fin de juego</p>
+<p>Añade una descripción para tu pull request: Actualiza el mensaje de game over para que la gente sepa cómo jugar de nuevo</p>
+<p>Haz clic en Crear solicitud pull.</p>
+<p>Espera unos 20 segundos y luego actualiza esta página. Las acciones en GitHub Actualiza automáticamente al siguiente paso.</p>
+<h3>Ejercicio #2: Actualizar una solicitud pull y resolver conflictos de fusión</h3>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/resolve-merge-conflicts</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública &quot;skills-resolve-merge-conflicts&quot;.</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: habilidades-resolver-fusionar-conflictos</p>
+<p>Tipo de repositorio: Público</p>
+<p>Una vez creado el repositorio, selecciona la pestaña de Pull request en la barra principal de navegación.</p>
+<p>Haz clic en el botón de nueva solicitud de tiradas.</p>
+<p>Crea una pull request seleccionando lo siguiente:</p>
+<p>my-resume como rama principal y</p>
+<p>Principal como rama de comparación.</p>
+<p>Haz clic en el botón Crear pull request</p>
+<p>En la página de Abrir una solicitud pull introduce el título como Resolución de conflictos de fusión Y haz clic en Crear solicitud pull (Crear solicitud pull).</p>
+<p>Espera 20 segundos mientras GitHub Actions se actualiza automáticamente y La página muestra detalles de conflictos, si los hay.</p>
+<p>Haz clic en Resolver conflictos para continuar.</p>
+<p>Revisa los conflictos y resuélvelos.</p>
+<p>En este ejercicio, eliminemos el conflicto de líneas y hagamos clic en el botón Marcar como resuelto.</p>
+<p>Haz clic en el botón de Commit merge y marca el cuadro de mensaje de aviso.</p>
+<p>Haz clic en entendido, sigue actualizando la principal. Verás el Resultados de la comprobación final.</p>
+<h2>Resumen:</h2>
+<p>Ahora has terminado de crear y revisar pull requests para conflictos y resolver conflictos, habilidades esenciales para un trabajo en equipo eficaz y una gestión de proyectos en GitHub.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 04 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

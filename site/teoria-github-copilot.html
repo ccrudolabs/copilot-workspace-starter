@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Teoría GH-300 GitHub Copilot Study Hub de Carlos Crudo." />
+    <title>Teoría GH-300 | GitHub Copilot Study Hub</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegación de teoría">
+        <a class="brand" href="index.html"><strong>Carlos Crudo</strong><span>GitHub Copilot Certification Study Hub</span></a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html">Volver al hub</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Teoría base</p>
+        <h1>Mapa conceptual para estudiar GitHub Copilot con criterio profesional.</h1>
+        <p>Contenido teórico extraído del material de estudio y reorganizado para explicar planes, consumo, Agent Mode, Workspace, CLI, riesgos y políticas antes de entrar a los laboratorios.</p>
+      </div>
+    </section>
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="section-head"><p class="kicker">Antes de los labs</p><h2>Conceptos que conviene dominar.</h2><p>Esta página funciona como puente entre la arquitectura 360, el simulador y los laboratorios prácticos.</p></div>
+          <div class="grid">
+        <article class="card span-6">
+          <p class="kicker">Teoría</p>
+          <h3>SKUs, planes y AI Credits</h3>
+          <p>Diferenciar SKU técnico de billing/API frente a plan comercial asignable. Para estudiar GH-300 conviene separar licenciamiento, consumo, gobierno y capacidades por plan.</p>
+          <ul><li>Free/Student/Pro para entrada individual o educativa.</li><li>Business para gobierno organizacional.</li><li>Enterprise para conocimiento organizacional, auditoría y adopción avanzada.</li><li>AI Credits como unidad de consumo: 1 crédito equivale a USD 0,01 según el material revisado.</li></ul>
+        </article>
+        
+        <article class="card span-6">
+          <p class="kicker">Teoría</p>
+          <h3>Copilot CLI e interacción operativa</h3>
+          <p>Copilot no se limita al editor: también puede asistir en comandos, scripts, explicación de operaciones y tareas repetibles desde terminal.</p>
+          <ul><li>Instalar CLI en Windows o Linux.</li><li>Pedir comandos con intención clara y revisar antes de ejecutar.</li><li>Usar el CLI como asistente, no como reemplazo de criterio operativo.</li></ul>
+        </article>
+        
+        <article class="card span-6">
+          <p class="kicker">Teoría</p>
+          <h3>Copilot Enterprise y base de conocimiento</h3>
+          <p>Enterprise agrega valor cuando el conocimiento del repositorio, documentación interna, políticas y trazabilidad son parte del trabajo diario.</p>
+          <ul><li>Aplicar gobierno por organización.</li><li>Controlar modelos, políticas, repositorios y permisos.</li><li>Usar knowledge base y documentación como contexto controlado.</li></ul>
+        </article>
+        
+        <article class="card span-6">
+          <p class="kicker">Teoría</p>
+          <h3>Agent Mode y Copilot Workspace</h3>
+          <p>Agent Mode y Workspace llevan Copilot hacia flujos de planificación, ejecución multiarchivo, pruebas y pull requests supervisados.</p>
+          <ul><li>Definir objetivo, límites y criterios de aceptación.</li><li>Revisar diffs y pruebas antes de aceptar cambios.</li><li>Mantener human-in-the-loop para tareas críticas.</li></ul>
+        </article>
+        
+        <article class="card span-6">
+          <p class="kicker">Teoría</p>
+          <h3>Riesgos, políticas y preparación de examen</h3>
+          <p>GH-300 evalúa productividad, seguridad y responsabilidad. El foco no es generar código rápido, sino operar Copilot con validación, privacidad y control.</p>
+          <ul><li>No exponer secretos ni datos sensibles.</li><li>Validar salida con tests y revisión humana.</li><li>Configurar políticas, exclusiones y auditoría.</li><li>Repasar atajos y superficies: IDE, CLI, GitHub.com, Agent Mode y MCP.</li></ul>
+        </article>
+        </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="wrap">
+          <div class="grid">
+            <article class="note span-6"><p class="kicker">Referencia oficial</p><h2>Alineación con Microsoft Learn GH-300.</h2><p>La guía oficial mide uso responsable, funciones de Copilot, datos y arquitectura, prompt engineering, productividad, testing, seguridad, privacidad y exclusiones de contenido.</p><p><a href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/gh-300">Ver guía oficial GH-300</a></p></article>
+            <article class="card span-6"><p class="kicker">Notas del documento</p><h2>Material fuente reorganizado.</h2><ul class="checklist"><li>Profundización:GitHub Copilot</li><li>GitHub SKU´s y planes: revisa el Excel</li><li>Incluye estas hojas:</li><li>La matriz de SKU/plan, uso recomendado, capacidades, límites principales y ventajas/desventajas, usando fuentes actuales de GitHub para evitar mezclar nombres comerciales viejos con los planes vigentes.</li><li>A continuación tenés una matriz clara y completa de GitHub Copilot SKUs / planes, separando dos conceptos importantes: SKU técnico de billing/API y plan comercial/licencia asignable.</li><li>Vigente al 4 de junio de 2026. GitHub cambió Copilot hacia un modelo de AI Credits / uso medido, donde 1 AI Credit = USD 0,01. Chat, CLI, Cloud Agent, Spaces, Spark y agentes de terceros consumen créditos; las code completions y Next Edit Suggestions no consumen AI Credits en planes pagos.</li><li>1. SKUs técnicos de GitHub Copilot para billing/API</li><li>Estos son los identificadores que GitHub documenta para presupuestos, consultas de consumo y reportes vía billing/API.</li><li>Fuente oficial: GitHub documenta estos SKUs bajo GitHub Copilot SKUs en su referencia de Product and SKU names.</li><li>3. Consideraciones importantes de licenciamiento y consumo</li><li>4. Recomendación práctica para una empresa DevOps / IaC</li><li>Conclusión ejecutiva: para una organización seria, el punto de entrada recomendado es GitHub Copilot Business; para una empresa con gobierno, seguridad, auditoría, repositorios críticos y adopción DevSecOps, la opción más sólida es GitHub Copilot Enterprise. Para uso personal intensivo, Pro+ o Max son los planes más adecuados, siempre controlando el consumo de AI Credits.</li><li>Instalar la cli de copilot bajo Windows o inux</li><li>Lo que le podemos pedir a copilot</li><li>Ejemplo: Implement a delete method to delete an individual plane bases on id</li><li>Copilot Enterprise y su base de conocimientos</li><li>GitHub Copilot Agent Mode</li><li>GitHub Copilot · Your AI pair programmer</li></ul></article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><div class="wrap"><p>© Carlos Crudo. Teoría GH-300 preparada para estudio profesional.</p></div></footer>
+  </body>
+</html>

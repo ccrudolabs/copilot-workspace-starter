@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 22 GH-300 generado desde Lab_22_Jupyter_Notebook.docx." />
+    <title>Laboratorio 22 | Crear un notebook con Copilot Chat y datos de prestamos</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 22</p>
+        <h1>Crear un notebook con Copilot Chat y datos de prestamos</h1>
+        <p>Este conjunto de datos tested_worldwide.csv proviene de Kaggle. Este conjunto de datos, que contiene el número de pruebas realizadas a lo largo del tiempo, es importante para ayudar a entender los casos reportados diariamente y entender cómo se está propagando realmente la COVID-19 en cada país.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_22_Jupyter_Notebook.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_22_Jupyter_Notebook.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 22</h2>
+<p>Jupyter Notebook con GitHub Copilot Chat</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Creación y análisis de notebooks Jupyter usando GitHub Copilot Chat para generar código Python, visualizaciones y análisis de datos de prueba.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Jupyter Notebook en VS Code con Copilot</p>
+<p>Generación de código Python para data analysis</p>
+<p>Pandas, Matplotlib con asistencia Copilot</p>
+<p>Copilot Chat para explicación de código</p>
+<p>Análisis exploratorio de datos (EDA)</p>
+<p>Export a HTML / PDF desde Notebook</p>
+<h2>Laboratorio 22: Jupyter Notebook con GitHub Copilot Chat</h2>
+<h2>Laboratorio 22 - Crea un cuaderno usando el chat de Github Copilot y proporciona respuestas basadas en datos de prueba INTRODUCCIÓN</h2>
+<p>Este conjunto de datos tested_worldwide.csv proviene de Kaggle. Este conjunto de datos, que contiene el número de pruebas realizadas a lo largo del tiempo, es importante para ayudar a entender los casos reportados diariamente y entender cómo se está propagando realmente la COVID-19 en cada país.</p>
+<h3>INSTRUCCIONES</h3>
+<p>Abre Visual Studio Code desde el menú de inicio de Windows y abre la carpeta navegando a C:\Labfiles\CopilotHackathon</p>
+<p>Haz clic en el botón Sí, Confío en el autor.</p>
+<p>Haz clic en el icono de Copilot en la esquina derecha y selecciona Github Copilot Chat.</p>
+<p>Escribe tu prompt create a new notebook in a project. Use command /newnotebook and name it as &quot;COVID19 Worldwide Testing Data&quot;</p>
+<p>Puedes ver las instrucciones del Copilot ayudándote con las instrucciones. Sigue los pasos y crea el cuaderno.</p>
+<p>Abre la paleta de comandos pulsando Ctrl+Shift+P.</p>
+<p>Escribe y pulsa Enter.Jupyter: Create New Blank Notebook</p>
+<p>Se creará un nuevo cuaderno. Guárdalo con el nombre. También puedes preguntar a Copilot cómo guardar un cuaderno nuevo.COVID19WorldwideTesting Data.ipynb</p>
+<p>Ve a la carpeta de destino - excercisefiles-? Dataengineer introduce y guarda el archivo.COVID19WorldwideTesting Data.ipynb</p>
+<p>Deberías ver que el archivo fue creado en la carpeta de dataengineer.</p>
+<p>Utiliza Copilot y Copilot Chat para desarrollar el ejercicio y apoyar tu aprendizaje.</p>
+<h3>EJERCICIO</h3>
+<p>Nuestro análisis intenta responder a esta pregunta: ¿Qué países han reportado el mayor número de casos positivos en relación con el número de pruebas realizadas?</p>
+<h3>Tarea 1: Importar las bibliotecas requeridas</h3>
+<p>Haz clic en el núcleo de Notebook, escribe y pulsa Enter*#Import Required Libraries.Including Pandas*</p>
+<p>Pulsa tab. Te llevará hasta el final de la línea. Pulsa Enter y vuelve a pulsar Tab para añadir todas las bibliotecas.</p>
+<p># Importar las bibliotecas necesarias, incluidos los pandas.</p>
+<p>*# Import Required Libraries*</p>
+<p>*# Here we are importing the necessary libraries for our task*</p>
+<p>import pandas as pd *# pandas is a software library written for the Python programming language for data manipulation and analysis.*</p>
+<h3>Tarea 2: Cargar el conjunto de datos</h3>
+<p>Usa pandas para cargar el archivo &#x27;tested_worldwide.csv&#x27; desde el nivel raíz.</p>
+<p>Pide ayuda a Github Copilot con cómo cargar datos. Entra Use pandas to load the &#x27;tested_worldwide.csv&#x27; file from the root level</p>
+<p>Introduce el siguiente código en un Notebook y ejecutalo. Te pedirá que selecciones Entorno Python. Seleccionalo.</p>
+<p>Selecciona el entorno recomendado. El script se ejecuta y proporciona los resultados.</p>
+<h3>Tarea 3: Entender los datos</h3>
+<p>Utiliza la función head() para mostrar las primeras 5 filas del conjunto de datos</p>
+<p>Pide a tu Copilot de Github que te ayude con el código para mostrar las primeras 5 filas del conjunto de datos. display first 5 rows of the dataset</p>
+<p>Haz clic en + código para abrir un nuevo kerner. Solo tienes que introducir # mostrar las primeras 5 filas del conjunto de datos. Predecirá automáticamente tu pregunta. Solo pulsa etiquetar y luego pulsar Enter.</p>
+<p>Coiplot predice el comando que buscas, así que pulsa la pestaña para aceptar el código. Siempre tienes la opción de editar/escribir tu propio código.</p>
+<p>Pulsa la pestaña y acepta el código. Ejecuta el kernel.</p>
+<p>Deberías ver los resultados.</p>
+<p>Pide ayuda a tu copiloto con . Haz clic en +code, .enter el código y luego ejecuta el kernel. También puedes usar el código de abajoDisplay the number of rows and columns in the dataframe</p>
+<p>num_rows, num_cols = data.shape</p>
+<p>print(&quot;Number of rows:&quot;, num_rows)</p>
+<p>print(&quot;Number of columns:&quot;, num_cols)</p>
+<p>Pide ayuda a tu copiloto con esto. También puedes usar Display the data types of each columndata.dttypes</p>
+<p>Pide a tu Copilot de GitHub que proporcione el código para Display the number of missing values in each column.</p>
+<p>Añade un nuevo kernel, añade el código de abajo y ejecuta. También puedes usar el código sugerido por Copilot y comprobar</p>
+<p>missing_values = df.isnull().sum()</p>
+<p>print(missing_values)</p>
+<p>Ejecuta el código de abajo en el nuevo núcleo para mostrar el número de valores únicos en cada columna. Consulta con tu copiloto sobre el código y los resultados.</p>
+<p>unique_values = df.nunique()</p>
+<p>print(unique_values)</p>
+<h3>Tarea 4: Limpieza de datos</h3>
+<p>Ejecuta el código de abajo para eliminar las columnas que no sean necesarias para el análisis. Pídele el código a tu copiloto y revisa los resultados.</p>
+<p>data = df[[&#x27;Country_Region&#x27;, &#x27;positive&#x27;, &#x27;total_tested&#x27;]]</p>
+<p>Escribe un nuevo kernel y acepta el código.*#Rename the columns to make them more readable*</p>
+<p>Puedes usar el código de abajo y ejecutarlo.</p>
+<p>df.rename(columns={&#x27;Country_Region&#x27;: &#x27;Country&#x27;, &#x27;positive&#x27;: &#x27;Positive Cases&#x27;, &#x27;total_tested&#x27;: &#x27;Total Tested&#x27;}, inplace=True)</p>
+<p>Pide a tu copiloto que ejecute el código en un nuevo kernel o escribe En el nuevo kernel y pulsa enter. Pulsa la pestaña y acepta el códigoDrop the rows that have missing values*#Drop the rows that have missing values*</p>
+<p>Añade un nuevo núcleo +Code y escribe, pulsa etiqueta para aceptar el código, vuelve a enter y pulsa tab. Genera código para casos positivos, Total de pruebas y país, y luego ejecutalo.*#Convert the data types of the columns to the appropriate types*</p>
+<p>Añade un nuevo núcleo +Code y escribe Y pulsa Enter. Pulsa tab y acepta el código. También puedes preguntar en el chat de GitHub Copilot*#Display the number of missing values in each column*</p>
+<h3>Tarea 5: Extraer los diez países con más casos de Covid-19.</h3>
+<p>Pide a tu chat de Copilot que te ayude con el código o abre un código nuevo y escribe y pulsa Etner. Pulsa tab para acceder al código.Create a new dataframe that contains the total number of positive cases for each country*#Create a new dataframe that contains the total number of positive cases for each country*</p>
+<p>En un código nuevo, introduce debajo de los prompts y entra después de cada prompt para aceptar el código y ejecutarlo.</p>
+<p>*# Group the data by &#x27;Country&#x27; and calculate the sum of &#x27;Positive Cases&#x27;*</p>
+<p>total_positive_cases = data.groupby(&#x27;Country&#x27;)[&#x27;Positive Cases&#x27;].sum()</p>
+<p>*# Create a new dataframe with the total positive cases for each country*</p>
+<p>df_total_positive_cases = pd.DataFrame({&#x27;Country&#x27;: total_positive_cases.index, &#x27;Total Positive Cases&#x27;: total_positive_cases.values})</p>
+<p>*# Display the new dataframe*</p>
+<p>df_total_positive_cases</p>
+<p>Pide a Copilot que escriba el nuevo kernel de código, pulsa etiqueta para aceptar el código y ejecutarlo.Sort the dataframe in descending order of the total number of positive cases*# Sort the dataframe in descending order of the total number of positive cases*</p>
+<p>Pide a tu chat de Github Copilot que te ayude con el O escribe nuevo kernel de código y reúsalo. Recuerda que solo necesitas exhibir.Display the top ten countries with the most positive cases*# Display the top ten countries with the most positive cases*</p>
+<h3>Tarea 6: Identificar el mayor índice de positivos en casos testados</h3>
+<p>Pide ayuda en tu chat de GitHub Copilot o abre un nuevo núcleo de código y escribe y pulsa tab para acceder al código. Puedes editar el código si es necesario y ejecutarlo.Create a new dataframe that contains the total number of tests conducted for each country*# Create a new dataframe that contains the total number of tests conducted for each country*</p>
+<p>*# Group the data by &#x27;Country&#x27; and calculate the sum of &#x27;Total Tested&#x27;*</p>
+<p>total_tests = data.groupby(&#x27;Country&#x27;)[&#x27;Total Tested&#x27;].sum()</p>
+<p>*# Create a new dataframe with the total tests conducted for each country*</p>
+<p>df_total_tests = pd.DataFrame({&#x27;Country&#x27;: total_tests.index, &#x27;Total Tests&#x27;: total_tests.values})</p>
+<p>*# Display the new dataframe*</p>
+<p>df_total_tests</p>
+<p>Pregunta en tu chat de Github Copilot o abre un nuevo kernel de código, escribe Y pulsa tab para hacer caccep al código y ejecutarlo.Sort the dataframe in descending order of the total number of tests conducted*# Sort the dataframe in descending order of the total number of tests conducted*</p>
+<p>Pregunta en tu chat de Github Copilot o abre un nuevo kernel de código, escribe Y pulsa tab para hacer caccep al código y ejecutarlo.Display the top ten countries with the most tests conducted*# Display the top ten countries with the most tests conducted*</p>
+<h3>Tarea 7: Identificar los tres principales países que han tenido el mayor número de casos positivos frente al número de pruebas realizadas</h3>
+<p>Pregunta en el chat de Github Copilot o abre un nuevo núcleo de código y escribe Y pulsa tab para hacer caccep al código y ejecutarlo.Merge the two dataframes created in the previous steps*# Display the top ten countries with the most tests conducted*</p>
+<p>Pregunta a tu chat de Github Copilot o abre un nuevo núcleo de código y escribe Y pulsa tab para aceptar el código y ejecutarlo.Create a new column that contains the ratio of positive cases to the number of tests conducted*# Create a new column that contains the ratio of positive cases to the number of tests conducted*</p>
+<p>Pregunta a tu chat de Github Copilot o abre un nuevo núcleo de código y escribe Y pulsa la pestaña para aceptar el código y ejecutarlo.Sort the dataframe in descending order of the ratio of positive cases to the number of tests conducted*# Sort the dataframe in descending order of the ratio of positive cases to the number of tests conducted*</p>
+<p>Pregunta a tu chat de Github Copilot O abre un nuevo núcleo de código y escribe Y pulsa la pestaña para aceptar el código y ejecutarloDisplay the top three countries with the highest ratio of positive cases to the number of tests conducted*#Display the top three countries with the highest ratio of positive cases to the number of tests conducted*</p>
+<p>*#Display the top three countries with the highest ratio of positive cases to the number of tests conducted*</p>
+<p>top_countries = merged_df.nlargest(3, &#x27;Positive Test Rate&#x27;)</p>
+<p>top_countries[[&#x27;Country&#x27;, &#x27;Positive Test Rate&#x27;]]</p>
+<h3>Tarea 8: Mostrar los resultados</h3>
+<p>Pide a tu chat de Github Copilot o abre un nuevo kernel de código y escribe Y pulsa la pestaña para aceptar el código y ejecutarloDisplay the results a chart that shows the top three countries with the highest ratio of positive cases to the number*# Display the results a chart that shows the top three countries with the highest ratio of positive cases to the number*</p>
+<p>*#Display the results a chart that shows the top three countries with the highest ratio of positive cases to the number*</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>top_countries.plot(x=&#x27;Country&#x27;, y=&#x27;Positive Test Rate&#x27;, kind=&#x27;bar&#x27;)</p>
+<p>Pide a tu chat de Github Copilot o abre un nuevo kernel de código y escribe Y pulsa la pestaña para aceptar el código y ejecutarloDisplay the results in a chart that shows the top ten countries with the most positive cases*# Display the results in a chart that shows the top ten countries with the most positive cases*</p>
+<p>*#Display the results in a chart that shows the top ten countries with the most positive cases*</p>
+<p>import matplotlib.pyplot as plt</p>
+<p>df_total_positive_cases.head(10).plot(x=&#x27;Country&#x27;, y=&#x27;Total Positive Cases&#x27;, kind=&#x27;bar&#x27;)</p>
+<p>plt.xlabel(&#x27;Country&#x27;)</p>
+<p>plt.ylabel(&#x27;Total Positive Cases&#x27;)</p>
+<p>plt.title(&#x27;Top Ten Countries with the Most Positive Cases&#x27;)</p>
+<p>plt.show()</p>
+<p>Pide a tu chat de Github Copilot o abre un nuevo kernel de código y escribe Y pulsa la pestaña para aceptar el código y ejecutarloDisplay the results in a chart that shows the top ten countries with the most tests conducted*# Display the results in a chart that shows the top ten countries with the most tests conducted*</p>
+<h3>Tarea 9: Conclusión</h3>
+<p>¿Cuáles son tus conclusiones?</p>
+<p>¿Cuáles son las limitaciones de este análisis?</p>
+<p>¿Cuáles son los siguientes pasos que darías para mejorar este análisis?</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 22 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

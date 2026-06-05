@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 20 GH-300 generado desde Lab_20_NodeJS_Copilot.docx." />
+    <title>Laboratorio 20 | Activar GitHub Copilot usando Node.js</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 20</p>
+        <h1>Activar GitHub Copilot usando Node.js</h1>
+        <p>Este laboratorio es para ayudar a entender el proyecto Demo para gestionar laboratorios que evalúen la viabilidad de Copilot.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_20_NodeJS_Copilot.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_20_NodeJS_Copilot.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 20</h2>
+<p>Activar GitHub Copilot usando Node.js</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Uso de GitHub Copilot integrado en un proyecto Node.js completo: generación de código, tests, documentación y optimización de aplicaciones JavaScript/TypeScript.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Node.js + GitHub Copilot setup</p>
+<p>Generación de funciones y módulos</p>
+<p>Express.js endpoints con Copilot</p>
+<p>Tests con Jest usando Copilot Chat</p>
+<p>Copilot para refactoring JS/TS</p>
+<pre class="code-block"><code>npm scripts y automatización</code></pre>
+<h2>Laboratorio 20: Activar GitHub Copilot usando Node.js</h2>
+<h2>Lab 20 - Activa GitHub Copilot usando Nodejs</h2>
+<h2>Objetivo:</h2>
+<p>Este laboratorio es para ayudar a entender el proyecto Demo para gestionar laboratorios que evalúen la viabilidad de Copilot.</p>
+<p>Antes de ejecutar este laboratorio, instalemos primero los paquetes de software necesarios y configuremos el entorno.</p>
+<h3>Ejercicio 0: Instalar y configurar el entorno</h3>
+<p>Necesitas descargar e instalar los siguientes paquetes de software para configurar el entorno que ejecute este laboratorio.</p>
+<ul class="checklist">
+<li>a. Node.js</li>
+<li>B. mocha</li>
+</ul>
+<p>Abre el navegador de Edge.</p>
+<p>En el campo URL del navegador, copia y pega el enlace para descargar los paquetes de software en la máquina virtual de tu laboratorio.</p>
+<ul class="checklist">
+<li>a. Node.js y MVN https://nodejs.org/dist/v20.16.0/node-v20.16.0-x64.msi</li>
+<li>B. Mocha (no se requiere descarga)</li>
+</ul>
+<h3>Nota: Por defecto, los paquetes se guardarán en la carpeta de descargas.</h3>
+<ul class="checklist">
+<li>a. Instalar Node.js y MVN</li>
+</ul>
+<p>Ve a la carpeta Descargas (C:\Usuarios\Admin\Descargas) y haz doble clic node-v20.16.0-x64.msi.</p>
+<p>En la ventana de &quot;asistente de configuración de Node.js&quot; haz clic en Siguiente.</p>
+<p>Acepta el EULA y haz clic en Siguiente.</p>
+<p>Mantén la carpeta de destino predeterminada y luego haz clic en Siguiente.</p>
+<p>Haz clic en Añadir al CAMINO y luego en Siguiente.</p>
+<p>En la ventana de Herramientas para Módulos nativos, selecciona la casilla y haz clic en Siguiente.</p>
+<p>Haz clic en Instalar.</p>
+<h3>Nota: Si ves una ventana emergente de Control de Acceso de Usuario, por favor haz clic en Sí para continuar.</h3>
+<p>Haz clic en Terminar cuando termines.</p>
+<p>Se abre la terminal del CMD. Pulsa cualquier tecla para continuar...</p>
+<h3>Nota: Puede que notes un retraso tras pulsar una tecla. Por favor, espere un tiempo para proceder con la instalación.</h3>
+<p>Haz clic en Sí para continuar en la ventana UAC.</p>
+<p>Windows Powershell se abre mostrando los detalles de instalación.</p>
+<p>Una vez completada la instalación, escribe Enter para salir de PowerShell.</p>
+<ul class="checklist">
+<li>b. Instalar mocha</li>
+</ul>
+<p>Abre el símbolo de comandos</p>
+<p>Primero ejecuta el siguiente comando.</p>
+<p>Instalación de NPM --Global Mocha</p>
+<p>A continuación, ejecuta el siguiente comando</p>
+<p>Instalación de Axios de NPM</p>
+<p>Ahora has terminado de instalar mocha. Cierra el terminal para continuar instalando otros paquetes.</p>
+<h3>Ejercicio 1: Introducción</h3>
+<p>Desde Visual Studio, abre nodeserver.js desde el nodo exercise files -&gt;.</p>
+<p>Tenemos que empezar a programar para el nodo... servidor JS que expondrá una llamada al método &quot;get&quot; que devolverá el valor de la clave pasada en la cadena de consulta. Usemos el Copilot para ayudarnos con esto.</p>
+<p>Pulsa Ctrl+I y pega los comandos siguientes para que el Copilot genere el código y luego pulse Enviar.</p>
+<p>*// write a nodejs server that will expose a method call &quot;get&quot; that will return the value of the key passed in the query string*</p>
+<p>*// example: http://localhost:3000/get?key=hello*</p>
+<p>*// if the key is not passed, return &quot;key not passed&quot;*</p>
+<p>*// if the key is passed, return &quot;hello&quot; + key*</p>
+<p>*// if the url has other methods, return &quot;method not supported&quot;*</p>
+<p>*// when server is listening, log &quot;server is listening on port 3000&quot;*</p>
+<p>El Copilot genera el código y lo muestra. Haz clic en Aceptar para aceptarlo.</p>
+<p>Haz clic derecho en la carpeta del nodo y selecciona Abrir en Terminal Integrado.</p>
+<p>Una vez que el terminal esté abierto, ejecuta el comando de abajo desde él.</p>
+<p>mocha test.js</p>
+<p>Deberías obtener un resultado como 1 Pasando, como en la captura de pantalla de abajo.</p>
+<p>Esta es la prueba unitaria del método en el nodeserver.js y ha pasado.</p>
+<p>Seguiremos añadiendo diferentes métodos al servidor usando el Copilot.</p>
+<h3>Ejercicio 2: Desarrollar nuevas funcionalidades</h3>
+<p>El ejercicio consiste en construir un servidor web usando Nodejs que atiende a las solicitudes de diversas funcionalidades.</p>
+<p>Añadir la solicitud de funcionalidad DaysBetweenDates a la que el servidor debe asistir.</p>
+<p>Pulsa Enter después de que termine la condición if - nombre de ruta == &#x27;/get&#x27;.</p>
+<h3>Nota: Consulta el refuerzo en rojo donde necesitas pulsar Enter</h3>
+<p>Pulsa Ctrl+I para abrir la función en línea de Copilot, introduce lo siguiente y haz clic en Enviar.</p>
+<p>/DaysBetweenDates:</p>
+<p>Calculate days between two dates</p>
+<p>receive by query string 2 parameters date1 and date 2, and calculate the days between those two dates.</p>
+<p>Reference Code:</p>
+<p>if (req.url.startsWith(&#x27;/DaysBetweenDates&#x27;)) {</p>
+<p>*//calculate days between two dates*</p>
+<p>*//get dates from querystring*</p>
+<p>var queryData = url.parse(req.url, true).query;</p>
+<p>var date1 = queryData.date1;</p>
+<p>var date2 = queryData.date2;</p>
+<p>*//convert dates to milliseconds*</p>
+<p>var date1_ms = Date.parse(date1);</p>
+<p>var date2_ms = Date.parse(date2);</p>
+<p>*//calculate difference in milliseconds*</p>
+<p>var difference_ms = date2_ms - date1_ms;</p>
+<p>*//convert to days and return*</p>
+<p>res.end(Math.round(difference_ms / 86400000) + &quot; days&quot;);</p>
+<p>}</p>
+<p>Copilot genera el código. Haz clic en Aceptar para aceptar el código. Ten en cuenta que el código generado es un bloque if de otro tipo donde en la solicitud es DíasEntreFechas.</p>
+<p>Haz clic en Entrar después del bloque DíasEntreFechas.</p>
+<p>Introduce el bloque de comentarios de abajo y pulsa Enter.</p>
+<p>*/</p>
+<ul class="checklist">
+<li>* /Validatephonenumber:*</li>
+<li>* Receive by querystring a parameter called phoneNumber*</li>
+<li>* validate phoneNumber with proper Spanish format, for example 34666666666*</li>
+<li>* if phoneNumber is valid return &quot;valid&quot;*</li>
+<li>* if phoneNumber is not valid return &quot;invalid&quot;*</li>
+<li>* */*</li>
+</ul>
+<p>Reference Code:</p>
+<p>else if (req.url.startsWith(&#x27;/Validatephonenumber&#x27;)) {</p>
+<p>*//get phoneNumber var from querystring*</p>
+<p>var queryData = url.parse(req.url, true).query;</p>
+<p>var phoneNumber = queryData.phoneNumber;</p>
+<p>*//validate phoneNumber with Spanish format*</p>
+<p>var regex = /^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}$/;</p>
+<p>*//if phoneNumber is valid return &quot;valid&quot;*</p>
+<p>if (regex.test(phoneNumber)) {</p>
+<p>res.end(&quot;valid&quot;);</p>
+<p>}</p>
+<p>*//if phoneNumber is not valid return &quot;invalid&quot;*</p>
+<p>else {</p>
+<p>res.end(&quot;invalid&quot;);</p>
+<p>}</p>
+<p>}</p>
+<p>El Copiloto genera el código. Haz clic en Aceptar para aceptar el código.</p>
+<p>Haz clic en Enter después del bloque Validatephonenumber para añadir el siguiente bloque de código.</p>
+<p>Copia y pega el texto de abajo en el archivo js.</p>
+<p>*/</p>
+<p>*/ValidateSpanishDNI:*</p>
+<p>*Receive by querystring a parameter called dni*</p>
+<p>*calculate DNI letter*</p>
+<p>*if DNI is valid return &quot;valid&quot;*</p>
+<p>*if DNI is not valid return &quot;invalid&quot;*</p>
+<p>/*</p>
+<p>Reference Code:</p>
+<p>else if (req.url.startsWith(&#x27;/ValidateSpanishDNI&#x27;)) {</p>
+<p>var queryData = url.parse(req.url, true).query;</p>
+<p>var dni = queryData.dni;</p>
+<p>*// calculate DNI letter*</p>
+<p>var dniLetter = dni.charAt(dni.length - 1);</p>
+<p>var dniNumber = dni.substring(0, dni.length - 1);</p>
+<p>var dniLetterCalc = &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;.charAt(dniNumber % 23);</p>
+<p>*//if DNI is valid return &quot;valid&quot;*</p>
+<p>if (dniLetter == dniLetterCalc) {</p>
+<p>res.end(&quot;valid&quot;);</p>
+<p>}</p>
+<p>*//if DNI is not valid return &quot;invalid&quot;*</p>
+<p>else {</p>
+<p>res.end(&quot;invalid&quot;);</p>
+<p>}</p>
+<p>}</p>
+<p>Una vez pegado el contenido anterior, el Copilot genera el código que se muestra justo debajo del comentario. Haz clic en Aceptar para aceptar el código.</p>
+<p>Abre el chat de Copilot desde el panel de navegación izquierdo.</p>
+<p>Pega el contenido de abajo en el chat y haz clic en el botón Enviar.</p>
+<p>/ReturnColorCode:</p>
+<p>Receive by querystring a parameter called color</p>
+<p>read colors.json file and return the rgba field</p>
+<p>get color var from querystring</p>
+<p>iterate for each color in colors.json to find the color</p>
+<p>return the code.hex field</p>
+<p>Reference code:</p>
+<p>else if (req.url.startsWith(&#x27;/ReturnColorCode&#x27;)) {</p>
+<p>*//read colors.json file and return the rgba field*</p>
+<p>var colors = fs.readFileSync(&#x27;colors.json&#x27;, &#x27;utf-8&#x27;);</p>
+<p>var colorsObj = JSON.parse(colors);</p>
+<p>*//get color var from querystring*</p>
+<p>var queryData = url.parse(req.url, true).query;</p>
+<p>var color = queryData.color;</p>
+<p>var colorFound = &quot;not found&quot;;</p>
+<p>*//for each color in colors.json*</p>
+<p>for (var i = 1; i &lt; colorsObj.length; i++) {</p>
+<p>*//if color is found return the color code*</p>
+<p>if (colorsObj[i].color == color) {</p>
+<p>colorFound = colorsObj[i].code.hex;</p>
+<p>}</p>
+<p>}</p>
+<p>res.end(colorFound);</p>
+<p>}</p>
+<h3>Nota: Copilot usará por defecto el archivo abierto como contexto para generar la sugerencia.</h3>
+<p>Mantén el cursor después del bloque ValidateSpanishDNI y haz clic en el icono Insertar en el cursor en el chat. Esto copia el código generado por Copilot desde el chat al archivo js del servidor en la ubicación mencionada.</p>
+<p>Comprueba si hay errores, si es que hay alguno. En este código generado, hay un error ya que hay una declaración constante entre los bloques else.</p>
+<p>Pulsa Ctrl+I para abrir el Copilot Inline, escribe y haz clic en el botón Enviar./fix</p>
+<p>Copilot genera una solución si puede encontrar una. Acepta o descarta la solución según lo precisa que sea.</p>
+<p>Aquí, estamos moviendo la declaración constante dentro del bloque else if de returncolors para resolver el error.</p>
+<p>Importante: El código y la resolución pueden ser diferentes para ti según la que genere el Copilot.</p>
+<p>Después del bloque añadido, pulsa Ctrl+I para abrir la función en línea de Copilot, pega el contenido de abajo y haz clic en Enviar.</p>
+<p>/TellMeAJoke:</p>
+<p>Make a call to the joke api and return a random joke using axios (https:*//official-joke-api.appspot.com/random_joke)*</p>
+<p>Reference code:</p>
+<p>else if (req.url.startsWith(&#x27;/TellMeAJoke&#x27;)) {</p>
+<p>*//make a call to the joke api and return a random joke using axios*</p>
+<p>const axios = require(&#x27;axios&#x27;);</p>
+<p>axios.get(&#x27;https://official-joke-api.appspot.com/random_joke&#x27;)</p>
+<p>.then(function (response) {</p>
+<p>*// handle success*</p>
+<p>res.end(response.data.setup + &quot; &quot; + response.data.punchline);</p>
+<p>}</p>
+<p>)</p>
+<p>.catch(function (error) {</p>
+<p>*// handle error*</p>
+<p>console.log(error);</p>
+<p>})</p>
+<p>.then(function () {</p>
+<p>*// always executed*</p>
+<p>});</p>
+<p>}</p>
+<p>Haz clic en Aceptar para aceptar el código generado por el Copilot.</p>
+<p>Después del bloque de código generado, pulsa Ctrl+I, introduce el texto de abajo y haz clic en el botón Enviar.</p>
+<p>/MoviesByDirector:</p>
+<p>Receive by querystring a parameter called director</p>
+<p>Make a call to the movie api and return a list of movies of that director using axios</p>
+<p>Return the full list of movies</p>
+<p>Reference code:</p>
+<p>*//method that gets the name of a director and retrieves from an api the list of movies of that director*</p>
+<p>else if (req.url.startsWith(&#x27;/MoviesByDirector&#x27;)) {</p>
+<p>*//get a director name from querystring*</p>
+<p>var queryData = url.parse(req.url, true).query;</p>
+<p>var director = queryData.director;</p>
+<p>*//make a call to the movie api omdbapi.com and return a list of movies of that director using axios*</p>
+<p>const axios = require(&#x27;axios&#x27;);</p>
+<p>axios.get(&#x27;http://www.omdbapi.com/?apikey=XXXXXXX&amp;s=&#x27; + director)</p>
+<p>.then(function (response) {</p>
+<p>*//return the full list of movies*</p>
+<p>var movies = &quot;&quot;;</p>
+<p>for (var i = 0; i &lt; response.data.Search.length; i++) {</p>
+<p>movies = movies + response.data.Search[i].Title + &quot;, &quot;;</p>
+<p>}</p>
+<p>res.end(movies);</p>
+<p>}</p>
+<p>)</p>
+<p>.catch(function (error) {</p>
+<p>*// handle error*</p>
+<p>console.log(error);</p>
+<p>}</p>
+<p>)</p>
+<p>.then(function () {</p>
+<p>*// always executed*</p>
+<p>}</p>
+<p>);</p>
+<p>}</p>
+<p>Haz clic en Aceptar para aceptar el código.</p>
+<p>Después del bloque de código generado, pulsa Ctrl+I, introduce el texto de abajo y haz clic en el botón Enviar.</p>
+<p>/ParseUrl:</p>
+<p>Retrieves a parameter from querystring called someurl</p>
+<p>Parse the url and return the protocol, host, port, path, querystring and hash</p>
+<p>Return the parsed host</p>
+<p>Reference code:</p>
+<p>*//If url equals to ParseUrl*</p>
+<p>else if (req.url.startsWith(&#x27;/ParseUrl&#x27;)) {</p>
+<p>*//retrieves a parameter from querystring called someurl*</p>
+<p>var queryData = url.parse(req.url, true).query;</p>
+<p>var someUrl = queryData.someurl;</p>
+<p>*//parse the url and return the protocol, host, port, path, querystring and hash*</p>
+<p>var urlObj = new URL(someUrl);</p>
+<p>var protocol = urlObj.protocol;</p>
+<p>var host = urlObj.host;</p>
+<p>var port = urlObj.port;</p>
+<p>var path = urlObj.pathname;</p>
+<p>var querystring = urlObj.search;</p>
+<p>var hash = urlObj.hash;</p>
+<p>*//return the parsed host*</p>
+<p>res.end(&quot;host: &quot; + host);</p>
+<p>}</p>
+<p>Haz clic en Aceptar para aceptar el código.</p>
+<p>Después del bloque de código generado, pulsa Ctrl+I, introduce el texto de abajo y haz clic en el botón Enviar.</p>
+<p>/GetFullTextFile:</p>
+<p>Read sample.txt` and return lines that contains the word &quot;Fusce&quot;</p>
+<p>Reference code:</p>
+<p>else if (req.url.startsWith(&#x27;/GetFullTextFile&#x27;)) {</p>
+<pre class="code-block"><code>//read sample.txt and return lines that contains the word &quot;Fusce&quot;</code></pre>
+<p>var text = fs.readFileSync(&#x27;sample.txt&#x27;, &#x27;utf-8&#x27;);</p>
+<p>var lines = text.split(&quot;\r&quot;);</p>
+<p>var linesFound = &quot;&quot;;</p>
+<p>for (var i = 1; i &lt; lines.length; i++) {</p>
+<p>if (lines[i].includes(&quot;Fusce&quot;)) {</p>
+<p>linesFound = linesFound + lines[i] + &quot;, &quot;;</p>
+<p>}</p>
+<p>}</p>
+<p>res.end(linesFound);</p>
+<p>}</p>
+<h3>NOTA: Ten cuidado con esta implementación, ya que normalmente lee el contenido completo del archivo antes de analizarlo, por lo que el uso de memoria es alto y puede fallar cuando los archivos son demasiado grandes.</h3>
+<p>Haz clic en Aceptar para aceptar el código.</p>
+<p>Después del bloque de código generado, pulsa Ctrl+I, introduce el texto de abajo y haz clic en el botón Enviar.</p>
+<p>/GetLineByLinefromtTextFile:</p>
+<p>Read sample.txt line by line</p>
+<p>Create a promise to read the file line by line, and return a list of lines that contains the word &quot;Fusce&quot;</p>
+<p>Return the list of lines</p>
+<p>Reference code:</p>
+<p>else if (req.url.startsWith(&#x27;/GetLineByLinefromtTextFile&#x27;)) {</p>
+<p>*//read sample.txt line by line*</p>
+<p>var lineReader = require(&#x27;readline&#x27;).createInterface({</p>
+<p>input: require(&#x27;fs&#x27;).createReadStream(&#x27;sample.txt&#x27;)</p>
+<p>});</p>
+<p>*//create a promise to read the file line by line, and return a list of lines that contains the word &quot;Fusce&quot;*</p>
+<p>var promise = new Promise(function (resolve, reject) {</p>
+<p>var lines = [];</p>
+<p>lineReader.on(&#x27;line&#x27;, function (line) {</p>
+<p>if (line.includes(&quot;Fusce&quot;)) {</p>
+<p>lines.push(line);</p>
+<p>}</p>
+<p>});</p>
+<p>lineReader.on(&#x27;close&#x27;, function () {</p>
+<p>resolve(lines);</p>
+<p>});</p>
+<p>});</p>
+<p>*//return the list of lines*</p>
+<p>promise.then(function (lines) {</p>
+<p>res.end(lines.toString());</p>
+<p>});</p>
+<p>}</p>
+<p>Haz clic en Aceptar para aceptar el código.</p>
+<p>Después del bloque de código generado, pulsa Ctrl+I, introduce el texto de abajo y haz clic en el botón Enviar.</p>
+<p>/CalculateMemoryConsumption:</p>
+<p>Return the memory consumption of the process in GB, rounded to 2 decimals</p>
+<p>Reference code:</p>
+<p>else if (req.url.startsWith(&#x27;/CalculateMemoryConsumption&#x27;)) {</p>
+<p>*//return the memory consumption of the process in GB, rounded to 2 decimals*</p>
+<p>var memory = process.memoryUsage().heapUsed / 1024 / 1024;</p>
+<p>res.end(memory.toFixed(2) + &quot; GB&quot;);</p>
+<p>}</p>
+<p>Haz clic en Aceptar para aceptar el código.</p>
+<p>Después del bloque de código generado, pulsa Ctrl+I, introduce el texto de abajo y haz clic en el botón Enviar.</p>
+<p>/RandomEuropeanCountry:</p>
+<p>Make an array of european countries and its iso codes</p>
+<p>Return a random country from the array</p>
+<p>Return the country and its iso code</p>
+<p>Reference code:</p>
+<p>else if (req.url.startsWith(&#x27;/RandomEuropeanCountry&#x27;)) {</p>
+<p>*//make an array of european countries and its iso codes*</p>
+<p>var countries = [</p>
+<p>{ country: &quot;Italy&quot;, iso: &quot;IT&quot; },</p>
+<p>{ country: &quot;France&quot;, iso: &quot;FR&quot; },</p>
+<p>{ country: &quot;Spain&quot;, iso: &quot;ES&quot; },</p>
+<p>{ country: &quot;Germany&quot;, iso: &quot;DE&quot; },</p>
+<p>{ country: &quot;United Kingdom&quot;, iso: &quot;GB&quot; },</p>
+<p>{ country: &quot;Greece&quot;, iso: &quot;GR&quot; },</p>
+<p>{ country: &quot;Portugal&quot;, iso: &quot;PT&quot; },</p>
+<p>{ country: &quot;Romania&quot;, iso: &quot;RO&quot; },</p>
+<p>{ country: &quot;Bulgaria&quot;, iso: &quot;BG&quot; },</p>
+<p>{ country: &quot;Croatia&quot;, iso: &quot;HR&quot; },</p>
+<p>{ country: &quot;Czech Republic&quot;, iso: &quot;CZ&quot; },</p>
+<p>{ country: &quot;Denmark&quot;, iso: &quot;DK&quot; },</p>
+<p>{ country: &quot;Estonia&quot;, iso: &quot;EE&quot; },</p>
+<p>{ country: &quot;Finland&quot;, iso: &quot;FI&quot; },</p>
+<p>{ country: &quot;Hungary&quot;, iso: &quot;HU&quot; },</p>
+<p>{ country: &quot;Ireland&quot;, iso: &quot;IE&quot; },</p>
+<p>{ country: &quot;Latvia&quot;, iso: &quot;LV&quot; },</p>
+<p>{ country: &quot;Lithuania&quot;, iso: &quot;LT&quot; },</p>
+<p>{ country: &quot;Luxembourg&quot;, iso: &quot;LU&quot; },</p>
+<p>{ country: &quot;Malta&quot;, iso: &quot;MT&quot; },</p>
+<p>{ country: &quot;Netherlands&quot;, iso: &quot;NL&quot; },</p>
+<p>{ country: &quot;Poland&quot;, iso: &quot;PL&quot; },</p>
+<p>{ country: &quot;Slovakia&quot;, iso: &quot;SK&quot; },</p>
+<p>{ country: &quot;Slovenia&quot;, iso: &quot;SI&quot; },</p>
+<p>{ country: &quot;Sweden&quot;, iso: &quot;SE&quot; },</p>
+<p>{ country: &quot;Belgium&quot;, iso: &quot;BE&quot; },</p>
+<p>{ country: &quot;Austria&quot;, iso: &quot;AT&quot; },</p>
+<p>{ country: &quot;Switzerland&quot;, iso: &quot;CH&quot; },</p>
+<p>{ country: &quot;Cyprus&quot;, iso: &quot;CY&quot; },</p>
+<p>{ country: &quot;Iceland&quot;, iso: &quot;IS&quot; },</p>
+<p>{ country: &quot;Norway&quot;, iso: &quot;NO&quot; },</p>
+<p>{ country: &quot;Albania&quot;, iso: &quot;AL&quot; },</p>
+<p>{ country: &quot;Andorra&quot;, iso: &quot;AD&quot; },</p>
+<p>{ country: &quot;Armenia&quot;, iso: &quot;AM&quot; },</p>
+<p>{ country: &quot;Azerbaijan&quot;, iso: &quot;AZ&quot; },</p>
+<p>{ country: &quot;Belarus&quot;, iso: &quot;BY&quot; },</p>
+<p>{ country: &quot;Bosnia and Herzegovina&quot;, iso: &quot;BA&quot; },</p>
+<p>{ country: &quot;Georgia&quot;, iso: &quot;GE&quot; },</p>
+<p>{ country: &quot;Kazakhstan&quot;, iso: &quot;KZ&quot; },</p>
+<p>{ country: &quot;Kosovo&quot;, iso: &quot;XK&quot; },</p>
+<p>{ country: &quot;Liechtenstein&quot;, iso: &quot;LI&quot; },</p>
+<p>{ country: &quot;Macedonia&quot;, iso: &quot;MK&quot; },</p>
+<p>{ country: &quot;Moldova&quot;, iso: &quot;MD&quot; },</p>
+<p>{ country: &quot;Monaco&quot;, iso: &quot;MC&quot; },</p>
+<p>{ country: &quot;Montenegro&quot;, iso: &quot;ME&quot; },</p>
+<p>{ country: &quot;Russia&quot;, iso: &quot;RU&quot; },</p>
+<p>{ country: &quot;San Marino&quot;, iso: &quot;SM&quot; },</p>
+<p>{ country: &quot;Serbia&quot;, iso: &quot;RS&quot; },</p>
+<p>{ country: &quot;Turkey&quot;, iso: &quot;TR&quot; },</p>
+<p>{ country: &quot;Ukraine&quot;, iso: &quot;UA&quot; },</p>
+<p>{ country: &quot;Vatican City&quot;, iso: &quot;VA&quot; }</p>
+<p>];</p>
+<p>*//return a random country from the array*</p>
+<p>var randomCountry = countries[Math.floor(Math.random() * countries.length)];</p>
+<p>*//return the country and its iso code*</p>
+<p>res.end(randomCountry.country + &quot; &quot; + randomCountry.iso);</p>
+<p>}</p>
+<p>Haz clic en Aceptar para aceptar el código.</p>
+<h3>Ejercicio 3: Documentar el código</h3>
+<p>Documentar código siempre es una tarea aburrida y dolorosa. Sin embargo, podemos usar Copilot para documentarlo por nosotros. En el chat, pide a Copilot que documente el archivo nodeserver.js.</p>
+<p>Selecciona todo en el archivo nodeserver.js.</p>
+<p>Desde el chat de Copilot, entra y haz clic en enviar.document the nodeserver.js file</p>
+<p>El Copilot genera una documentación detallada del archivo.</p>
+<h3>Ejercicio 4: Pruebas de construcción</h3>
+<p>Crearemos pruebas automatizadas para comprobar que la funcionalidad de los endpoints anteriores está correctamente implementada. Las pruebas deberían estar juntas en el archivo test.js.</p>
+<p>Puedes aprovechar Copilot para hacer las pruebas. Hay un comando /tests que puedes ejecutar directamente desde Copilot Chat o seleccionando el fragmento de código para el que quieres crear pruebas y usando la función en línea de Copilot.</p>
+<p>Abre el archivo test.js.</p>
+<p>Haz clic en Enter después del bloque it existente.</p>
+<p>Introduce el texto siguiente y haz clic en Enter.</p>
+<p>add test to test DaysBetweenDates</p>
+<p>Esto genera el bloque de pruebas unitario para DíasEntreFechas. Haz clic en Aceptar para aceptar el código.</p>
+<p>Desde el terminal, ejecuta el siguiente comando mocha test.js</p>
+<p>Introduce el texto siguiente y haz clic en Enter.*//add test to check validatephoneNumber*</p>
+<p>Haz clic en Aceptar para aceptar el código generado por el Copilot.</p>
+<p>Desde el terminal, ejecuta el comando, . Comprueba que el número de teléfono validado haya pasado.mocha test.js</p>
+<p>Introduce el texto de abajo y pulsa Enter.</p>
+<p>*//write test to validate validateSpanishDNI*</p>
+<p>Acepta el texto generado por Copilot.</p>
+<p>Desde el terminal, ejecuta y comprueba que el ValidateSpanishDNI ha pasado.mocha test.js</p>
+<p>Reference Code:</p>
+<p>*//write npm command line to install mocha*</p>
+<p>*//npm install --global mocha*</p>
+<p>*//command to run this test file*</p>
+<p>*//mocha test.js*</p>
+<p>const assert = require(&#x27;assert&#x27;);</p>
+<p>const http = require(&#x27;http&#x27;);</p>
+<p>const server = require(&#x27;./nodeserver&#x27;);</p>
+<p>describe(&#x27;Node Server&#x27;, () =&gt; {</p>
+<p>it(&#x27;should return &quot;key not passed&quot; if key is not passed&#x27;, (done) =&gt; {</p>
+<p>http</p>
+<p>.get(&#x27;http://localhost:3000/Get&#x27; , (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;key not passed&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>it(&#x27;should return the value of the key if key is found&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/Get?key=world&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;hello world&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>*//add test to check validatephoneNumber*</p>
+<p>it(&#x27;should return &quot;valid&quot; if phoneNumber is valid&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/Validatephonenumber?phoneNumber=34666666666&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;valid&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>*//write test to validate spanish DNI*</p>
+<p>it(&#x27;should return &quot;valid&quot; if spanish DNI 86471508H is valid&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/ValidateSpanishDNI?dni=86471508H&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;valid&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>*//write test to validate spanish DNI*</p>
+<p>it(&#x27;should return &quot;valid&quot; if spanish DNI 24153149K is valid&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/ValidateSpanishDNI?dni=24153149K&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;valid&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>*//write test to validate spanish DNI*</p>
+<p>it(&#x27;should return &quot;valid&quot; if spanish DNI 12345678A is invalid&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/ValidateSpanishDNI?dni=12345678A&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;invalid&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>*//write test for returnColorCode*</p>
+<p>it(&#x27;should return &quot;red&quot; if color is red&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/ReturnColorCode?color=red&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;#FF0000&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>*//write test for daysBetweenDates*</p>
+<p>it(&#x27;should return &quot;1&quot; if dates are 2020-01-01 and 2020-01-02&#x27;, (done) =&gt; {</p>
+<p>http.get(&#x27;http://localhost:3000/DaysBetweenDates?date1=2020-01-01&amp;date2=2020-01-02&#x27;, (res) =&gt; {</p>
+<p>let data = &#x27;&#x27;;</p>
+<p>res.on(&#x27;data&#x27;, (chunk) =&gt; {</p>
+<p>data += chunk;</p>
+<p>});</p>
+<p>res.on(&#x27;end&#x27;, () =&gt; {</p>
+<p>assert.equal(data, &#x27;1 days&#x27;);</p>
+<p>done();</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<p>});</p>
+<h3>Ejercicio 5: Crear un archivo Dockerfile</h3>
+<p>Abre el dockerfile desde la carpeta node.</p>
+<p>El archivo consistirá en comentarios sobre cómo debe poblarse.</p>
+<p>Pulsa Ctrl+I y escribe . Haz clic en el icono de enviar./fix</p>
+<p>El Copilot generará el contenido del archivo Docker. Haz clic en Aceptar.</p>
+<p>Desde el terminal, ejecuta el siguiente comando</p>
+<pre class="code-block"><code>docker build -t mynodeapp .</code></pre>
+<p>Esto es para construir la imagen y etiquetarla como mynodeapp.</p>
+<p>Ejecuta el docker en el puerto 4000 usando el comando de abajo.</p>
+<pre class="code-block"><code>docker run -p 4000:3000 -d mynodeapp</code></pre>
+<p>Abre el demonio Docker para ver que la aplicación ha sido contenedora y está ejecutándose en él.</p>
+<h2>Resumen:</h2>
+<p>En este laboratorio, hemos aprendido a usar el Copilot en un proyecto de nodo</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 20 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 18 GH-300 generado desde Lab_18_Spring_Boot_API.docx." />
+    <title>Laboratorio 18 | Construir una API REST con Spring Boot y Copilot</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 18</p>
+        <h1>Construir una API REST con Spring Boot y Copilot</h1>
+        <p>Hemos creado un proyecto Spring Boot con algunos archivos ya creados, puedes encontrar el proyecto en la carpeta C:\CopilotHackathon\exercisefiles\springboot.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_18_Spring_Boot_API.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_18_Spring_Boot_API.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 18</h2>
+<p>API REST con Spring Boot y GitHub Copilot</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Construcción de una API REST completa usando Spring Boot con la asistencia de GitHub Copilot para acelerar el desarrollo, generación de tests y refactoring.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Configuración entorno: JDK 17, Apache Maven</p>
+<p>Copilot para generación de controladores REST</p>
+<p>GET, POST, PUT, DELETE endpoints</p>
+<p>Tests unitarios con JUnit + Copilot</p>
+<p>Copilot Chat para resolución de errores</p>
+<p>Spring Boot: mvn package, test, spring-boot:run</p>
+<h2>Laboratorio 18: API REST con Spring Boot y GitHub Copilot</h2>
+<p>Ahora has adquirido una comprensión práctica de cómo habilitar y probar Escaneo secreto Lab 18 - Construye una API REST usando Spring Boot con la ayuda de GitHub Copilot</p>
+<h2>Objetivo</h2>
+<p>El objetivo de este laboratorio es aprender a usar GitHub Copilot, utilizando un ejercicio que consiste en construir una API REST usando Spring Boot.</p>
+<p>Hemos creado un proyecto Spring Boot con algunos archivos ya creados, puedes encontrar el proyecto en la carpeta C:\CopilotHackathon\exercisefiles\springboot.</p>
+<p>Antes de ejecutar este laboratorio, instalemos primero los paquetes de software necesarios y configuremos el entorno.</p>
+<h3>Tarea 0: Instalar y configurar el entorno</h3>
+<p>Necesitas descargar e instalar los siguientes paquetes de software para configurar el entorno que ejecute este laboratorio.</p>
+<ul class="checklist">
+<li>a. Microsoft JDK 17</li>
+<li>B. apache maven</li>
+</ul>
+<p>Abre el navegador de Edge.</p>
+<p>En el campo URL del navegador, copia y pega el enlace para descargar los paquetes de software en la máquina virtual de tu laboratorio.</p>
+<ul class="checklist">
+<li>a. Microsoft JDK 17 https://aka.ms/download-jdk/microsoft-jdk-17.0.12-windows-x64.msi</li>
+<li>b. apache maven https://dlcdn.apache.org/maven/maven-3/3.9.9/binaries/apache-maven-3.9.9-bin.zip</li>
+</ul>
+<h3>Nota: Repite los mismos pasos para descargar todos los demás paquetes también. Por defecto, los paquetes se guardarán en la carpeta de descargas.</h3>
+<ul class="checklist">
+<li>a. Instalar Microsoft JDK 17</li>
+</ul>
+<p>En la carpeta Descargas (C:\Users\Admin\Downloads) y haz doble clic en Microsoft JDK</p>
+<p>Haz clic en Siguiente.</p>
+<p>Acepta el EULA y haz clic en Siguiente.</p>
+<p>Selecciona Instalar solo para ti (Admin) y haz clic en Siguiente.</p>
+<p>En la pantalla de configuración personalizada, ahora configurarás la variable JAVA_HOME. Haz clic en la flecha hacia abajo y selecciona Toda la función se instalará en el disco duro local.</p>
+<p>Haz clic en Siguiente.</p>
+<p>Haz clic en Instalar.</p>
+<ul class="checklist">
+<li>b. Instala apache- maven</li>
+</ul>
+<p>Navega a la carpeta Descargas (C:\Usuarios\Admin\Descargas)</p>
+<p>Haz clic derecho apache-maven-3.9.9-bin.zip carpeta y selecciona Extraer todo.</p>
+<p>En la página &quot;Seleccionar un destino&quot; introduzca el destino como C:\Usuarios\Admin\Descargas y haz clic en Extraer.</p>
+<p>Los archivos extraídos estarán tal y como se muestra en la captura de pantalla.</p>
+<h3>Nota: Asegúrate de que la carpeta se renombre como apache-maven-3.9.9, si ves algún otro nombre.</h3>
+<p>Variables ambientales de configuración</p>
+<p>Haz clic en el logo de Windows y selecciona Configuración</p>
+<p>Búsqueda Sistema de edición en la página de configuración de Windows y selecciona la variable Editar Entorno del Sistema.</p>
+<p>Haz clic en el botón de Variable de Entorno.</p>
+<p>Haz clic en Nuevo en la sección de Administrador en Nuevo en la sección de Administrador.</p>
+<p>Ahora configurarás el entorno y las variables de ruta para Maven.</p>
+<p>Selecciona Nuevo en la sección de Administrador en la variable de usuario.</p>
+<p>En la ventana de Nueva Variable de Usuario, introduce lo siguiente y haz clic en Aceptar</p>
+<p>Nombre de la variable: MAVEN_HOME</p>
+<p>Valor variable: C:\Usuarios\Admin\Descargas\apache-maven-3.9.9</p>
+<p>Ahora selecciona Ruta y haz clic en Editar</p>
+<p>En la ventana de la variable Editar entorno, haz clic en Nuevo.</p>
+<p>En el campo vacío, introduce lo siguiente %MAVEN_HOME%\bin y haz clic en OK.</p>
+<p>Haz clic en Aceptar para terminar de configurar el entorno de usuario y las variables de ruta para Maven.</p>
+<p>Ahora configurarás las variables de Sistema para Maven. Selecciona Nuevo en la sección de variables del sistema.</p>
+<p>En la ventana de Nueva Variable del Sistema, introduzca lo siguiente y haga clic en Aceptar</p>
+<p>Nombre de la variable: MAVEN_HOME</p>
+<p>Valor variable: C:\Usuarios\Admin\Descargas\apache-maven-3.9.9</p>
+<h3>Tarea 1: Crear el código para gestionar una simple solicitud GET</h3>
+<p>Pasa al archivo &#x27;DemoController.java&#x27; y empieza a escribir el código para gestionar una solicitud GET sencilla. En este primer ejercicio, hemos proporcionado un comentario que describe el código que necesitas generar. Solo pulsa enter y espera un par de segundos, Copilot generará el código por ti.</p>
+<p>Ya existe una prueba unitaria implementada para este ejercicio, puedes ejecutarla usando el comando mvn test antes y después para validar que el código generado por Copilot es correcto.</p>
+<p>Luego, crea una nueva prueba unitaria para el caso cuando no se proporcione ninguna clave en la solicitud.</p>
+<p>Después de cada ejercicio, siéntete libre de empaquetar y ejecutar tu aplicación para probarlo.</p>
+<p>Package: mvn package</p>
+<p>Run: mvn spring-boot:run</p>
+<p>Test: curl -v http:*//localhost:8080/hello?key=world*</p>
+<p>Abre el Explorador de archivos, expande Local Disk (C:) y expande la carpeta CopilotHackathon-&gt;ejerciciofiles &gt; Springboot &gt; copilot-demo &gt; src&gt;main&gt;java&gt;com&gt;Microsoft&gt;hackathon&gt;copilotdemo&gt;controller carpeta para ver &#x27;DemoController.java file.</p>
+<p>Haz doble clic DemoController.java archivo. En este primer ejercicio, solo se proporciona un comentario que describe el código que necesitas generar.</p>
+<p>Toma el cursor al final del comentario (línea 12), solo pulsa enter y espera un par de segundos, Copilot generará el código por ti. Pulsa la pestaña hasta que te muestre el código completo.</p>
+<p>También puedes pulsar Ctrl + Enter para elegir opciones de código.</p>
+<p>Amplía la carpeta de prueba y haz clic en CopilotDemoApplicationTests.java. La prueba unitaria ya te la han dado.</p>
+<p>Puedes intentar ejecutar el código sin actualizar el pom xml y pedir a Coiplot una solución para explorar el producto.</p>
+<p>Abre Pom.xml añade el siguiente plugin y guarda el archivo</p>
+<p>&lt;plugin&gt;</p>
+<p>&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</p>
+<p>&lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</p>
+<p>&lt;version&gt;3.8.1&lt;/version&gt;</p>
+<p>&lt;configuration&gt;</p>
+<p>&lt;source&gt;17&lt;/source&gt;</p>
+<p>&lt;target&gt;17&lt;/target&gt;</p>
+<p>&lt;/configuration&gt;</p>
+<p>&lt;/plugin&gt;</p>
+<p>Haz clic en Terminal -&gt; Nuevo Terminal desde la barra de herramientas.</p>
+<p>Selecciona Gitbash y ejecuta el comando de abajo.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/</code></pre>
+<p>Comando Runmvn clean install -DskipTests</p>
+<p>Corre. Si tu montaje falla con error.mvn test</p>
+<p>Haz clic en el icono de Copilot en la esquina derecha y selecciona Github Copilot Chat.</p>
+<p>Pide al chat de Copilot de Github que te proporcione una solución para tu error.</p>
+<p>Mira el chat de Copilot explicando el problema y la solución correspondiente. Si aún no tienes claro la solución, sigue preguntando tus dudas y Copilot te responderá. Lee y entiende el error y la solución a implementar.</p>
+<p>Proporciona el método /hello a Copilot y veamos qué te sugiere.</p>
+<p>Vuelve a la CopilotDemoApplicationTests.java coge el cursor al final del examen (línea 24) y pulsa Enter. Copilot genera otra prueba para ti. Pulsa la pestaña para aceptarlo.</p>
+<p>Proporciona el método /hello desde la prueba hasta Copilot y mira qué sugiere.</p>
+<p>Vuelve a ejecutar el Tu código puede verse como abajo. También puedes escribir tu propio código y pedirle a Copilot que lo valide.mvn test</p>
+<pre class="code-block"><code>@RestController</code></pre>
+<p>public class DemoController {</p>
+<pre class="code-block"><code>@GetMapping(&quot;/hello&quot;)</code></pre>
+<p>public String hello(@RequestParam(name = &quot;key&quot;, required = false) String key) {</p>
+<p>if (key == null) {</p>
+<p>return &quot;key not passed&quot;;</p>
+<p>}</p>
+<p>return &quot;hello &quot; + key;</p>
+<p>}</p>
+<p>}</p>
+<p>Comando Runmvn package</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Haz clic en dividir el terminal e introduce elsegundo terminal. También puedes pedirle a tu Copilot que proporcione el comando curl para probar tu código.curl -v http:*//localhost:8080/hello?key=world*</p>
+<p>Haz clic en dividir el terminal e introduce elsegundo terminalcurl -v http:*//localhost:8080/hello*</p>
+<p>Pulsa Ctrl + C para detener el servicio en ejecución.</p>
+<h3>Tarea 2: Comparación de fechas</h3>
+<p>Nueva operación bajo /diffdates que calcula la diferencia entre dos fechas. La operación debe recibir dos fechas como parámetro en formato dd-MM-yyyy y devolver la diferencia en días.</p>
+<p>Además, crea una prueba unitaria que valide la operación.</p>
+<p>A partir de ahora, tendrás que crear las pruebas unitarias para cada nueva operación. ¿No fue fácil con Copilot?</p>
+<p>Ve a DemoController.java introduce el aviso y pulsa Enter. Espera un rato y, una vez que el copiloto prediga el código, pulsa la pestaña para aceptarlo.*//create a New operation under /diffdates that calculates the difference between two dates. The operation should receive two dates as parameter in format dd-MM-yyyy and return the difference in days*</p>
+<p>También puedes usar el siguiente código.</p>
+<pre class="code-block"><code>@GetMapping(&quot;/diffdates&quot;)</code></pre>
+<p>public String diffdates(@RequestParam(name = &quot;date1&quot;, required = false) String date1, @RequestParam(name = &quot;date2&quot;, required = false) String date2) throws ParseException {</p>
+<p>if (date1 == null || date2 == null) {</p>
+<p>return &quot;date not passed&quot;;</p>
+<p>}</p>
+<p>SimpleDateFormat sdf = new SimpleDateFormat(&quot;dd-MM-yyyy&quot;);</p>
+<p>Date date1Obj = sdf.parse(date1);</p>
+<p>Date date2Obj = sdf.parse(date2);</p>
+<p>long diffInMillies = Math.abs(date2Obj.getTime() - date1Obj.getTime());</p>
+<p>long diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);</p>
+<p>return &quot;difference in days: &quot; + diff;</p>
+<p>}</p>
+<p>A partir de ahora, tendrás que crear las pruebas unitarias para cada nueva operación. Usa Copilot para crear.</p>
+<p>Abre CopilotDemoApplicationTests.java bajo la carpeta de prueba, entra en el prompt, luego pulsa Enter. Espera un segundo para que el copilot prediga el código y pulsa tab para aceptar el código predicho.*// create unit test to /diffdates that calculates the difference between two dates. The operation should receive two dates as parameter in format dd-MM-yyyy and return the difference in days.*</p>
+<p>Puedes entrar y pulsar tab para crear varias pruebas unitarias</p>
+<p>Busca ayuda en el chat de Copilot para problemas a solucionar o para explicar el test de unidad y actualizar el código si es necesario basándose en las entradas de Copilot.</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void diffdates() throws Exception {</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/diffdates?date1=01-01-2021&amp;date2=01-02-2021&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;difference in days: 31&quot;));</p>
+<p>}</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void diffdatesNoDate1() throws Exception {</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/diffdates?date2=01-02-2021&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;date not passed&quot;));</p>
+<p>}</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void diffdatesNoDate2() throws Exception {</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/diffdates?date1=01-01-2021&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;date not passed&quot;));</p>
+<p>}</p>
+<p>Abre el terminal -&gt;Gitbash y ejecuta los comandos bajo</p>
+<pre class="code-block"><code>cd &quot;exercisefiles\springboot\copilot-demo&quot;
+mvn test</code></pre>
+<p>Si ves errores de compilación, copia el mensaje de error y pide a Copilot la solución.</p>
+<p>Copolit te sugiere importar paquetes con código. Añade el comando a tu código y ejecuta mvn test</p>
+<p>¡Corre mvn package</p>
+<p>Haz la prueba mvn -Dtest=CopilotDemoApplicationTests*#diffdates test*</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Haz clic en Dividir terminal y ejecuta curl -v http:*//localhost:8080/diffdates?date1=01-01-2021&amp;date2=01-02-2021*</p>
+<p>Verás un error. Busca ayuda de Copilot y soluciona el pequeño problema.</p>
+<p>Como chat de copiloto para ayudarte con el comando de curl. Simplemente copia el mensaje de error como si lo pegues en el chat. Copilot te da el comando modificado con explicación</p>
+<h3>Tarea 3: Validar el formato de un teléfono español</h3>
+<p>Valida el formato de un número de teléfono español (+34 prefijo, luego 9 dígitos, empezando por 6, 7 o 9). La operación debe recibir un número de teléfono como parámetro y devolver true si el formato es correcto, falso en caso contrario.</p>
+<p>Abre DemoController.Java e introduce el prompt . Pulsa tab para aceptar el código.*// Validate the format of a spanish phone number (+34 prefix, then 9 digits, starting with 6, 7 or 9). The operation should receive a phone number as parameter and return true if the format is correct, false otherwise.*</p>
+<p>También puedes usar el código de abajo.</p>
+<p>*// Validate the format of a spanish phone number (+34 prefix, then 9 digits, starting with 6, 7 or 9). The operation should receive a phone number as parameter and return true if the format is correct, false otherwise. *</p>
+<pre class="code-block"><code>@GetMapping(&quot;/validatephone&quot;)</code></pre>
+<p>public boolean validatephone(@RequestParam(name = &quot;phone&quot;, required = false) String phone) {</p>
+<p>if (phone == null || phone.isEmpty()) {</p>
+<p>return false;</p>
+<p>}</p>
+<p>String regex = &quot;^\\+34[679]\\d{8}$&quot;;</p>
+<p>return phone.matches(regex);</p>
+<p>}</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//Write unit test to validate the format of a spanish phone number (+34 prefix, then 9 digits, starting with 6, 7 or 9). The operation should receive a phone number as parameter and return true if the format is correct, false otherwise*</p>
+<p>También puedes usar las pruebas unitarias que aparecen a continuación o escribir tus propias pruebas unitarias.</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void validatephone() throws Exception {</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+34666666666&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;true&quot;));</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+34766666666&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;true&quot;));</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+34966666666&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;true&quot;));</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+3466666666&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;false&quot;));</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+346666666666&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;false&quot;));</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+3466666666a&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;false&quot;));</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone?phone=+34866666666&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;false&quot;));</p>
+<p>}</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void validatephoneNoPhone() throws Exception {</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatephone&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;false&quot;));</p>
+<p>}</p>
+<p>Abre el Terminal -&gt;Gitbash y ejecuta los comandos de abajo.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>¡Corre mvn package</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Divide el terminal y ejecuta los comandos de curl de abajo para validar los números de teléfono.</p>
+<pre class="code-block"><code>curl -v http:*//localhost:8080/validatephone?phone=+34866666666*
+curl -v http:*//localhost:8080/validatephone?phone=+34666666667*
+curl -v http:*//localhost:8080/validatephone?phone=+34666666666*</code></pre>
+<h3>Tarea 4: Validar el formato de un DNI español</h3>
+<p>Valida el formato de un DNI español (8 dígitos y 1 letra). La operación debe recibir un DNI como parámetro y devolver true si el formato es correcto, false en caso contrario.</p>
+<p>Abre DemoController.Java e introduce el prompt . Pulsa la pestaña para aceptar el código.*// Validate the format of a spanish DNI (8 digits and 1 letter). The operation should receive a DNI as parameter and return true if the format is correct, false otherwise.*</p>
+<p>También puedes usar el siguiente código</p>
+<p>*// Validate the format of a spanish DNI (8 digits and 1 letter). The operation should receive a DNI as parameter and return true if the format is correct, false otherwise. *</p>
+<pre class="code-block"><code>@GetMapping(&quot;/validatedni&quot;)</code></pre>
+<p>public boolean validatedni(@RequestParam(name = &quot;dni&quot;, required = false) String dni) {</p>
+<p>if (dni == null || dni.isEmpty()) {</p>
+<p>return false;</p>
+<p>}</p>
+<p>String regex = &quot;^\\d{8}[A-Z]$&quot;;</p>
+<p>return dni.matches(regex);</p>
+<p>}</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade //Write unit test para validar el formato de un DNI español (8 dígitos y 1 letra). La operación debe recibir un DNI como parámetro y devolver true si el formato es correcto; false si no, pulse Enter. Pulse la pestaña para aceptar el código.</p>
+<p>También puedes usar la prueba unitaria que aparece a continuación o escribir tus propias pruebas unitarias.</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void validatedniNoDni() throws Exception {</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/validatedni&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;false&quot;));</p>
+<p>}</p>
+<p>Abre Terminal -&gt; Gitbash y ejecuta los comandos siguientes.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>¡Corre mvn package</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Terminal dividida y circula por &gt; lasegunda terminalcurl -v http:*//localhost:8080/validatedni?dni=12345678C*</p>
+<h3>Tarea 5: Del nombre del color al código hexadecimal</h3>
+<p>Basándose en el archivo de colors.json existente bajo recursos, dado el nombre del color como parámetro de camino, devuelven el código hexadecimal. Si no se encuentra el color, devuelva 404</p>
+<p>Consejo: Usa TDD. Empieza creando la prueba unitaria y luego implementa el código.</p>
+<p>Abre DemoController.Java e introduce el prompt . Pulsa la pestaña para aceptar el código.*// Based on existing colors.json file under resources, given the name of the color as path parameter, return the hexadecimal code. If the color is not found, return 404*</p>
+<p>También puedes usar el código below o escribir tu código.</p>
+<p>*//Based on existing colors.json file under resources, given the name of the color as path parameter, return the hexadecimal code. If the color is not found, return 404*</p>
+<pre class="code-block"><code>@GetMapping(&quot;/color/{name}&quot;)</code></pre>
+<p>public ResponseEntity&lt;String&gt; color(@PathVariable(&quot;name&quot;) String name) throws IOException {</p>
+<p>InputStream inputStream = getClass().getClassLoader().getResourceAsStream(&quot;colors.json&quot;);</p>
+<p>ObjectMapper objectMapper = new ObjectMapper();</p>
+<p>*// create JsonNode from mapper*</p>
+<p>JsonNode rootNode = objectMapper.readTree(inputStream);</p>
+<p>for (JsonNode color : rootNode) {</p>
+<p>*// if color name is found, return the hex code*</p>
+<p>if (color.get(&quot;color&quot;).asText().equals(name)) {</p>
+<p>return new ResponseEntity&lt;String&gt;(color.get(&quot;code&quot;).get(&quot;hex&quot;).asText(), HttpStatus.OK);</p>
+<p>}</p>
+<p>}</p>
+<p>return new ResponseEntity&lt;String&gt;(&quot;Color not found&quot;, HttpStatus.NOT_FOUND);</p>
+<p>}</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//test for /color/{color} endpoint*</p>
+<p>Puedes escribir tus pruebas unitarias. Siempre puedes consultar con Copilot si hay código/corrección/prueba unitaria</p>
+<p>Abre el terminal -&gt; Gitbash y ejecuta debajo de los comandos. Puedes ver errores de compilación.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>Pulsa Ctrl + Alt+ I para abrir el chat de Copilot de Github. Copia el mensaje de error y pégalo en la ventana del chat. Copilot sugiere la solución.</p>
+<p>Copilot sugiere importar paquetes perdidos con la función de importación. Cópialo y añádelo a tu código. Pulsa Enter y Copilot te sugiere añadir paquetes que faltan. Pulsa la pestaña y acéptalos para añadirlos al código.</p>
+<p>Abre Terminal -&gt; Gitbash y ejecuta de nuevo los comandos de abajo.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>Ejecutar para empaquetar tu aplicación.mvn package</p>
+<p>Correr para probarmvn spring-boot:run</p>
+<p>Puedes pedirle a tu copiloto que te ayude con el comando de curl para probar tu función.</p>
+<p>Haz clic en Dividir terminal y ejecuta el comando curl para probar tu aplicación. (Actualizar el puerto)</p>
+<p>Prueba con los colores listados en colors.json archivo</p>
+<p>Prueba el color que no aparece en colors.json y ve los resultados</p>
+<h3>Tarea 6: Creador de chistes</h3>
+<p>Crear una nueva operación que llame a la API https://api.chucknorris.io/jokes/random y devuelve la broma.</p>
+<p>Abre DemoController.Java e introduce el prompt . Pulsa la pestaña para aceptar el código.*// new operation that call the API https://api.chucknorris.io/jokes/random and return the joke*</p>
+<p>También puedes usar el código de abajo.</p>
+<p>*// new operation that call the API https://api.chucknorris.io/jokes/random and return the joke*</p>
+<pre class="code-block"><code>@GetMapping(&quot;/joke&quot;)</code></pre>
+<p>public String getJoke() {</p>
+<p>RestTemplate restTemplate = new RestTemplate();</p>
+<p>String url = &quot;https://api.chucknorris.io/jokes/random&quot;;</p>
+<p>ResponseEntity&lt;String&gt; response = restTemplate.getForEntity(url, String.class);</p>
+<p>*// parse response to get the value*</p>
+<p>ObjectMapper objectMapper = new ObjectMapper();</p>
+<p>JsonNode rootNode;</p>
+<p>try {</p>
+<p>rootNode = objectMapper.readTree(response.getBody());</p>
+<p>return rootNode.get(&quot;value&quot;).asText();</p>
+<p>} catch (IOException e) {</p>
+<p>return new String(&quot;Error getting joke&quot;);</p>
+<p>}</p>
+<p>}</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*// Create a unit test for new operation that call the API https://api.chucknorris.io/jokes/random and return the joke*</p>
+<p>También puedes añadir la prueba unitaria por debajo o escribir tus propias pruebas unitarias.</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void joke() throws Exception{</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/joke&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>*// check that content is a string*</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(Matchers.any(String.class)));</p>
+<p>}</p>
+<p>Abre el terminal -&gt; Gitbahs y ejecuta debajo de los comandos .</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>Empaqueta tu solicitud. ¡Corre mvn package</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Haz clic en Dividir terminal y ejecuta el comando a: en elsegundo terminalcurl -v http:*//localhost:8080/joke*</p>
+<h3>Tarea 7: Análisis de URL</h3>
+<p>Dado un parámetro de consulta de una URL, analizarlo y devolver los parámetros de protocolo, host, puerto, ruta y consulta. La respuesta debería estar en formato Json.</p>
+<p>Abre DemoController.Java e introduce el prompt . Pulsa la pestaña para aceptar el código.*//write a code for Given a url as query parameter, parse it and return the protocol, host, port, path and query parameters. The response should be in Json format*</p>
+<p>También puedes usar el siguiente código.</p>
+<p>*// Given a url as query parameter, parse it and return the protocol, host, port, path and query parameters. The response should be in Json format.*</p>
+<pre class="code-block"><code>@GetMapping(&quot;/parseurl&quot;)</code></pre>
+<p>public String parseurl(@RequestParam(name = &quot;url&quot;, required = false) String url) throws MalformedURLException {</p>
+<p>if (url == null || url.isEmpty()) {</p>
+<p>return &quot;url not passed&quot;;</p>
+<p>}</p>
+<p>URL urlObj = new URL(url);</p>
+<p>String protocol = urlObj.getProtocol();</p>
+<p>String host = urlObj.getHost();</p>
+<p>int port = urlObj.getPort();</p>
+<p>String path = urlObj.getPath();</p>
+<p>String query = urlObj.getQuery();</p>
+<p>return &quot;{ \&quot;protocol\&quot;: \&quot;&quot; + protocol + &quot;\&quot;, \&quot;host\&quot;: \&quot;&quot; + host + &quot;\&quot;, \&quot;port\&quot;: \&quot;&quot; + port + &quot;\&quot;, \&quot;path\&quot;: \&quot;&quot; + path + &quot;\&quot;, \&quot;query\&quot;: \&quot;&quot; + query + &quot;\&quot; }&quot;;</p>
+<p>}</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*// Create a unit test for new operation that call the API https://api.chucknorris.io/jokes/random and return the joke*</p>
+<p>También puedes añadir las pruebas unitarias a continuación o escribir tus propias pruebas unitarias.</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void parseUrl() throws Exception{</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/parseurl?url=https://learn.microsoft.com/en-us/azure/aks/concepts-clusters-workloads?source=recommendations&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>*// validate json fields*</p>
+<p>.andExpect(MockMvcResultMatchers.jsonPath(&quot;$.protocol&quot;).value(&quot;https&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.jsonPath(&quot;$.host&quot;).value(&quot;learn.microsoft.com&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.jsonPath(&quot;$.path&quot;).value(&quot;/en-us/azure/aks/concepts-clusters-workloads&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.jsonPath(&quot;$.query&quot;).value(&quot;source=recommendations&quot;));</p>
+<p>}</p>
+<pre class="code-block"><code>@Test</code></pre>
+<p>void parseUrlNoUrl() throws Exception{</p>
+<p>mockMvc.perform(MockMvcRequestBuilders.get(&quot;/parseurl&quot;))</p>
+<p>.andExpect(MockMvcResultMatchers.status().isOk())</p>
+<p>.andExpect(MockMvcResultMatchers.content().string(&quot;url not passed&quot;));</p>
+<p>}</p>
+<p>Abre Terminal -&gt; Gitbash y ejecuta los comandos siguientes.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>Ejecutar para empaquetar tu aplicación.mvn package</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Divide el terminal y prueba tu aplicación: curl -v http:*//localhost:8080/parseurl?url=https://www.google.com/search?q=chuck+norris*</p>
+<h3>Tarea 8: Contar palabras</h3>
+<p>Dada la ruta de un archivo y cuenta el número de ocurrencias de una palabra proporcionada. El camino y la palabra deberían ser parámetros de consulta. La respuesta debería estar en formato Json.</p>
+<p>Abre DemoController.Java e introduce el prompt . Pulsa la pestaña para aceptar el código.*//write a code for Given the path of a file and count the number of occurrences of a provided word. The path and the word should be query parameters. The response should be in Json format*</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*// Given the path of a file and count the number of occurrences of a provided word. The path and the word should be query parameters. The response should be in Json format.*</p>
+<p>Abre Terminal -&gt; Gitbash y ejecuta debajo de los comandos.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+mvn test</code></pre>
+<p>Ejecutar para empaquetar tu aplicación/mvn package</p>
+<p>¡Corre mvn spring-boot:run</p>
+<p>Haz clic en Dividir terminal y ejecuta el comando curl para probar tu aplicación.</p>
+<p>Rizo http://localhost:8080/countword?path=src/test/resources/test.txt</p>
+<h3>Tarea 9: Contenedorizar la aplicación</h3>
+<p>Utiliza el archivo Docker proporcionado para crear una imagen docker de la aplicación. Hay algunos comentarios en el archivo Docker que te ayudarán a completar el ejercicio.</p>
+<p>Para construir, ejecutar y probar la imagen docker, también puedes usar Copilot para generar los comandos.</p>
+<p>Por ejemplo, crea un archivo DOCKER.md donde puedas almacenar los comandos para construir, ejecutar y probar la imagen de Docker. Verás que Copilot también te ayudará a documentar tu proyecto y comandos.</p>
+<p>Ejemplos de pasos a documentar: Construir la imagen del contenedor, ejecutar el contenedor, Probar el contenedor.</p>
+<p>Haz doble clic en Docker desde Dekstop e inicia sesión con tu cuenta.</p>
+<p>Abre el archivo Docker en código Visual Studio, añade el código de abajo y guarda el archivo.</p>
+<p>*# Build a java application image based on openjdk 17 and run it on port 8080*</p>
+<p>FROM openjdk:17-jdk-alpine</p>
+<h3>EXPOSE 8080</h3>
+<p>COPY target*/*.jar app.jar*</p>
+<p>*ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]*</p>
+<p>Pulsa Ctrl + Alt +I para abrir la ventana de chat de GitHub Copilot. Pregunta a Copilot abajo. Copilot proporciona pasos para contenerizar la aplicación.</p>
+<p>how to build, run and test the docker image with the Dockerfile provided to create a docker image of the application</p>
+<p>Sigue elprimer paso: construye la imagen de Docker. Abre Terminal -&gt; Gitbash y ejecuta el comando para construir la imagen Docker.</p>
+<pre class="code-block"><code>cd exercisefiles/springboot/copilot-demo/
+docker build -t my-application .</code></pre>
+<p>Después de crear la imagen, puedes ejecutarla usando el comando docker run.</p>
+<pre class="code-block"><code>docker run -p 8080:8080 my-application</code></pre>
+<p>Una vez que el contenedor Docker esté en funcionamiento, puedes probarlo enviando peticiones a tu aplicación.</p>
+<pre class="code-block"><code>curl &lt;http:*//localhost:8080/hello?key=world*</code></pre>
+<p>para proteger tu código y datos.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 18 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>
