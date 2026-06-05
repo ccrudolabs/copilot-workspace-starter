@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" role="img" aria-labelledby="title desc">
+  <title id="title">Threat Protection capabilities with M365 E5 - Sales Ready PROFICIENT 2026</title>
+  <desc id="desc">Credencial Microsoft de Carlos Crudo.</desc>
+  <defs>
+    <linearGradient id="body" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#073f4a"/>
+      <stop offset="1" stop-color="#071827"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2b8fd4"/>
+      <stop offset="1" stop-color="#b9edf3"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#071827" flood-opacity=".22"/>
+    </filter>
+    <style>
+      .brand { fill: #fff; font: 700 17px "Segoe UI", Arial, sans-serif; }
+      .title { fill: #d7f1f4; font: 500 15px "Segoe UI", Arial, sans-serif; }
+      .track { fill: #fff; font: 700 20px "Segoe UI", Arial, sans-serif; }
+      .level { fill: #fff; font: 900 36px "Segoe UI", Arial, sans-serif; letter-spacing: .5px; }
+      .year { fill: #fff; font: 800 22px "Segoe UI", Arial, sans-serif; }
+    </style>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M160 12 288 72v184L160 330 32 256V72Z" fill="url(#body)" stroke="#2b8fd4" stroke-width="4"/>
+    <path d="M54 266 160 326l106-60v46l-106 56L54 312Z" fill="url(#ribbon)"/>
+    <path d="M54 266 160 326v42L54 312Z" fill="#2b8fd4" opacity=".72"/>
+    <path d="M266 266 160 326v42l106-56Z" fill="#d4f5f8" opacity=".55"/>
+    <g transform="translate(105 42)">
+      <rect x="0" y="0" width="13" height="13" fill="#f25022"/>
+      <rect x="16" y="0" width="13" height="13" fill="#7fba00"/>
+      <rect x="0" y="16" width="13" height="13" fill="#00a4ef"/>
+      <rect x="16" y="16" width="13" height="13" fill="#ffb900"/>
+      <text x="40" y="22" class="brand">Microsoft</text>
+    </g>
+    <text x="160" y="82" text-anchor="middle" class="title">Threat Protection capabilities with</text>
+<text x="160" y="100" text-anchor="middle" class="title">M365 E5</text>
+    <line x1="118" x2="202" y1="142" y2="142" stroke="#e1fbff" stroke-width="2"/>
+    <text x="160" y="184" text-anchor="middle" class="track">Sales Ready</text>
+    <text x="160" y="226" text-anchor="middle" class="level">PROFICIENT</text>
+    <text x="160" y="268" text-anchor="middle" class="year">2026</text>
+  </g>
+</svg>
