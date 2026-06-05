@@ -45,3 +45,11 @@ Esta aplicación sirve como base completa para estudiar, practicar y demostrar e
 ## GitHub
 
 Consulta [docs/github-setup.md](docs/github-setup.md) para conectar este proyecto a tu repositorio GitHub.
+
+## GH-300 Study Hub
+
+El sitio estatico profesional para estudiar GitHub Copilot GH-300 esta en:
+
+- [site/index.html](site/index.html)
+
+Cuando GitHub Pages este habilitado con GitHub Actions, el hub quedara publicado desde la carpeta `site`.

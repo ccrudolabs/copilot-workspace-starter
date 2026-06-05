@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 21 GH-300 generado desde Lab_21_WebAPI_NET_Docker.docx." />
+    <title>Laboratorio 21 | Crear una Web API minima .NET y Docker con Copilot</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 21</p>
+        <h1>Crear una Web API minima .NET y Docker con Copilot</h1>
+        <p>Antes de ejecutar este laboratorio, instalemos primero los paquetes de software necesarios y configuremos el entorno</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_21_WebAPI_NET_Docker.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_21_WebAPI_NET_Docker.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 21</h2>
+<p>WebAPI .NET Minimal + Docker con GitHub Copilot</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Creación de una Web API mínima con .NET y generación de la imagen Docker correspondiente usando GitHub Copilot para acelerar el desarrollo full-stack.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>.NET Minimal API con Copilot</p>
+<p>Swagger / OpenAPI auto-generado</p>
+<p>Dockerfile para .NET con Copilot</p>
+<p>Docker Compose para desarrollo local</p>
+<p>Publicar en GitHub Container Registry</p>
+<p>Copilot Chat para debugging .NET</p>
+<h2>Laboratorio 21: WebAPI .NET Minimal + Docker con GitHub Copilot</h2>
+<h2>Lab 21 - Crear una WebAPI mínima usando .NET y una imagen Docker correspondiente con GitHub Copilot</h2>
+<h2>Objetivo:</h2>
+<p>El objetivo es crear una Web API Mínima usando .NET 7.0 y una imagen Docker correspondiente con la ayuda de GitHub Copilot. Aquí usamos GitHub Copilot tanto como podemos.</p>
+<p>Prueba diferentes cosas y mira qué puede hacer GitHub Copilot por ti, como generar un archivo Docker o una clase, añadir comentarios, etc.</p>
+<p>Antes de ejecutar este laboratorio, instalemos primero los paquetes de software necesarios y configuremos el entorno</p>
+<h3>Ejercicio 0: Instalar y configurar el entorno</h3>
+<p>Necesitas descargar e instalar los siguientes paquetes de software para configurar el entorno que permita ejecutar este laboratorio.</p>
+<p>• dotnet-sdk-8.0</p>
+<p>Abre el navegador de Edge.</p>
+<p>En el campo URL del navegador, copia y pega el enlace para descargar el paquete de software en la máquina virtual de tu laboratorio.</p>
+<p>dotnet-sdk-8.0 https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-8.0.401-windows-x64-installer</p>
+<h3>Nota: Por defecto, los paquetes se guardarán en la carpeta de descargas.</h3>
+<p>Instalar .NET SDK Ve a la carpeta Descargas (C:\Users\Admin\Descargas) y haz doble clic en dotnet-sdk-8.0.401 y sigue el proceso de instalación.</p>
+<h3>Ejercicio 1: Configurar el proyecto en VS Code</h3>
+<p>Abre el código de Visual Studio desde el menú Inicio.</p>
+<p>Seleccionar archivo -&gt; abrir carpeta...</p>
+<p>Selecciona la carpeta CopilotHackathon desde C:\Labfiles y haz clic en Seleccionar carpeta.</p>
+<p>Haz clic en Sí, confío en los autores.</p>
+<h3>Ejercicio 2: Introducción</h3>
+<h3>Nota: El código generado por el Copilot puede variar en distintas ejecuciones. En los pasos en los que se involucra la generación de código a continuación, hemos dado el código de referencia. Por favor, utilízalo para comprobar la corrección del código generado por Copilot o para resolver errores, si los hay.</h3>
+<p>Abre Program.cs desde dotnet -&gt; MinimalAPI.</p>
+<p>Dentro de MinimalAPI\Program.cs después de la línea AÑADIR NUEVOS PUNTOS FINALES HERE (LÍNEA NÚMERO 19), ESCRIBE Y PULSA Enter. El Copilot sugerirá el código en gris.*// Hello World Get endpoint*</p>
+<p>Una vez que tengas el código generado por el Copilot, puedes aceptarlo o descartarlo. Para aceptar, haz clic en el botón Ctrl y aparecerá la barra de opciones sobre el texto gris. Otra opción es simplemente pulsar la tecla Tab.</p>
+<p>Código de referencia: app.MapGet(&quot;/&quot;, () =&gt; &quot;Hello World!&quot;);</p>
+<p>El código ahora se verá así. Guarda el archivo.</p>
+<p>Haz clic derecho en la carpeta dotnet y selecciona Abrir en Terminal Integrado.</p>
+<p>Desde el terminal, ejecuta el siguiente comando.</p>
+<pre class="code-block"><code>dotnet test</code></pre>
+<h3>Ejercicio 3: Crear nuevas funcionalidades</h3>
+<p>Junto al endpoint de Hello World, añade DíasEntreFechas.</p>
+<p>Pulsa Ctrl+I en orden, abre el Copilot en línea.</p>
+<p>Introduce el siguiente texto y pulsa el botón Enviar.</p>
+<p>/DaysBetweenDates:</p>
+<p>calculate days between two dates</p>
+<p>receive by query string two parameters date1 and date2, and calculate the days between those two dates.</p>
+<p>El Copilot ahora genera código y lo introduce en el archivo Program.cs. Una vez hecho, verás dos opciones: Aceptar o Desechar. Acepta el código.</p>
+<p>Una vez aceptado, selecciona el código generado y pulsa Ctrl+I. Entra y pulsa Enter. Haz clic en Aceptar una vez que el código se convierta en una sola línea.Convert this code into a single line</p>
+<p>Código de referencia - app.MapGet(&quot;/DaysBetweenDates&quot;, (DateTime date1, DateTime date2) =&gt; (date2 - date1).Days.ToString());</p>
+<p>Introduce las siguientes declaraciones (comentado) y haz clic en Enter.</p>
+<p>Haz clic en Aceptar para aceptar el código generado por el Copiloto.</p>
+<p>*/</p>
+<p>*/validatephonenumber:*</p>
+<p>*receive by querystring a parameter called phoneNumber*</p>
+<p>*validate phoneNumber with Spanish format, for example +34666777888*</p>
+<p>*if phoneNumber is valid return true*</p>
+<p>/*</p>
+<p>Código de referencia:</p>
+<p>app.MapGet(&quot;/validatephonenumber&quot;, (string phonenumber) =&gt; Regex.IsMatch(phonenumber, @&quot;^(\+[0-9]{9})$&quot;).ToString());</p>
+<p>Añade el texto de abajo como en la función de Copilot en línea, en el archivo Program.cs y pulsa Enter.</p>
+<p>/validatespanishdni:</p>
+<p>receive by querystring a parameter called dni</p>
+<p>calculate DNI letter</p>
+<p>if DNI is valid return &quot;valid&quot;</p>
+<p>if DNI is not valid return &quot;invalid&quot;</p>
+<p>En este caso, puede que quieras consultar varias soluciones de Copilot para elegir la que mejor se adapte a la forma de calcular la carta. Para ver las primeras 10 sugerencias de Copilot, pulsa ctrl + enter.</p>
+<p>Acepta el código generado por GitHub.</p>
+<p>Código de referencia:</p>
+<p>app.MapGet(&quot;/validatespanishdni&quot;, (string dni) =&gt; {</p>
+<p>var valid = false;</p>
+<p>if (dni.Length == 9 &amp;&amp; int.TryParse(dni.Substring(0, 8), out int number))</p>
+<p>{</p>
+<p>var letters = &quot;TRWAGMYFPDXBNJZSQVHLCKE&quot;;</p>
+<p>var letter = letters[number % 23];</p>
+<p>valid = dni.EndsWith(letter.ToString());</p>
+<p>}</p>
+<p>return valid ? &quot;valid&quot; : &quot;invalid&quot;;</p>
+<p>});</p>
+<p>Selecciona Chat en el panel izquierdo.</p>
+<p>Introduce el texto siguiente y haz clic en Enter.</p>
+<p>/returncolorcode:</p>
+<p>receive by querystring a parameter called color read colors.json file and return the rgba field get color var from querystring iterate for each color in colors.json to find the color return the code.hex field</p>
+<p>Asegúrate de que el Copilot dé los pasos detallados y luego el código generado. Coloca el cursor en el archivo Program.cs, después del código validatspanishdni. Haz clic en el icono Insertar en el cursor para pegar el código en el archivo.</p>
+<p>Código de referencia:</p>
+<p>app.MapGet(&quot;/color&quot;, (string color) =&gt;</p>
+<p>{</p>
+<p>var colors = JsonSerializer.Deserialize&lt;Color[]&gt;(File.ReadAllText(&quot;colors.json&quot;));</p>
+<p>return colors.First(c =&gt; c.Name == color).Code.HEX;</p>
+<p>});</p>
+<p>Asegúrate de que no haya errores en el código generado. Si existe un error, mantén el código de referencia como referencia y corre el código.</p>
+<p>En este caso, hay un error: Color no contiene definición de código.</p>
+<p>El código generado se actualiza como se indica a continuación para resolver los errores.</p>
+<p>Introduce el texto de abajo y pulsa Enter y revisa y acepta el código generado por Copilot.</p>
+<p>*/</p>
+<p>*/tellmeajoke:*</p>
+<p>*Make a call to the joke api and return a random joke*</p>
+<p>/*</p>
+<p>Código de referencia:</p>
+<p>app.MapGet(&quot;/tellmeajoke&quot;, async () =&gt; {</p>
+<p>var client = new HttpClient();</p>
+<p>var response = await client.GetAsync(&quot;https://official-joke-api.appspot.com/jokes/random&quot;);</p>
+<p>var joke = await response.Content.ReadAsStringAsync();</p>
+<p>return joke;</p>
+<p>});</p>
+<h3>NOTA: Este es un ejemplo en el que quizá necesites usar tu propio conocimiento y juicio para validar que Copilot sigue las mejores prácticas. Que Copilot imite lo que muchos desarrolladores hacen no siempre significa que sea la forma correcta. Puede que tengas que ser muy específico en tu prompt para informar a Copilot de cuáles son las mejores prácticas. Consejo: Presta atención a HttpClient.</h3>
+<p>Copilot puede ayudarte a aprender nuevos frameworks.</p>
+<p>Introduce el texto de abajo en Copilot inline y pulsa Enter.</p>
+<p>/parseurl:</p>
+<p>Retrieves a parameter from querystring called someurl</p>
+<p>Parse the url and return the protocol, host, port, path, querystring and hash</p>
+<p>Return the parsed host</p>
+<p>Código de referencia:</p>
+<p>app.MapGet(&quot;/parseurl&quot;, (string someurl) =&gt; {</p>
+<p>var uri = new Uri(someurl);</p>
+<p>var host = uri.Host;</p>
+<p>var protocol = uri.Scheme;</p>
+<p>var port = uri.Port;</p>
+<p>var path = uri.AbsolutePath;</p>
+<p>var query = uri.Query;</p>
+<p>var hash = uri.Fragment;</p>
+<p>return host;</p>
+<p>});</p>
+<p>Copilot también puede ayudar con este tipo de comandos localmente. La función se llama Copilot en la línea de crédito. Puedes obtener más información sobre esta función aquí.</p>
+<p>Abre Copilot Inline, introduce el texto de abajo y pulsa Enter.</p>
+<p>/listfiles:</p>
+<p>Get the current directory</p>
+<p>Get the list of files in the current directory</p>
+<p>Return the list of files</p>
+<p>Código de referencia:</p>
+<p>app.MapGet(&quot;/listfiles&quot;, () =&gt; {</p>
+<p>var currentDirectory = Directory.GetCurrentDirectory();</p>
+<p>var files = Directory.GetFiles(currentDirectory);</p>
+<p>return files;</p>
+<p>});</p>
+<p>Introduce el texto de abajo en el copilot en línea y pulsa Enter.</p>
+<p>/calculatememoryconsumption:</p>
+<p>Return the memory consumption of the process in GB, rounded to 2 decimals</p>
+<p>Código de referencia:</p>
+<p>*// Calculate memory consumption endpoint*</p>
+<p>app.MapGet(&quot;/calculatememoryconsumption&quot;, () =&gt;</p>
+<p>{</p>
+<p>var process = System.Diagnostics.Process.GetCurrentProcess();</p>
+<p>var memoryUsage = process.WorkingSet64 / (1024.0 * 1024 * 1024); *// Convert to GB*</p>
+<p>return Math.Round(memoryUsage, 2);</p>
+<p>});</p>
+<p>Introduce el texto de abajo en Copilot inline y pulsa Enter.</p>
+<p>/randomeuropeancountry:</p>
+<p>Make an array of european countries and its iso codes</p>
+<p>Return a random country from the array</p>
+<p>Return the country and its iso code</p>
+<p>Código de referencia:</p>
+<p>*// Random European Country endpoint*</p>
+<p>app.MapGet(&quot;/randomeuropeancountry&quot;, () =&gt;</p>
+<p>{</p>
+<p>var europeanCountries = new Dictionary&lt;string, string&gt;</p>
+<p>{</p>
+<p>{ &quot;Albania&quot;, &quot;AL&quot; },</p>
+<p>{ &quot;Andorra&quot;, &quot;AD&quot; },</p>
+<p>{ &quot;Austria&quot;, &quot;AT&quot; },</p>
+<p>{ &quot;Belarus&quot;, &quot;BY&quot; },</p>
+<p>{ &quot;Belgium&quot;, &quot;BE&quot; },</p>
+<p>{ &quot;Bosnia and Herzegovina&quot;, &quot;BA&quot; },</p>
+<p>{ &quot;Bulgaria&quot;, &quot;BG&quot; },</p>
+<p>{ &quot;Croatia&quot;, &quot;HR&quot; },</p>
+<p>{ &quot;Cyprus&quot;, &quot;CY&quot; },</p>
+<p>{ &quot;Czech Republic&quot;, &quot;CZ&quot; },</p>
+<p>{ &quot;Denmark&quot;, &quot;DK&quot; },</p>
+<p>{ &quot;Estonia&quot;, &quot;EE&quot; },</p>
+<p>{ &quot;Finland&quot;, &quot;FI&quot; },</p>
+<p>{ &quot;France&quot;, &quot;FR&quot; },</p>
+<p>{ &quot;Germany&quot;, &quot;DE&quot; },</p>
+<p>{ &quot;Greece&quot;, &quot;GR&quot; },</p>
+<p>{ &quot;Hungary&quot;, &quot;HU&quot; },</p>
+<p>{ &quot;Iceland&quot;, &quot;IS&quot; },</p>
+<p>{ &quot;Ireland&quot;, &quot;IE&quot; },</p>
+<p>{ &quot;Italy&quot;, &quot;IT&quot; },</p>
+<p>{ &quot;Kosovo&quot;, &quot;XK&quot; },</p>
+<p>{ &quot;Latvia&quot;, &quot;LV&quot; },</p>
+<p>{ &quot;Liechtenstein&quot;, &quot;LI&quot; },</p>
+<p>{ &quot;Lithuania&quot;, &quot;LT&quot; },</p>
+<p>{ &quot;Luxembourg&quot;, &quot;LU&quot; },</p>
+<p>{ &quot;Malta&quot;, &quot;MT&quot; },</p>
+<p>{ &quot;Moldova&quot;, &quot;MD&quot; },</p>
+<p>{ &quot;Monaco&quot;, &quot;MC&quot; },</p>
+<p>{ &quot;Montenegro&quot;, &quot;ME&quot; },</p>
+<p>{ &quot;Netherlands&quot;, &quot;NL&quot; },</p>
+<p>{ &quot;North Macedonia&quot;, &quot;MK&quot; },</p>
+<p>{ &quot;Norway&quot;, &quot;NO&quot; },</p>
+<p>{ &quot;Poland&quot;, &quot;PL&quot; },</p>
+<p>{ &quot;Portugal&quot;, &quot;PT&quot; },</p>
+<p>{ &quot;Romania&quot;, &quot;RO&quot; },</p>
+<p>{ &quot;Russia&quot;, &quot;RU&quot; },</p>
+<p>{ &quot;San Marino&quot;, &quot;SM&quot; },</p>
+<p>{ &quot;Serbia&quot;, &quot;RS&quot; },</p>
+<p>{ &quot;Slovakia&quot;, &quot;SK&quot; },</p>
+<p>{ &quot;Slovenia&quot;, &quot;SI&quot; },</p>
+<p>{ &quot;Spain&quot;, &quot;ES&quot; },</p>
+<p>{ &quot;Sweden&quot;, &quot;SE&quot; },</p>
+<p>{ &quot;Switzerland&quot;, &quot;CH&quot; },</p>
+<p>{ &quot;Ukraine&quot;, &quot;UA&quot; },</p>
+<p>{ &quot;United Kingdom&quot;, &quot;GB&quot; },</p>
+<p>{ &quot;Vatican City&quot;, &quot;VA&quot; }</p>
+<p>};</p>
+<p>var random = new Random();</p>
+<p>var index = random.Next(europeanCountries.Count);</p>
+<p>var country = europeanCountries.ElementAt(index);</p>
+<p>return $&quot;{country.Key} ({country.Value})&quot;;</p>
+<p>});</p>
+<h3>Ejercicio 4: Documentar el código</h3>
+<p>Abre la ventana del chat.</p>
+<p>Escribe, documenta el archivo Program.cs y selecciona Enviar.</p>
+<p>GitHubCopiot genera una breve documentación del archivo Program.cs.</p>
+<h3>Ejercicio 5: Pruebas de construcción</h3>
+<p>Abre Program.cs archivo.</p>
+<p>Selecciona el endpoint DaysBetweenDates, pulsa Ctrl+I para abrir el Copilot en línea.</p>
+<p>En la línea de Copilot, escribe /tests y haz clic en el botón Enviar.</p>
+<p>Copia la prueba generada.</p>
+<p>Abre la IntegrationTests.cs desde MinimalAPI.Tests.</p>
+<p>Pégalo en el archivo de CS después del bloque de prueba de Hello World. Resuelve cualquier problema que pueda surgir.</p>
+<p>Abre el chat del Copilot desde el panel izquierdo.</p>
+<p>Escribe , el comando para crear unidades de prueba y pulsa Enter. El Copilot genera un archivo de prueba. Copia su contenido./tests</p>
+<p>Abre IntegrationTests.cs desde MinimalAPI.Tests.</p>
+<p>Sustituye el contenido del archivo por el código generado por Copilot y guarda.</p>
+<p>Importante: Revisa si hay errores y arréglalo usando el comando /fix o manualmente. Usa el código de referencia de abajo para solucionar el problema.</p>
+<p>Si las pruebas no se generan para todos los endpoints, desde el chat, especifica el nombre del endpoint y pide al Copilot que genere la prueba como se indica a continuación. Actualiza los nombres de los endpoints según cuáles se hayan actualizado y cuáles falten en tu prueba.</p>
+<p>generate test units for moviesbydirector, parseurl, listfiles, calculatememoryconsumption and randomeuropeancountry</p>
+<p>Código de referencia:</p>
+<p>using System;</p>
+<p>using System.Net.Http;</p>
+<p>using System.Threading.Tasks;</p>
+<p>using Microsoft.AspNetCore.Mvc.Testing;</p>
+<p>using Xunit;</p>
+<p>public class EndpointTests : IClassFixture&lt;WebApplicationFactory&lt;Program&gt;&gt;</p>
+<p>{</p>
+<p>private readonly WebApplicationFactory&lt;Program&gt; _factory;</p>
+<p>private readonly HttpClient _client;</p>
+<p>public EndpointTests(WebApplicationFactory&lt;Program&gt; factory)</p>
+<p>{</p>
+<p>_factory = factory;</p>
+<p>_client = _factory.CreateClient();</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_HelloWorld_ReturnsHelloWorld()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.Equal(&quot;Hello World!&quot;, stringResponse);</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_ValidatePhoneNumber_ReturnsInvalid()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/validatephonenumber?phonenumber=123456789&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.Equal(&quot;False&quot;, stringResponse);</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_ValidateSpanishDni_ReturnsValid()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/validatespanishdni?dni=12345678Z&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.Equal(&quot;valid&quot;, stringResponse);</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_Color_ReturnsHexCode()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/color?color=red&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.Equal(&quot;#FF0000&quot;, stringResponse); *// assuming red color returns #FF0000*</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_TellMeAJoke_ReturnsJoke()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/tellmeajoke&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.NotNull(stringResponse); *// assuming the joke API always returns a joke*</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_ParseUrl_ReturnsHost()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/parseurl?someurl=https://www.example.com&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.Equal(&quot;www.example.com&quot;, stringResponse);</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_ListFiles_ReturnsFiles()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/listfiles&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.NotNull(stringResponse); *// assuming the API always returns a list of files*</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_CalculateMemoryConsumption_ReturnsMemoryUsage()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/calculatememoryconsumption&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.NotNull(stringResponse); *// assuming the API always returns a memory usage*</p>
+<p>}</p>
+<p>[Fact]</p>
+<p>public async Task Get_RandomEuropeanCountry_ReturnsCountry()</p>
+<p>{</p>
+<p>var response = await _client.GetAsync(&quot;/randomeuropeancountry&quot;);</p>
+<p>response.EnsureSuccessStatusCode();</p>
+<p>var stringResponse = await response.Content.ReadAsStringAsync();</p>
+<p>Assert.NotNull(stringResponse); *// assuming the API always returns a country*</p>
+<p>}</p>
+<p>*// Add similar tests for the other endpoints*</p>
+<p>}</p>
+<p>Desde el terminal, ejecuta el comando, prueba dotnet</p>
+<p>Si la prueba pasa, deberías ver un resultado similar al que aparece en la captura de pantalla de abajo.</p>
+<p>Puedes añadir más pruebas si es necesario.</p>
+<h3>Ejercicio 6: Crear un archivo Dockerfile</h3>
+<p>Haz clic derecho en la carpeta dotnet y selecciona Nuevo archivo y nombra el archivo como Dockerfile.</p>
+<p>Nombra el archivo como Dockerfile.</p>
+<p>En el archivo recién creado, pulsa Ctrl+I, escribe el texto de abajo y pulsa Enter.</p>
+<p>Generar contenido para Dockerfile para .NET 8 Nombre del proyecto - MinimalAPI</p>
+<p>Acepta el código generado.</p>
+<p>Guarda el archivo. Desde el Terminal, ejecuta el siguiente comando.</p>
+<pre class="code-block"><code>docker build -t dotnetapp .</code></pre>
+<p>Usa el código de referencia para resolver errores si los hay.</p>
+<p>Código de referencia:</p>
+<p>*# Use the official .NET SDK image as the base image*</p>
+<p>FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build</p>
+<p>*# Set the working directory in the container*</p>
+<p>WORKDIR /app</p>
+<p>*# Copy the project file(s) to the container*</p>
+<p>COPY *.csproj ./</p>
+<p>*# Copy the remaining source code to the container*</p>
+<h3>COPY . ./</h3>
+<p>*# Build the application*</p>
+<p>RUN dotnet build -c Release</p>
+<p>*# Publish the application*</p>
+<p>RUN dotnet publish -c Release --no-build -o out</p>
+<p>*# Use the official .NET runtime image as the base image for the final stage*</p>
+<p>FROM mcr.microsoft.com/dotnet/runtime:8.0 AS runtime</p>
+<p>*# Set the working directory in the container*</p>
+<p>WORKDIR /app</p>
+<p>*# Copy the published output from the build stage to the final stage*</p>
+<p>COPY --from=build /app/out ./</p>
+<p>*# Set the entry point for the container*</p>
+<p>ENTRYPOINT [&quot;dotnet&quot;, &quot;MinimalAPI.dll&quot;]</p>
+<p>Ejecuta el siguiente comando para ejecutar la app en el puerto 8080</p>
+<pre class="code-block"><code>docker run -d -p 8080:80 --name dotnetapp dotnetapp</code></pre>
+<p>Ahora tenemos la app dotnet ejecutándose en el docker.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 21 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

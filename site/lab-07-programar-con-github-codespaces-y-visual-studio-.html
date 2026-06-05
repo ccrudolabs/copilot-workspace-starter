@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 07 GH-300 generado desde Lab_07_Codespaces_VSCode.docx." />
+    <title>Laboratorio 07 | Programar con GitHub Codespaces y Visual Studio Code</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 07</p>
+        <h1>Programar con GitHub Codespaces y Visual Studio Code</h1>
+        <p>Configuración y uso de GitHub Codespaces como entorno de desarrollo cloud integrado con Visual Studio Code para productividad máxima.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_07_Codespaces_VSCode.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_07_Codespaces_VSCode.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 07</h2>
+<p>GitHub Codespaces y Visual Studio Code</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Configuración y uso de GitHub Codespaces como entorno de desarrollo cloud integrado con Visual Studio Code para productividad máxima.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Crear y configurar Codespaces</p>
+<p>Dev containers (devcontainer.json)</p>
+<p>VS Code en el navegador vs desktop</p>
+<p>Extensiones y personalización del entorno</p>
+<p>Copilot en Codespaces</p>
+<h2>Laboratorio 07: GitHub Codespaces y Visual Studio Code</h2>
+<h2>Lab 07: Programando con GitHub Codespaces y Visual Studio Code</h2>
+<h2>Objetivo:</h2>
+<p>Imagina que eres un desarrollador trabajando en un proyecto que requiere un entorno de desarrollo alojado en la nube para facilitar la colaboración y Agiliza tu flujo de trabajo. Para aumentar tu productividad y gestionar tu Más eficazmente configurado en desarrollo, decides usar GitHub Codespaces con Visual Studio Code. Esta configuración te permite crear y personalizar entornos de desarrollo directamente en la nube, facilitando la Colabora con tu equipo y gestiona las configuraciones de proyectos eficientemente.</p>
+<p>En este laboratorio práctico, tú deberás:</p>
+<p>Inicia un Codespace: Crea y lanza un Codespace en GitHub usando plantillas predefinidas.</p>
+<p>Personaliza configuraciones: Personaliza las configuraciones de tu proyecto dentro del espacio de código para adaptarse a tus necesidades de desarrollo.</p>
+<p>Gestionar los espacios de código: Gestiona y navega eficientemente por tus espacios de códigos, garantizar un proceso de desarrollo fluido y ordenado.</p>
+<p>Push Code to Repository: Practica cómo empujar tus cambios de código desde el codespace al repositorio de GitHub, reforzando tu capacidad de Integra el trabajo de desarrollo con control de versiones.</p>
+<h3>Ejercicio #1: Configurar un nuevo Repositorio y crear un espacio de código en GitHub)</h3>
+<p>Inicia sesión en tu cuenta de GitHub.</p>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/code-with-codespaces</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública &quot;código-de habilidades con espacios de código&quot;.</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: skills-code-with-codespaces</p>
+<p>Tipo de repositorio: Público</p>
+<p>Una vez creado el repositorio, haz clic en el botón de Código.</p>
+<p>Selecciona la pestaña Codespaces en la ventana emergente y luego haz clic en el botón Crear codespace en el botón principal.</p>
+<h3>Nota: El espacio de código se abrirá en una nueva pestaña del navegador.</h3>
+<p>El navegador mostrará un editor web basado en VS Code y un terminal Debería estar presente como se muestra a continuación.</p>
+<p>Espera 2 minutos a que el espacio de código (una máquina virtual) gire se levantaba solo.</p>
+<p>Vuelve al repositorio skills-code-with-codespaces y Haz clic en el botón de Código</p>
+<h3>Nota: si el espacio de código recién creado no se carga, entonces actualiza la página.</h3>
+<p>Haz clic en la puntería suspensiva... en el espacio de código activo.</p>
+<h3>Nota: El nombre del espacio de código puede diferir en tu caso</h3>
+<p>Selecciona Abrir en Visual Studio Code en el menú emergente.</p>
+<p>Una ventana emergente pedirá confirmación para abrir el espacio de código en la aplicación VS code. Selecciona Abrir Código Visual Studio para abrir el espacio de código.</p>
+<p>Se te pedirá que instales la extensión de GitHub Codespaces, que hagas clic en instalar extensión y que abras URI.</p>
+<p>Una vez instalado, verás una ventana emergente pidiendo más permisos. Haz clic en Autorizar código Visual Studio</p>
+<p>Confirma el acceso introduciendo la contraseña de tu cuenta de GitHub.</p>
+<h3>Nota: Si ves que aparece la opción Permitir el Cortafuegos de Windows, por favor permite que continúes.</h3>
+<h3>Ejercicio #2: Envía código a tu repositorio desde el espacio de código</h3>
+<p>Desde dentro del espacio de código en la ventana del explorador de código de VS, selecciona el archivo index.html.</p>
+<p>Sustituye el conector h1 por lo siguiente:</p>
+<p>&lt;h1&gt;Hello from the codespace!&lt;/h1&gt;</p>
+<p>Guarda el archivo.</p>
+<h3>Nota: El archivo debería guardarse automáticamente.</h3>
+<p>Utiliza el terminal VS Code para confirmar el cambio de archivo introduciendo la Siguiente mensaje de confirmación:</p>
+<pre class="code-block"><code>git commit -a -m &quot;¡Añadiendo hola desde el espacio de código!&quot;</code></pre>
+<p>Envía los cambios de nuevo a tu repositorio. Desde el terminal VS Code, introduzca:</p>
+<pre class="code-block"><code>git push</code></pre>
+<p>¡El nuevo código de VS ha sido enviado a tu repositorio!</p>
+<p>Vuelve a la página principal de tu repositorio y ve el index.html verificar que el nuevo código se envió a tu repositorio.</p>
+<p>Espera unos 20 segundos y luego actualiza esta Acciones de GitHub Actualiza automáticamente al siguiente paso.</p>
+<h2>Resumen:</h2>
+<p>Ahora has usado GitHub Codespaces y Visual Studio Code para</p>
+<p>Crea y lanza un Codespace en GitHub usando plantillas predefinidas.</p>
+<p>Push Code to Repository: Practica cómo empujar tus cambios de código desde el codespace al repositorio de GitHub, reforzando tu capacidad de Integra el trabajo de desarrollo con control de versiones.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 07 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

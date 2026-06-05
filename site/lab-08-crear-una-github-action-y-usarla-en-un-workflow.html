@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 08 GH-300 generado desde Lab_08_GitHub_Actions_Custom.docx." />
+    <title>Laboratorio 08 | Crear una GitHub Action y usarla en un workflow</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 08</p>
+        <h1>Crear una GitHub Action y usarla en un workflow</h1>
+        <p>Construcción y uso de GitHub Actions personalizadas para automatizar tareas únicas en flujos de trabajo de CI/CD.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_08_GitHub_Actions_Custom.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_08_GitHub_Actions_Custom.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 08</h2>
+<p>Crear una GitHub Action Personalizada</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Construcción y uso de GitHub Actions personalizadas para automatizar tareas únicas en flujos de trabajo de CI/CD.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Anatomía de una GitHub Action</p>
+<p>action.yml: inputs, outputs, runs</p>
+<p>Docker actions vs JavaScript actions</p>
+<p>Publicar y versionar una Action</p>
+<p>Uso en workflows (.github/workflows/)</p>
+<h2>Laboratorio 08: Crear una GitHub Action Personalizada</h2>
+<h2>Lab 08: Crea una acción en GitHub y úsala en un flujo de trabajo</h2>
+<h2>Objetivo:</h2>
+<p>Imagina que formas parte de un equipo de desarrollo que quiere agilizar tu proceso de desarrollo automatizando tareas repetitivas. Para mejorar la eficiencia, decides aprovechar GitHub Actions, que te permite automatizar tareas como pruebas, despliegue y revisiones de código directamente dentro de tu repositorio de GitHub. Configurando una acción en GitHub e integrándola en tu flujo de trabajo, puedes asegurarte de que las tareas esenciales se realicen automáticamente, ahorrando tiempo y reduciendo el esfuerzo manual.</p>
+<p>En este laboratorio práctico, tú deberás:</p>
+<p>Configura un archivo de flujo de trabajo en el directorio .github/workflows, definiendo el contenido y especificar los eventos que desencadenan el flujo de trabajo.</p>
+<p>Practica añadir y comprometer archivos de flujo de trabajo en tu repositorio para Integra GitHub Actions en tu proceso de desarrollo.</p>
+<h3>Ejercicio #1: Crea un nuevo repositorio a partir de una plantilla pública</h3>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/hello-github-actions</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública &quot;skills-hola-github-actions&quot;.</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: skills-hello-github-actions</p>
+<p>Tipo de repositorio: Público</p>
+<h3>Ejercicio #2: Crea un archivo de flujo de trabajo</h3>
+<p>En la página de inicio del repositorio recién creado, navega a la pestaña de Pull requests.</p>
+<p>En la página siguiente, haz clic en el botón de nueva solicitud de tirada.</p>
+<p>En la página Comparar cambios, selecciona base: main y compare: welcome-workflow y haz clic en Crear pull request.</p>
+<p>En la página Abrir una solicitud pull, haz clic en Crear solicitud pull.</p>
+<p>Navega a la pestaña de código.</p>
+<p>En la página siguiente, desde el desplegable de la rama principal, haz clic en la rama de flujo de trabajo de bienvenida.</p>
+<p>Una vez que la rama principal cambie a flujo de trabajo de bienvenida, navega a la carpeta .github/workflows, luego selecciona Añadir archivo y haz clic en Crear nuevo archivo.</p>
+<p>En la página de creación de archivos, introduce el nombre del archivo como welcome.yml</p>
+<p>En la página del editor, añade el siguiente contenido al welcome.yml file: y haz clic en Confirmar cambios.</p>
+<p>name: Post welcome comment</p>
+<p>on:</p>
+<p>pull_request:</p>
+<p>types: [opened]</p>
+<p>permissions:</p>
+<p>pull-requests: write</p>
+<p>En la página de Commit cambios haz clic en confirmar cambios.</p>
+<p>Espera 20 segundos a que se ejecuten acciones, luego actualiza esto y un La acción cerrará automáticamente este paso.</p>
+<h2>Resumen:</h2>
+<p>Ahora has adquirido experiencia práctica en la configuración y gestión de Acciones en GitHub, mejorando tu capacidad para automatizar y optimizar tus flujos de trabajo de desarrollo de software.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 08 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

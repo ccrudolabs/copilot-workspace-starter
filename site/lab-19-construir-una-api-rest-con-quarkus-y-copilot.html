@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 19 GH-300 generado desde Lab_19_Quarkus_API_REST.docx." />
+    <title>Laboratorio 19 | Construir una API REST con Quarkus y Copilot</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 19</p>
+        <h1>Construir una API REST con Quarkus y Copilot</h1>
+        <p>Hemos creado un proyecto de Quarkus con algunos archivos ya creados, puedes encontrar el proyecto en la carpeta exercisefiles/quarkus.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_19_Quarkus_API_REST.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_19_Quarkus_API_REST.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 19</h2>
+<p>API REST con Quarkus y GitHub Copilot</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Desarrollo de una API REST usando el framework Quarkus (supersónico y subatómico) con la asistencia de GitHub Copilot para generación de código Java.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Quarkus vs Spring Boot: diferencias clave</p>
+<p>GitHub Copilot en desarrollo Java/Quarkus</p>
+<p>RESTful endpoints con JAX-RS</p>
+<p>Quarkus Dev Mode y hot reload</p>
+<p>Tests con QuarkusTest</p>
+<p>Build nativo con GraalVM</p>
+<h2>Laboratorio 19: API REST con Quarkus y GitHub Copilot</h2>
+<h2>Laboratorio 19 - Construir una API REST usando Quarkus con la ayuda de GitHub CopilotGoal</h2>
+<p>El objetivo de este laboratorio es aprender a usar GitHub Copilot, utilizando tareas que consisten en construir una API REST usando https://quarkus.io/.</p>
+<p>Hemos creado un proyecto de Quarkus con algunos archivos ya creados, puedes encontrar el proyecto en la carpeta exercisefiles/quarkus.</p>
+<p>Empecemos a copilotar!!</p>
+<h3>Tarea 1 - Crear el código para manejar una simple solicitud GET</h3>
+<p>Pasa al archivo &#x27;DemoResource.java&#x27; y empieza a escribir el código para gestionar una simple solicitud GET.</p>
+<p>En este primer paso, hemos proporcionado un comentario que describe el código que necesitas generar. Solo pulsa enter y espera un par de segundos.</p>
+<p>Copilot generará el código por ti. Si no estás satisfecho con el código, pulsa Ctrl +Enter y te sugerirá varias opciones de código.</p>
+<p>. Si no estás satisfecho con el código generado, puedes pulsar enter de nuevo y Copilot generará un nuevo código</p>
+<p>Ve a test/java/com/Microsoft/hackthon/quarkus/ y haz clic en DemoResourceTest.java. Ya existe una prueba unitaria implementada para esta tarea.</p>
+<p>Haz clic en Terminal -&gt; Nueva Terminal.</p>
+<p>Selecciona Gitbash.</p>
+<p>Ejecuta el comando. cd exercisefiles/quarkus/copilot-demo/</p>
+<p>Puedes ejecutarlo usando los comandos antes y después para validar que el código generado por Copilot es correcto.mvn test</p>
+<p>Después de cada tarea, siéntete libre de empaquetar y ejecutar tu aplicación para probarla.</p>
+<p>Paquete: mvn package</p>
+<p>Corre: mvn quarkus:dev</p>
+<p>Haz clic en Dividir terminal, introduce el comando en elsegundo terminal yejecuta</p>
+<pre class="code-block"><code>curl -v http:*//localhost:8080/hello?key=world*
+curl http:*//localhost:8080/hello*
+curl http:*//localhost:8080/hello?key=world*</code></pre>
+<h3>Tarea 2: Comparación de fechas</h3>
+<p>Nueva operación bajo /diffdates que calcula la diferencia entre dos fechas. La operación debe recibir dos fechas como parámetro en formato dd-MM-yyyy y devolver la diferencia en días.</p>
+<p>Escribe el siguiente comentario y pulsa Enter*// New operation under /diffdates that calculates the difference between two dates. The operation should receive two dates as parameter in format dd-MM-yyyy and return the difference in days.*</p>
+<h3>Nota: El comentario está en el archivo DemoResource.java. C:\CopiolHackathon\exercisefiles\ quarkus\ copilot-demo\src\main\ java\com\microsoft\hackathon\quarkus\DemoResource.java</h3>
+<p>Pulsa tab y otra vez Tab para aceptar el código.</p>
+<p>Abre DemoResourceTest.java archivo, crea una prueba unitaria que valide la operación. Añade y luego pulsa Enter.*//Create a unit test to validate /diffdates that calculates the difference between two dates*</p>
+<p>Pulsa tab para aceptar el código. También puedes usar el siguiente código.</p>
+<p>package com.microsoft.hackathon.quarkus;</p>
+<p>import jakarta.ws.rs.GET;</p>
+<p>import jakarta.ws.rs.Path;</p>
+<p>import jakarta.ws.rs.Produces;</p>
+<p>import jakarta.ws.rs.QueryParam;</p>
+<p>import jakarta.ws.rs.client.Client;</p>
+<p>import jakarta.ws.rs.client.ClientBuilder;</p>
+<p>import jakarta.ws.rs.client.WebTarget;</p>
+<p>import jakarta.ws.rs.core.MediaType;</p>
+<p>import jakarta.ws.rs.core.Response;</p>
+<p>import java.io.File;</p>
+<p>import java.io.FileInputStream;</p>
+<p>import java.io.IOException;</p>
+<p>import java.io.InputStream;</p>
+<p>import java.net.URL;</p>
+<p>import java.nio.file.Files;</p>
+<p>import java.nio.file.Paths;</p>
+<p>import java.text.SimpleDateFormat;</p>
+<p>import java.util.ArrayList;</p>
+<p>import java.util.Date;</p>
+<p>import java.util.List;</p>
+<p>import java.util.Objects;</p>
+<p>import com.fasterxml.jackson.databind.JsonNode;</p>
+<p>import com.fasterxml.jackson.databind.ObjectMapper;</p>
+<p>import com.fasterxml.jackson.databind.node.ObjectNode;</p>
+<p>import io.quarkus.fs.util.ZipUtils;</p>
+<p>*/* *</p>
+<p>The Demo resource should be mapped to the root path.*</p>
+<p>*</p>
+<p>Create a GET operation to return the value of a key passed as query parameter in the request. *</p>
+<p>*</p>
+<p>If the key is not passed, return &quot;key not passed&quot;.*</p>
+<p>If the key is passed, return &quot;hello &lt;key&gt;&quot;.*</p>
+<p>*</p>
+<p>/*</p>
+<pre class="code-block"><code>@Path(&quot;/&quot;)</code></pre>
+<p>public class DemoResource {</p>
+<pre class="code-block"><code>@GET
+@Path(&quot;/hello&quot;)
+@Produces(MediaType.TEXT_PLAIN)</code></pre>
+<p>public String hello(@QueryParam(&quot;key&quot;) String key) {</p>
+<p>if (key == null) {</p>
+<p>return &quot;key not passed&quot;;</p>
+<p>} else {</p>
+<p>return &quot;hello &quot; + key;</p>
+<p>}</p>
+<p>}</p>
+<p>*// New operation under /diffdates that calculates the difference between two dates. The operation should receive two dates as parameter in format dd-MM-yyyy and return the difference in days. *</p>
+<pre class="code-block"><code>@GET
+@Path(&quot;/diffdates&quot;)
+@Produces(MediaType.TEXT_PLAIN)</code></pre>
+<p>public String diffdates(@QueryParam(&quot;date1&quot;) String date1, @QueryParam(&quot;date2&quot;) String date2) {</p>
+<p>Objects.requireNonNull(date1, &quot;date1 must not be null&quot;);</p>
+<p>Objects.requireNonNull(date2, &quot;date2 must not be null&quot;);</p>
+<p>try {</p>
+<p>SimpleDateFormat dateFormat = new SimpleDateFormat(&quot;dd-MM-yyyy&quot;);</p>
+<p>Date date1Obj = dateFormat.parse(date1);</p>
+<p>Date date2Obj = dateFormat.parse(date2);</p>
+<p>long diffMillis = Math.abs(date1Obj.getTime() - date2Obj.getTime());</p>
+<p>long diffDays = diffMillis / (24 * 60 * 60 * 1000);</p>
+<p>return String.valueOf(diffDays);</p>
+<p>} catch (Exception e) {</p>
+<p>return &quot;invalid date format&quot;;</p>
+<p>}</p>
+<p>}</p>
+<p>Abre el terminal y ejecuta el comando. mvn test</p>
+<p>Empaqueta la solución ejecutando el comando mvn package</p>
+<p>Corre: mvn quarkus:dev or mvn compile quarkus:dev</p>
+<p>Terminal dividido y recorrido curl -v http:*//localhost:8080/diffdates*</p>
+<h3>Tarea 3: Validar el formato de un teléfono español</h3>
+<p>Valida el formato de un número de teléfono español (+34 prefijo, luego 9 dígitos, empezando por 6, 7 o 9). La operación debe recibir un número de teléfono como parámetro y devolver true si el formato es correcto, falso en caso contrario.</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar el código de sugerencia Copilot.*//Validate the format of a spanish phone number (+34 prefix, then 9 digits, starting with 6, 7 or 9). The operation should receive a phone number as parameter and return true if the format is correct, false otherwise*</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar las pruebas unitarias sugeridas por copilot*// write unit test to Validate the format of a spanish phone number (+34 prefix, then 9 digits, starting with 6, 7 or 9). The operation should receive a phone number as parameter and return true if the format is correct, false otherwise*</p>
+<p>Abre el terminal y ejecuta .mvn test</p>
+<p>¡Corre mvn package</p>
+<p>¡Corre mvn quarkus:dev</p>
+<p>Haz clic en dividir terminal y ejecuta en uno de los terminales -</p>
+<pre class="code-block"><code>curl -v http:*//localhost:8080/validatephone?phone=+34866666666*
+curl -v http:*//localhost:8080/validatephone?phone=+34666666667*
+curl -v http:*//localhost:8080/validatephone?phone=+34666666666*</code></pre>
+<h3>Tarea 4: Validar el formato de un DNI español</h3>
+<p>Valida el formato de un DNI español (8 dígitos y 1 letra). La operación debe recibir un DNI como parámetro y devolver true si el formato es correcto, false en caso contrario.</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar el código de sugerencia del Copilot.*// Validate the format of a spanish DNI (8 digits and 1 letter). The operation should receive a DNI as parameter and return true if the format is correct, false otherwise.*</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//Write unit test to Validate the format of a spanish DNI (8 digits and 1 letter). The operation should receive a DNI as parameter and return true if the format is correct, false otherwise.*</p>
+<p>Abrir la terminal y correr mvn test</p>
+<p>¡Corre mvn package</p>
+<p>Corre: mvn quarkus:dev</p>
+<p>Prueba: curl -v http:*//localhost:8080/hello/validatedni?dni=12345678A*</p>
+<h3>Tarea 5: Del nombre del color al código hexadecimal</h3>
+<p>Basándonos en el archivo de colors.json existente bajo recursos, dado el nombre del color como parámetro de camino, devuelven el código hexadecimal. Si no se encuentra el color, devuelva 404</p>
+<p>Consejo: Usa TDD. Empieza creando la prueba unitaria y luego implementa el código.</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar el código de sugerencia del Copilot.*// Based on the existing colors.json file under resources, given the name of the color as path parameter, return the hexadecimal code. If the color is not found, return 404.*</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//Write unit test to Based on the existing colors.json file under resources, given the name of the color as path parameter, return the hexadecimal code. If the color is not found, return 404.*</p>
+<p>¡Corre mvn test</p>
+<p>¡Corre mvn package</p>
+<p>Corre: mvn quarkus:dev</p>
+<p>Prueba: curl -v http:*//localhost:8080/hello/color?color=red*</p>
+<h3>Tarea 6: Creador de chistes</h3>
+<p>Crear una nueva operación que llame a la API https://api.chucknorris.io/jokes/random y devuelven el chiste.</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar el código de sugerencia del Copilot.*// Create a new operation that call the API https://api.chucknorris.io/jokes/random and return the joke.*</p>
+<p>Pulsa tab para aceptar el código</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//Create a new operation that call the API [&lt;u&gt;https://api.chucknorris.io/jokes/random&lt;/u&gt;](https://api.chucknorris.io/jokes/random) and return the joke.*</p>
+<p>Pulsa tab para aceptar el código.</p>
+<p>Haz clic en Terminal -&gt; New Terminal -&gt; Gitbash y ejecuta los comandos a continuación</p>
+<pre class="code-block"><code>cd exercisefiles/quarkus/copilot-demo/
+mvn test</code></pre>
+<p>Ejecuta para empaquetar tu solicitud.mvn package</p>
+<p>Corre: mvn quarkus:dev</p>
+<p>Prueba: curl -v http:*//localhost:8080/hello/joke*</p>
+<h3>Tarea 7: Análisis de URL</h3>
+<p>Dado un parámetro de consulta de una URL, analizarlo y devolver los parámetros de protocolo, host, puerto, ruta y consulta. La respuesta debería estar en formato Json.</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar el código de sugerencia del Copilot.*//Given a url as query parameter, parse it and return the protocol, host, port, path and query parameters. The response should be in Json format.*</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//Write unit test for Given a url as query parameter, parse it and return the protocol, host, port, path and query parameters. The response should be in Json format.*</p>
+<p>¡Corre mvn test</p>
+<p>Ejecuta para empaquetar tu solicitud.mvn package</p>
+<p>¡Corre mvn quarkus:dev</p>
+<p>Haz clic en split terminal y ejecuta curl -v http:*//localhost:8080/hello/parseurl?url=https://www.google.com/search?q=quarkus*</p>
+<h3>Tarea 9: Contar palabras</h3>
+<p>Dado el camino de un archivo y cuenta el número de veces que aparece una palabra proporcionada. El camino y la palabra deberían ser parámetros de consulta. La respuesta debería estar en formato Json.</p>
+<p>Escribe y pulsa Enter. Pulsa tab para aceptar el código de sugerencia del Copilot.*//Given the path of a file and count the number of occurrence of a provided word. The path and the word should be query parameters. The response should be in Json format.*</p>
+<p>Cambia a CopilotDemoApplicationTests.java. Para escribir una prueba unitaria que pruebe la función anterior, añade Pulse Enter. Pulse la pestaña para aceptar el código.*//Write unit test to Given the path of a file and count the number of occurrence of a provided word. The path and the word should be query parameters. The response should be in Json format.*</p>
+<p>Abrir la terminal y correr mvn test</p>
+<p>Ejecuta para empaquetar tu solicitud.mvn package</p>
+<p>Corre: mvn quarkus:dev</p>
+<p>Prueba: curl &lt;http:*//localhost:8080/hello/countword?path=/tmp/test.txt&amp;word=hello*</p>
+<p>Puedes pedir a GitHub Copilot el comando curl para tu proyecto.</p>
+<h3>Tarea 10: Contenerizar la aplicación</h3>
+<p>Utiliza el archivo Docker proporcionado para crear una imagen docker de la aplicación. En este caso, se proporciona el contenido completo, pero para construir, ejecutar y probar la imagen docker, también usarás Copilot para generar los comandos.</p>
+<p>He creado un archivo DOCKER.md donde documentaremos los pasos para construir la aplicación (nativa), construiremos la imagen del contenedor, ejecutaremos el contenedor y probaremos el contenedor.</p>
+<p>En el código de Visual Studio, pulsa Ctrl + Shift + X Busca Docker e instálalo.</p>
+<p>Haz doble clic en Docker de escritorio y inicia sesion con tu cuenta Docker.</p>
+<p>Pulsa Ctrl + Alt+I para abrir el chat de Copilot en Github. Pregunta a tu Copilot how to build the container image, run the container, and test the container with the provided Dockerfile</p>
+<p>Sigue la instrucción de Copilot. Construye la aplicación: Ejecuta el siguiente comando en tu terminal:</p>
+<pre class="code-block"><code>./mvnw package -Pnative -Dquarkus.native.container-build=true</code></pre>
+<p>Construir la imagen de Docker: Suponiendo que tu Dockerfile se llame Dockerfile.native-micro, puedes usar el siguiente comando:</p>
+<pre class="code-block"><code>docker build -f Dockerfile.native-micro -t my-app .</code></pre>
+<p>Este comando indica a Docker que construya una imagen usando el Dockerfile llamada &#x27;Dockerfile.native-micro&#x27; en el directorio actual (&#x27;.&#x27; al final del comando), y que marque la imagen resultante con el nombre &#x27;my-app&#x27;.</p>
+<p>Ejecuta la imagen Docker: Después de construir la imagen, puedes ejecutarla con el comando &#x27;docker run&#x27;:</p>
+<pre class="code-block"><code>docker run -p 8080:8080 my-app</code></pre>
+<p>Este comando indica a Docker que ejecute un contenedor desde la imagen &#x27;my-app&#x27; y que mape el puerto 8080 del contenedor al puerto 8080 de la máquina anfitriona.</p>
+<p>Prueba la aplicación: Finalmente, para comprobar si tu aplicación funciona correctamente, puedes enviar una solicitud desde tu navegador o usando una herramienta como:http:*//localhost:8080*curl</p>
+<pre class="code-block"><code>curl http:*//localhost:8080*</code></pre>
+<p>Este comando envía una solicitud GET a tu solicitud y imprime la respuesta. Si tu aplicación funciona correctamente, deberías ver la respuesta esperada.</p>
+<p>Ten en cuenta que estos comandos deben ejecutarse en tu terminal, no en el código de tu aplicación Java.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 19 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

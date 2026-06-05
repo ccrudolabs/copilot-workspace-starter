@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 14 GH-300 generado desde Lab_14_Supply_Chain.docx." />
+    <title>Laboratorio 14 | Asegurar la cadena de suministro del repositorio</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 14</p>
+        <h1>Asegurar la cadena de suministro del repositorio</h1>
+        <p>Implementación de controles de seguridad para la cadena de suministro de software: Dependabot, SBOM, políticas de dependencias y revisión de código.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_14_Supply_Chain.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_14_Supply_Chain.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 14</h2>
+<p>Asegurar la Cadena de Suministro del Repositorio</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Implementación de controles de seguridad para la cadena de suministro de software: Dependabot, SBOM, políticas de dependencias y revisión de código.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Dependabot alerts y security updates</p>
+<p>SBOM (Software Bill of Materials)</p>
+<p>Dependency Review Action</p>
+<p>Policy as Code para dependencias</p>
+<p>Supply chain attacks: mitigaciones</p>
+<h2>Laboratorio 14: Asegurar la Cadena de Suministro del Repositorio</h2>
+<h2>Laboratorio 14: Asegura la cadena de suministro de tu repositorio</h2>
+<p>Objetivos:</p>
+<p>Imagina que eres responsable de mantener la seguridad de un software Proyecto que depende de diversas dependencias de terceros. Para asegurar que La integridad y seguridad de la cadena de suministro de tu proyecto es crucial para Comprende y gestiona estas dependencias de forma eficaz. Esto implica identificar posibles vulnerabilidades dentro de tus dependencias y Aplicando los parches necesarios para asegurar tu proyecto. En este laboratorio, aprende a usar la función de grafos de dependencias de GitHub para monitorizar y revisa tus dependencias, asegurándote de que tu proyecto siga siendo seguro y Actualizado.</p>
+<p>En este laboratorio práctico, tú deberás:</p>
+<p>Habilitar grafo de dependencias: Habilitar y verificar el grafo de dependencias función en la configuración de tu repositorio para visualizar los proyectos dependencias.</p>
+<p>Añadir una nueva dependencia: Añadir una nueva dependencia a tu proyecto y Asegúrate de que esté bien integrado.</p>
+<p>Revisar el grafo de dependencias: Utilizar el grafo de dependencias para revisar y confirmar que la nueva dependencia se refleja correctamente y vigilado.</p>
+<h3>Ejercicio 01: Crear un nuevo repositorio</h3>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/secure-repository-supply-chain</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública habilidades-seguro-repositorio-cadena de suministro</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: habilidades-seguro-repositorio-cadena de suministro</p>
+<p>Tipo de repositorio: Público</p>
+<h3>Ejercicio 02: Verificar que el grafo de dependencias esté habilitado</h3>
+<p>En la página de aterrizaje del repositorio recién creado, navega a la pestaña de Configuración.</p>
+<p>En la página de Configuración, selecciona Seguridad y análisis de código disponibles en Seguridad.</p>
+<p>Verificar/activar el grafo de dependencias. (Si el repositorio es privado, lo harás Actívalo aquí. Si el repositorio es público, se habilitará mediante por defecto)</p>
+<h3>Ejercicio 03: Añade una nueva dependencia y ve tu gráfico de dependencias</h3>
+<p>Ve a la pestaña de Código y localiza la carpeta code/src/AttendeeSite.</p>
+<h3>Nota: Puedes navegar hasta la carpeta o usar la búsqueda de archivos Ir a archivos code/src/AttendeeSite</h3>
+<p>Abre el archivo package-lock.json.</p>
+<p>Inserte el siguiente fragmento de código entre la línea #14 y la línea #15</p>
+<p>&quot;follow-redirects&quot;: {</p>
+<p>&quot;version&quot;: &quot;1.14.1&quot;,</p>
+<p>&quot;resolved&quot;:</p>
+<p>&quot;https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.1.tgz&quot;,</p>
+<p>&quot;integrity&quot;:</p>
+<p>&quot;sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==&quot;</p>
+<p>},</p>
+<h3>Nota: Por favor, asegúrate de que el fragmento de código añadido esté correctamente indentado como se muestra en la captura de pantalla</h3>
+<p>Haz clic en Confirmar cambios en la esquina superior derecha.</p>
+<p>En la barra principal de navegación, haz clic en la pestaña de Ideas.</p>
+<p>En el panel de navegación izquierdo, haz clic en el grafo de dependencias.</p>
+<p>Revisa todas las nuevas dependencias en el hub de Dependencias.</p>
+<p>Busca redirecciones de seguimiento y revisa la nueva dependencia que acabas de hacer añadió.</p>
+<h2>Resumen:</h2>
+<p>Ahora has adquirido valiosos conocimientos sobre cómo gestionar las dependencias de tu proyecto y proteger la cadena de suministro de tu repositorio, lo que te permite abordar y mitigar proactivamente los riesgos de seguridad.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 14 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 16 GH-300 generado desde Lab_16_Historial_Commits.docx." />
+    <title>Laboratorio 16 | Eliminar historial de commits de un repositorio</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 16</p>
+        <h1>Eliminar historial de commits de un repositorio</h1>
+        <p>Técnicas seguras para limpiar el historial de commits de un repositorio Git, incluyendo eliminación de datos sensibles y reducción del tamaño del repo.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_16_Historial_Commits.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_16_Historial_Commits.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 16</h2>
+<p>Eliminar Historial de Commits de un Repositorio Git</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Técnicas seguras para limpiar el historial de commits de un repositorio Git, incluyendo eliminación de datos sensibles y reducción del tamaño del repo.</p>
+<p>Temas que cubre este laboratorio:</p>
+<pre class="code-block"><code>git filter-branch vs git filter-repo</code></pre>
+<p>BFG Repo Cleaner</p>
+<p>Force push y sincronización del equipo</p>
+<p>Eliminar archivos sensibles del historial</p>
+<p>Squash de commits para historial limpio</p>
+<h2>Laboratorio 16: Eliminar Historial de Commits de un Repositorio Git</h2>
+<h2>Laboratorio 16: Eliminar el historial de commitos de un repositorio git</h2>
+<h2>Objetivo:</h2>
+<p>Imagina que formas parte de un equipo de desarrollo trabajando en un proyecto donde información sensible, como claves API o credenciales de base de datos, era accidentalmente comprometido en tu repositorio Git. Los commits accidentales pueden ser Complicado de eliminar con Git.</p>
+<p>En este laboratorio, tú deberás:</p>
+<p>Clona el repositorio con datos sensibles comprometidos accidentalmente.</p>
+<p>Eliminar/eliminar el archivo que contiene datos sensibles del clonado y Commit la eliminación.</p>
+<p>Enviar cambios a GitHub: Sube el repositorio actualizado a GitHub a Reflejar los cambios.</p>
+<h3>Ejercicio #1: Crear el repositorio con el historial de confirmación accidental (datos sensibles)</h3>
+<p>Inicia sesión en tu cuenta de GitHub.</p>
+<p>Navega hasta el siguiente enlace: https://github.com/skills/change-commit-history</p>
+<p>En este laboratorio crearás el repositorio usando una plantilla pública &quot;habilidades-cambio-commisión-historia&quot;.</p>
+<p>Selecciona Crear un nuevo repositorio en el menú Usar esta plantilla.</p>
+<p>Introduce los siguientes datos y selecciona Crear Repositorio.</p>
+<p>Nombre del repositorio: habilidades-cambio-commit-historia</p>
+<p>Tipo de repositorio: Público</p>
+<h3>Ejercicio #2: Eliminar/eliminar el archivo (.env en el directorio raíz del proyecto) que contiene datos sensibles</h3>
+<p>En la página de inicio del repositorio clonado, navega a Code&gt;Local&gt;HTTPS y copia la URL.</p>
+<p>Abre PowerShell de Windows e introduce el siguiente comando.</p>
+<pre class="code-block"><code>git clone &lt;your-repository-url&gt;</code></pre>
+<h3>Nota: Sustituye por la URL que copiaste en el paso 1.</h3>
+<p>Cambia al directorio de tu repositorio y introduce el siguiente comando.</p>
+<pre class="code-block"><code>cd &quot;C:\Usuarios\Admin\habilidades-cambiar-commit-history&quot;</code></pre>
+<p>Ejecuta el siguiente comando para eliminar .env de la raíz Directorio,</p>
+<pre class="code-block"><code>git rm .env</code></pre>
+<p>Comprometer la eliminación del archivo .env</p>
+<pre class="code-block"><code>git commit -m &quot;eliminar archivo .env&quot;</code></pre>
+<p>Propina: ¿Cómo eliminar completamente el archivo .env del historial de Git y reescribir el historial total con nuevos hashes de confirmación?</p>
+<p>Utiliza los siguientes comandos para:</p>
+<p>Elimina completamente el archivo .env del historial de Git y reescribe el historial total</p>
+<pre class="code-block"><code>git filter-branch --force --index-filter &#x27;git RM --cached --ignore-unmatch.env&#x27; --prune-empty --tag-name-filter cat -- --all</code></pre>
+<p>Enviar la eliminación a GitHub Git Push Origin --Force -All</p>
+<p>Enviar la eliminación a GitHub:</p>
+<pre class="code-block"><code>git push</code></pre>
+<h2>Resumen:</h2>
+<p>Ahora has completado de limpiar tu repositorio Git, asegurándote de que El contenido sensible no aparece expuesto en el historial del repositorio.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 16 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>

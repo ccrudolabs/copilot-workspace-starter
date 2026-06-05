@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio 00 GH-300 generado desde Lab_00_Preparacion.docx." />
+    <title>Laboratorio 00 | Preparacion del entorno GitHub Copilot</title>
+    <link rel="stylesheet" href="assets/lab-page.css" />
+    <style>
+      .code-block {
+        background: #071827;
+        border-radius: var(--radius);
+        color: #e6f4fb;
+        font-size: 14px;
+        line-height: 1.55;
+        overflow-x: auto;
+        padding: 16px;
+        white-space: pre-wrap;
+      }
+      .source-panel {
+        background: #edf7fa;
+        border: 1px solid #c7e9f0;
+        border-radius: var(--radius);
+        color: #075f70;
+        padding: 18px;
+      }
+      .source-panel strong { color: #06233b; }
+      .doc-content {
+        display: grid;
+        gap: 14px;
+      }
+      .doc-content h2 {
+        color: #06233b;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.05;
+        margin: 28px 0 4px;
+      }
+      .doc-content h3 {
+        color: #06233b;
+        font-size: 22px;
+        margin: 22px 0 0;
+      }
+      .doc-content p { margin: 0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegacion del laboratorio">
+        <a class="brand" href="index.html">
+          <strong>Carlos Crudo</strong>
+          <span>GitHub Copilot Certification Study Hub</span>
+        </a>
+        <div class="nav-actions">
+          <a class="btn secondary" href="index.html#laboratorios">Volver a laboratorios</a>
+          <a class="btn primary" href="simulador-examen.html">Simulador GH-300</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="kicker">Laboratorio 00</p>
+        <h1>Preparacion del entorno GitHub Copilot</h1>
+        <p>Configuración inicial del entorno de laboratorio: creación de cuenta GitHub, activación de licencia Copilot Pro y configuración de extensiones en Visual Studio Code.</p>
+      </div>
+    </section>
+
+    <main>
+      <section class="section alt">
+        <div class="wrap">
+          <div class="grid">
+            <article class="card span-4 success">
+              <p class="kicker">Fuente validada</p>
+              <h3>Lab_00_Preparacion.docx</h3>
+              <p>Esta pagina fue reconstruida desde el documento del ZIP entregado como fuente principal.</p>
+            </article>
+            <article class="card span-4">
+              <p class="kicker">Conformidad visual</p>
+              <h3>Sin imagenes publicadas</h3>
+              <p>El archivo fuente contiene 0 imagenes embebidas. Para garantizar conformidad, no se publican imagenes heredadas de otros materiales.</p>
+            </article>
+            <article class="card span-4 warning">
+              <p class="kicker">Criterio GH-300</p>
+              <h3>Practica verificable</h3>
+              <p>Ejecuta los comandos, captura evidencia propia y valida cada sugerencia de Copilot antes de aceptarla.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="source-panel">
+            <strong>Alcance de publicacion:</strong>
+            Solo se publica el contenido del laboratorio indicado por el archivo <strong>Lab_00_Preparacion.docx</strong>.
+            Las imagenes no se muestran porque el ZIP no incluye imagenes embebidas en este documento.
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="wrap doc-content">
+          <p>Certificación GH-300</p>
+<h2>Laboratorio 00</h2>
+<p>Preparación del Entorno</p>
+<p>Autor: Carlos Crudo</p>
+<p>linkedin.com/in/carloscrudo</p>
+<p>Configuración inicial del entorno de laboratorio: creación de cuenta GitHub, activación de licencia Copilot Pro y configuración de extensiones en Visual Studio Code.</p>
+<p>Temas que cubre este laboratorio:</p>
+<p>Registro en GitHub</p>
+<p>Licencia Copilot Pro (trial 30 días)</p>
+<p>Extensiones VS Code: GitHub Copilot, Docker, Java, Jupyter, Python</p>
+<p>Autenticación 2FA</p>
+<h2>Laboratorio 00: Preparación del Entorno</h2>
+<h2>Laboratorio 0: Preparación para la ejecución del laboratorio</h2>
+<h3>Tarea 1: Registrarse para crear una cuenta en GitHub</h3>
+<h3>Nota: Puedes saltarte la Tarea 1 y empezar con la Tarea 2 si ya has creado una Cuenta de GitHub.</h3>
+<p>Abre una nueva pestaña del navegador y navega a https://github.com/</p>
+<p>Haz clic en registrarse en la página principal de GitHub.</p>
+<p>Introduce tu correo electrónico, contraseña y un nombre de usuario único, y haz clic en Continúa.</p>
+<p>En la siguiente pantalla verifica tu cuenta (resuelve el acertijo) y haz clic Entrégate.</p>
+<p>Una vez verificado el puzle, te llevarán a un correo electrónico Página de verificación.</p>
+<p>Copia el código recibido en tu buzón y pégalo en el Página de verificación.</p>
+<p>Selecciona los detalles necesarios como edad, alumno y haz clic en Continuar</p>
+<p>Has conseguido firmar con éxito una cuenta de GitHub.</p>
+<h3>Tarea 2: Registrarse para la licencia de prueba de GitHub Copilot Pro - La suscripción de prueba es necesaria cuando agotes el límite mensual del nivel gratuito.</h3>
+<h3>Nota: GitHub empezó a ofrecer (a partir del último trimestre de 2024) la versión gratuita de GitHub Copilot por defecto a todos los usuarios de GitHub tanto en Github.com como en Visual Studio Code IDE. El nivel gratuito tiene algunos límites mensuales de uso en cuanto al número de códigos completados e interacciones en el chat de Copilot. Una vez que agotes los límites, se te pedirá que te registres para una prueba de Copilot Pro (si aún no has probado la oferta de prueba, una suscripción de prueba de 30 días a la que puedes suscribirte siguiendo los pasos que se indican a continuación). Asegúrate de cancelar tu licencia antes de que termine la prueba para evitar que te facturen.</h3>
+<p>Abre una pestaña nueva en tu navegador y ve a Registrarse en GitHub Copilot - https://github.com/github-copilot/signup</p>
+<p>Haz clic en Obtener acceso a GitHub Copilot.</p>
+<p>Enter billing information with your personal credit card and then click on Save.</p>
+<p>Enter your billing information and then click on Save payment information button.</p>
+<p>IMPORTANT: Make sure to deactivate the account after you complete the labs to avoid billing for usage.</p>
+<p>Task 3: Install required extensions in Visual Studio code</p>
+<p>Open Visual Studio Code from the Windows Start menu .Click on Accounts -&gt; Backup and Sync Settings and select Sign in.</p>
+<p>Select Sign in with Github option</p>
+<p>Sect the Browser and Sign in with your Copilot enabled Github account.</p>
+<p>Autentica y verifica con el código para completar Twofactor autenticación.</p>
+<p>Haz clic en Visual Studio Code.</p>
+<p>Haz clic en Extensión desde el menú de navegación izquierdo, busca Github Copilot, selecciona y haz clic en Instalar.</p>
+<p>Búsqueda de Docker y lo instalo de Microsoft.</p>
+<p>Búsqueda de Paquete de extensiones para JAVA , seleccionarlo e instálalo.</p>
+<p>Búsqueda de Jupyter, seleccionarlo e instálalo.</p>
+<p>Busca Python, selecciona el de Microsoft e instáltalo.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <p>&copy; Carlos Crudo. Laboratorio 00 preparado desde ZIP validado para GH-300.</p>
+      </div>
+    </footer>
+  </body>
+</html>
