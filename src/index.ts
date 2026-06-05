@@ -1,12 +1,32 @@
-// Función principal que inicia la aplicación.
+import { evaluateResponse, generatePrompt, getStudyPlan } from './gh300Lab';
+
+// Main function that starts the learning app.
 function main(): void {
-  // Leemos el entorno actual desde la variable APP_ENV.
   const environment = process.env.APP_ENV ?? 'dev';
 
-  // Mostramos el entorno y un mensaje base para validar la configuración.
-  console.log(`Entorno activo: ${environment}`);
-  console.log('Hola, este es el proyecto inicial en TypeScript.');
+  console.log(`Active environment: ${environment}`);
+  console.log('GitHub Copilot GH-300 learning lab is ready.');
+
+  const plan = getStudyPlan();
+  console.log('\nStudy plan:');
+  plan.forEach((item, index) => {
+    console.log(`${index + 1}. ${item.title} - ${item.focus}`);
+  });
+
+  const samplePrompt = generatePrompt(
+    'Refactor a TypeScript function and add unit tests',
+    'Use Copilot responsibly, validate suggestions, and mention privacy and security checks.',
+  );
+
+  console.log('\nSample prompt for Copilot practice:');
+  console.log(samplePrompt);
+
+  const result = evaluateResponse(
+    'I will validate the output, add tests, and check privacy and security risks before applying the suggestion.',
+  );
+
+  console.log(`\nSample evaluation score: ${result.score}`);
+  console.log(`Feedback: ${result.feedback}`);
 }
 
-// Ejecutamos la función principal al iniciar el programa.
 main();

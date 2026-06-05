@@ -1,6 +1,16 @@
-# Proyecto base para múltiples modelos y proyectos
+# GitHub Copilot GH-300 Learning App
 
-Este workspace está preparado como base de trabajo para desarrollar, probar y comparar varios modelos o proyectos con una estructura ordenada.
+Autor: Carlos Crudo
+
+Esta aplicación sirve como base completa para estudiar, practicar y demostrar el uso de GitHub Copilot y GitHub con enfoque de examen GH-300. Incluye teoría, escenarios, pruebas unitarias, arquitectura y un flujo de trabajo preparado para aprender desde cero.
+
+## Qué incluye esta app
+- una app TypeScript funcional de ejemplo,
+- una guía de estudio para GH-300,
+- escenarios prácticos de uso de Copilot,
+- pruebas unitarias con Node.js,
+- una arquitectura y topología explicada con Mermaid,
+- una conexión clara con GitHub para colaboración y revisión.
 
 ## Estructura recomendada
 
@@ -16,7 +26,7 @@ Este workspace está preparado como base de trabajo para desarrollar, probar y c
 - usar scripts específicos por entorno,
 - documentar el flujo de GitHub.
 
-## Comandos
+## Comandos útiles
 
 - npm install
 - npm run build
@@ -24,6 +34,13 @@ Este workspace está preparado como base de trabajo para desarrollar, probar y c
 - npm run dev
 - npm run qa
 - npm run prd
+- npm test
+
+## Documentación clave
+- [docs/gh300-study-guide.md](docs/gh300-study-guide.md)
+- [docs/architecture.md](docs/architecture.md)
+- [docs/exam-scenarios.md](docs/exam-scenarios.md)
+- [docs/github-setup.md](docs/github-setup.md)
 
 ## GitHub
 
