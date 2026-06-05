@@ -727,11 +727,13 @@
         <div class="wrap">
           <div class="section-head">
             <p class="kicker">Arquitectura enterprise 360</p>
-            <h2>GitHub Copilot visto como plataforma: personas, agentes, seguridad, costos y ROI.</h2>
+            <h2>Modelo ejecutivo para decidir, gobernar y escalar GitHub Copilot con Zero Trust.</h2>
             <p>
-              Esta sección incorpora la arquitectura 360 y el workbook de licenciamiento preparado
-              por Carlos Crudo. La idea es que el visitante pueda estudiar el mapa completo,
-              descargar la fuente y recorrer los dominios clave sin abrir Excel.
+              El diagrama resume la adopción empresarial de GitHub Copilot como una plataforma:
+              identidades, roles, IDEs, agentes, modelos, extensiones, DevOps, DevSecOps,
+              seguridad, privacidad, costos, ROI y gobierno operativo. Sirve como mapa de
+              decisión para validar preparación, controles faltantes e integración con GitHub,
+              Azure, Microsoft Entra y Microsoft 365 antes de ampliar el uso en producción.
             </p>
           </div>
           <div class="grid">
@@ -770,14 +772,54 @@
               </ul>
             </article>
             <aside class="callout span-5">
-              <p class="kicker">Lectura ejecutiva</p>
-              <h2>Cómo estudiar este material.</h2>
+              <p class="kicker">Prerrequisitos de adopción</p>
+              <h2>Qué debe estar listo antes de implementar Copilot.</h2>
               <ul>
-                <li>Primero revisar el diagrama 360 para entender el mapa completo.</li>
-                <li>Después usar el dashboard del Excel para comparar planes y costos.</li>
-                <li>Finalmente practicar con las hojas de examen, gobernanza y seguridad.</li>
+                <li>Identidad gobernada en Microsoft Entra: MFA, Conditional Access, grupos, PIM y ciclo de vida de usuarios.</li>
+                <li>Repositorios GitHub con ramas protegidas, revisiones obligatorias, secret scanning, CodeQL, Dependabot y auditoría.</li>
+                <li>Microsoft 365 con permisos revisados: Copilot responde con los datos que el usuario ya puede acceder.</li>
+                <li>Gobernanza de datos con Microsoft Purview: etiquetas, DLP, retención, sitios compartidos y permisos heredados.</li>
+                <li>Modelo operativo con owners, políticas de Copilot, exclusiones de contenido, capacitación, métricas DORA, FinOps y ROI.</li>
               </ul>
             </aside>
+            <article class="card span-12">
+              <p class="kicker">Zero Trust 360 y gobierno cloud</p>
+              <h2>La decisión no es solo licenciar Copilot: es preparar el plano de control.</h2>
+              <p>
+                La arquitectura propone aplicar Zero Trust 360 desde el inicio: verificar
+                explícitamente, otorgar mínimo privilegio y asumir brecha. En Azure y Microsoft
+                365 esto se traduce en Microsoft Entra ID, Conditional Access, PIM, Purview,
+                Defender, auditoría y protección de datos. En GitHub se complementa con
+                políticas empresariales de Copilot, exclusiones de contenido sensible,
+                seguridad de código y trazabilidad de cambios.
+              </p>
+              <ul class="download-list">
+                <li>
+                  <a href="https://learn.microsoft.com/en-us/security/zero-trust/copilots/zero-trust-microsoft-365-copilot">
+                    Microsoft Learn: Zero Trust para Microsoft 365 Copilot
+                    <span>oficial</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-architecture">
+                    Microsoft Learn: arquitectura y permisos de Microsoft 365 Copilot
+                    <span>oficial</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://learn.microsoft.com/en-us/entra/identity/conditional-access/overview">
+                    Microsoft Entra: Conditional Access como motor Zero Trust
+                    <span>oficial</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://docs.github.com/en/copilot/concepts/policies">
+                    GitHub Docs: políticas de Copilot para organizaciones y empresas
+                    <span>oficial</span>
+                  </a>
+                </li>
+              </ul>
+            </article>
           </div>
         </div>
       </section>
@@ -1164,27 +1206,40 @@
         <div class="wrap">
           <div class="grid">
             <article class="card span-6">
-              <p class="kicker">Cómo trabajarlo en VS Code</p>
-              <h2>Flujo recomendado de edición.</h2>
+              <p class="kicker">Autor</p>
+              <h2>Carlos Crudo: arquitectura, cloud, DevOps, seguridad y adopción de Copilot.</h2>
+              <p>
+                Este Study Hub fue preparado como material de consulta para profesionales IT que
+                necesitan evaluar GitHub Copilot con criterio técnico, gobierno, seguridad,
+                productividad y retorno de inversión.
+              </p>
               <ul>
-                <li>Usa Live Server para revisar cambios al instante.</li>
-                <li>HTML CSS Support ayuda con autocompletado visual y propiedades CSS.</li>
-                <li>Prettier mantiene el documento legible antes de publicarlo.</li>
-                <li>Tailwind CSS IntelliSense será útil si luego migras esta estructura a Tailwind.</li>
-              </ul>
-            </article>
-            <article class="card span-6">
-              <p class="kicker">Publicación</p>
-              <h2>Opciones claras para compartir el material.</h2>
-              <ul>
-                <li>GitHub Pages: publicar como sitio estático desde el repositorio.</li>
-                <li>Blog personal: adaptar esta página como entrada larga o landing educativa.</li>
-                <li>Repositorio de estudio: mantener versiones, laboratorios y recursos descargables.</li>
-                <li>LinkedIn: compartir avances por módulo y enlazar al blog o GitHub Pages.</li>
+                <li>Blog personal para publicar análisis, guías y material extendido.</li>
+                <li>LinkedIn para compartir avances del curso, reflexiones y recursos por módulo.</li>
+                <li>GitHub Pages para mantener una versión navegable, actualizada y trazable.</li>
               </ul>
               <div class="inline-actions">
-                <a class="btn primary" href="https://carloscrudo.com/">carloscrudo.com</a>
+                <a class="btn primary" href="https://carloscrudo.com/">Blog Carlos Crudo</a>
                 <a class="btn primary" href="https://www.linkedin.com/in/carloscrudo/">LinkedIn</a>
+              </div>
+            </article>
+            <article class="card span-6">
+              <p class="kicker">Invitación al curso</p>
+              <h2>Compartir el Study Hub como punto de entrada profesional.</h2>
+              <p>
+                La recomendación es publicar el enlace como recurso abierto de estudio GH-300:
+                primero en GitHub Pages, luego como artículo editorial en el blog y finalmente
+                como invitación desde LinkedIn para que otros profesionales revisen, practiquen
+                y aporten mejoras.
+              </p>
+              <ul>
+                <li>Mensaje sugerido: foco en gobernanza, seguridad, laboratorios y práctica de examen.</li>
+                <li>CTA principal: visitar el Study Hub y recorrer la ruta de aprendizaje.</li>
+                <li>CTA secundario: conectar con Carlos para feedback, consultoría o comunidad técnica.</li>
+              </ul>
+              <div class="inline-actions">
+                <a class="btn primary" href="https://ccrudolabs.github.io/copilot-workspace-starter/">Abrir Study Hub</a>
+                <a class="btn primary" href="https://carloscrudo.com/">Ver blog</a>
               </div>
             </article>
           </div>
