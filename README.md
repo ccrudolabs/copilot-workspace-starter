@@ -1,55 +1,79 @@
-# GitHub Copilot GH-300 Learning App
+# GH-300 GitHub Copilot Certification Study Hub
 
-Autor: Carlos Crudo
+Material profesional de estudio para GitHub Copilot, GitHub, DevOps, DevSecOps y adopcion de IA en equipos IT.
 
-Esta aplicación sirve como base completa para estudiar, practicar y demostrar el uso de GitHub Copilot y GitHub con enfoque de examen GH-300. Incluye teoría, escenarios, pruebas unitarias, arquitectura y un flujo de trabajo preparado para aprender desde cero.
+Autor: **Carlos Crudo**  
+Sitio publicado: [ccrudolabs.github.io/copilot-workspace-starter](https://ccrudolabs.github.io/copilot-workspace-starter/)  
+Perfil profesional: [LinkedIn](https://www.linkedin.com/in/carloscrudo/) · [Blog](https://carloscrudo.com/)
 
-## Qué incluye esta app
-- una app TypeScript funcional de ejemplo,
-- una guía de estudio para GH-300,
-- escenarios prácticos de uso de Copilot,
-- pruebas unitarias con Node.js,
-- una arquitectura y topología explicada con Mermaid,
-- una conexión clara con GitHub para colaboración y revisión.
+## Proposito
 
-## Estructura recomendada
+Este repositorio funciona como hub publico de aprendizaje para profesionales IT que quieren estudiar GH-300 con criterio tecnico, gobierno, seguridad y practica real. El foco no es solo aprobar un examen: es entender como adoptar GitHub Copilot con control, trazabilidad, buenas practicas y vision enterprise.
 
-- environments/dev: variables y configuración para desarrollo.
-- environments/qa: variables y configuración para pruebas.
-- environments/prd: variables y configuración para producción.
-- docs: documentación y guías de uso.
+## Que incluye
 
-## Buenas prácticas aplicadas
+- Sitio estatico profesional publicado con GitHub Pages.
+- Ruta de estudio para GitHub Copilot y GH-300.
+- Laboratorios practicos organizados por tema.
+- Simulador de examen sin exponer la clave de respuestas.
+- Arquitectura Enterprise 360 de GitHub Copilot con enfoque en personas, agentes, seguridad, costos, ROI y gobierno.
+- Referencias oficiales de Microsoft Learn y GitHub Docs.
+- Credenciales Microsoft 2026 y certificado MIT de IA generativa como respaldo de trayectoria profesional.
 
-- separar configuraciones por entorno,
-- mantener secretos fuera del repositorio,
-- usar scripts específicos por entorno,
-- documentar el flujo de GitHub.
+## Credenciales destacadas
 
-## Comandos útiles
+- Microsoft: Protect AI and Apps with MDC - Project Ready Proficient 2026.
+- Microsoft: Azure Migrate and Modernize - Sales Ready Proficient 2026.
+- Microsoft: Threat Protection capabilities with M365 E5 - Sales Ready Proficient 2026.
+- MIT Professional Education: Inteligencia Artificial Generativa Aplicada a la Transformacion Digital.
 
-- npm install
-- npm run build
-- npm start
-- npm run dev
-- npm run qa
-- npm run prd
-- npm test
+## Repositorio como portfolio tecnico
 
-## Documentación clave
-- [docs/gh300-study-guide.md](docs/gh300-study-guide.md)
-- [docs/architecture.md](docs/architecture.md)
-- [docs/exam-scenarios.md](docs/exam-scenarios.md)
-- [docs/github-setup.md](docs/github-setup.md)
+Este proyecto busca mostrar una forma profesional de publicar contenido tecnico:
 
-## GitHub
+- documentacion clara y navegable,
+- contenido versionado,
+- separacion entre sitio, laboratorios y recursos,
+- GitHub Pages con despliegue por Actions,
+- material descargable controlado,
+- footer de confianza con autor, credenciales y canales publicos,
+- sanitizacion de secretos simulados en laboratorios.
 
-Consulta [docs/github-setup.md](docs/github-setup.md) para conectar este proyecto a tu repositorio GitHub.
+## Estructura principal
 
-## GH-300 Study Hub
+```text
+site/
+  index.html
+  simulador-examen.html
+  teoria-github-copilot.html
+  lab-00-*.html ... lab-23-*.html
+  assets/
+docs/
+src/
+tests/
+.github/workflows/
+```
 
-El sitio estatico profesional para estudiar GitHub Copilot GH-300 esta en:
+## Buenas practicas aplicadas
 
-- [site/index.html](site/index.html)
+- GitHub Pages se publica desde workflow dedicado.
+- Las credenciales de ejemplo en laboratorios se publican como placeholders seguros.
+- El material de estudio separa teoria, laboratorios y simulacion.
+- El contenido publico evita exponer respuestas de examen.
+- El sitio enlaza fuentes oficiales cuando se tratan temas de seguridad, Zero Trust y gobierno.
 
-Cuando GitHub Pages este habilitado con GitHub Actions, el hub quedara publicado desde la carpeta `site`.
+## Recomendaciones para evolucionar
+
+- Estandarizar la rama principal a `main` en una ventana controlada.
+- Crear el repositorio de perfil `ccrudolabs/ccrudolabs` para mostrar un README global en GitHub.
+- Agregar una licencia o aviso de uso segun la estrategia de publicacion: contenido abierto, uso educativo o todos los derechos reservados.
+- Activar reglas de proteccion de rama para PRs y revisiones antes de mergear.
+- Mantener `SECURITY.md`, `CONTRIBUTING.md` y `NOTICE.md` actualizados.
+
+## Uso local
+
+El sitio es HTML estatico. Puede abrirse directamente desde `site/index.html` o servirse con Live Server.
+
+## Autor y derechos
+
+Material preparado por Carlos Crudo. Ver [NOTICE.md](NOTICE.md) para condiciones de autoria, referencias y uso del contenido.
